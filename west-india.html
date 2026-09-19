@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West & Central India | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ The Heart & The West — Discover Deserts, Wildlife, and Coastlines! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html" class="active">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">THE HEART & THE WEST</p>
+            <h1 style="font-size: 5rem;">WEST & CENTRAL</h1>
+            <p class="hero-subtitle">Golden desert landscapes, legendary royal forts, thriving wildlife sanctuaries, and vibrant coastal nightlife.</p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STATE EXPLORER -->
+    <section id="explore" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable States -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="rajasthan">🏜️ Rajasthan</button>
+                <button class="state-pill-btn" data-state="maharashtra">🎬 Maharashtra</button>
+                <button class="state-pill-btn" data-state="goa">🏖️ Goa</button>
+                <button class="state-pill-btn" data-state="mp">🐅 Madhya Pradesh</button>
+                <button class="state-pill-btn" data-state="gujarat">🦁 Gujarat</button>
+            </div>
+
+            <!-- RIGHT CONTENT: State Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- ============================================== -->
+                <!-- 1. RAJASTHAN -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card active" id="rajasthan">
+                    <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Rajasthan Fort">
+                    <h2>Rajasthan</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏰 Vibe: Royal Forts, Deserts & Heritage</span>
+                        <span class="fact-tag">🍛 Must Eat: Dal Baati Churma & Laal Maas</span>
+                    </div>
+
+                    <p>Rajasthan is India's great land of kings, forts, and desert landscapes. From the pink streets of Jaipur and the blue houses of Jodhpur to the golden sandstone fort of Jaisalmer and the romantic lakes of Udaipur, the state is filled with reminders of its royal past. Beyond its palaces, Rajasthan offers desert safaris, wildlife reserves, colorful bazaars, traditional crafts, and vibrant festivals.</p>
+
+                    <h3 class="section-heading">📍 Major Royal Hubs & Regions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏰 Jaipur (The Pink City)</h4>
+                            <p><strong>Royal Capital:</strong> Explore Amber Fort, City Palace, Hawa Mahal, Jantar Mantar observatory, Nahargarh Fort, and shop for gems and textiles at Johari and Bapu Bazaars.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Jodhpur (The Blue City)</h4>
+                            <p><strong>Marwar Forts:</strong> Dominated by the colossal Mehrangarh Fort, Jaswant Thada, Umaid Bhawan Palace, and the vibrant blue-painted historic neighborhoods.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏜️ Jaisalmer (The Golden City)</h4>
+                            <p><strong>Thar Desert:</strong> Experience the living Jaisalmer Fort, Sam Sand Dunes camel safaris, Patwon Ki Haveli, Gadisar Lake, and starry night camps.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Udaipur (City of Lakes)</h4>
+                            <p><strong>Venice of the East:</strong> Romantic boat rides on Lake Pichola, the sprawling City Palace, Jag Mandir island, and sunset at Sajjangarh Monsoon Palace.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Chittorgarh & Forts</h4>
+                            <p><strong>Rajput Valor:</strong> Chittorgarh Fort (one of India's largest), Vijay Stambh, Kumbhalgarh's massive defensive wall, Bundi, Bikaner, and Mount Abu.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Ranthambore & Desert Safaris</h4>
+                            <p><strong>Wildlife & Dunes:</strong> Spot Royal Bengal Tigers amid ancient fort ruins in Ranthambore National Park, and enjoy Kalbeliya folk performances in Thar camps.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Royal Cuisine & Famous Crafts</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍲 Dal Baati Churma</span>
+                        <span class="food-item">🍖 Fiery Laal Maas</span>
+                        <span class="food-item">🥘 Gatte Ki Sabzi & Ker Sangri</span>
+                        <span class="food-item">🫓 Pyaaz Kachori & Mirchi Vada</span>
+                        <span class="food-item">🍰 Ghewar & Mawa Kachori</span>
+                        <span class="food-item">🏺 Blue Pottery & Block Printing</span>
+                        <span class="food-item">🧵 Bandhani & Leheriya Textiles</span>
+                        <span class="food-item">👞 Leather Mojari Footwear</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Royal Circuit:</strong> Jaipur → Pushkar → Jodhpur → Jaisalmer → Udaipur → Chittorgarh.</p>
+                        <p>• <strong>Festivals:</strong> Plan during the <em>Pushkar Camel Fair</em>, <em>Jaipur Literature Festival</em>, or the <em>Desert Festival</em> in Jaisalmer.</p>
+                        <p>• <strong>Desert Protection:</strong> Winter days are pleasant, but desert nights in Jaisalmer drop rapidly in temperature. Carry heavy layers.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 2. MAHARASHTRA -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="maharashtra">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Maharashtra">
+                    <h2>Maharashtra</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to February</span>
+                        <span class="fact-tag">🏙️ Vibe: Bollywood, Forts, Coast & Caves</span>
+                        <span class="fact-tag">🍛 Must Eat: Vada Pav, Misal Pav & Puran Poli</span>
+                    </div>
+
+                    <p>Maharashtra combines India's financial capital, ancient rock-cut cave temples, spectacular Sahyadri hill forts, lush vineyards, and a long Konkan coastline. Mumbai represents the state's electric modern energy and cinema culture, while the Western Ghats offer tranquil hill escapes and historical treasures.</p>
+
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🌆 Mumbai (City of Dreams)</h4>
+                            <p><strong>Capital & Bollywood:</strong> Gateway of India, Marine Drive ("Queen's Necklace"), UNESCO-listed CST Railway Station, Elephanta Caves, and Film City.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Ajanta & Ellora Caves</h4>
+                            <p><strong>UNESCO Artistic Treasures:</strong> Ancient Buddhist frescoes at Ajanta and the mind-boggling monolithic rock-cut Kailasa Temple at Ellora.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Maratha Forts & Sahyadris</h4>
+                            <p><strong>Raigad, Sinhagad & Forts:</strong> Historical mountain strongholds built by Chhatrapati Shivaji Maharaj, popular for monsoon trekking and panoramic views.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Konkan Coast & Tarkarli</h4>
+                            <p><strong>Beaches & Scuba:</strong> Clear coastal waters in Tarkarli, Alibaug, Ganpatipule, Diveagar, and Kashid for water sports and fresh seafood.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🍷 Nashik & Hill Stations</h4>
+                            <p><strong>Wine Country & Monsoons:</strong> India's wine capital (vineyard tours in Nashik), Trimbakeshwar, Lonavala, Khandala, and Mahabaleshwar.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏙️ Pune & Culture</h4>
+                            <p><strong>Cultural Heart:</strong> Shaniwar Wada, Aga Khan Palace, vibrant Marathi theatre, and traditional educational heritage.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Authentic Marathi Street Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍔 Iconic Vada Pav</span>
+                        <span class="food-item">🌶️ Fiery Misal Pav</span>
+                        <span class="food-item">🥘 Pav Bhaji</span>
+                        <span class="food-item">🫓 Sweet Puran Poli</span>
+                        <span class="food-item">🍆 Bharli Vangi</span>
+                        <span class="food-item">🍚 Sabudana Khichdi</span>
+                        <span class="food-item">🍲 Kolhapuri Tambda Rassa</span>
+                        <span class="food-item">🥭 Mango & Ukdiche Modak</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Ganesh Chaturthi:</strong> Experience Mumbai and Pune during Ganesh Chaturthi (Aug/Sept) for colossal street processions and immersive cultural energy.</p>
+                        <p>• <strong>Heritage & Coast Circuit:</strong> Mumbai → Pune → Lonavala → Ajanta → Ellora → Nashik → Konkan Coast.</p>
+                        <p>• <strong>Local Transit:</strong> Use Mumbai's local train network outside peak office hours for quick travel across the city.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 3. GOA -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="goa">
+                    <img src="https://plus.unsplash.com/premium_photo-1664283661568-859f7aff0b20?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Goa Beaches">
+                    <h2>Goa</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: November to February</span>
+                        <span class="fact-tag">🌴 Vibe: Beaches, Nightlife & Heritage</span>
+                        <span class="fact-tag">🍛 Must Eat: Goan Fish Curry & Bebinca</span>
+                    </div>
+
+                    <p>Goa is India's most famous beach destination, blending golden coastlines with a distinctive Indo-Portuguese heritage. Portuguese-era churches, colorful Latin quarters, tropical spice plantations, waterfalls, and fresh coastal seafood give Goa an identity unlike anywhere else in the subcontinent.</p>
+
+                    <h3 class="section-heading">📍 Major Coastlines & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏖️ North Goa (Lively Beaches)</h4>
+                            <p><strong>Vibrant & Energetic:</strong> Baga, Calangute, Anjuna, and Vagator. Famous for water sports, beach shacks, flea markets, and Arambol's bohemian sunset circles.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌴 South Goa (Peaceful Coast)</h4>
+                            <p><strong>Tranquil Retreats:</strong> Palolem, Agonda, Colva, and Cavelossim. Serene curved bays, coconut groves, and quiet luxury resorts.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>⛪ Old Goa & Panaji</h4>
+                            <p><strong>Portuguese Heritage:</strong> UNESCO-listed Basilica of Bom Jesus, Sé Cathedral, Fontainhas (Latin Quarter), and heritage river cruises on the Mandovi.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>💦 Dudhsagar Waterfalls</h4>
+                            <p><strong>Western Ghats Adventure:</strong> Massive four-tiered waterfall inside Bhagwan Mahavir Sanctuary, accessible via jungle jeep safaris or train routes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Forts & Spice Plantations</h4>
+                            <p><strong>Aguada & Spices:</strong> Coastal fortifications like Fort Aguada and Chapora with sea views, plus organic spice plantation tours with traditional meals.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🎵 Nightlife & Festivals</h4>
+                            <p><strong>Electronic Culture:</strong> Famous for beach cafes, live music, the Sunburn Festival, Goa Carnival, and spectacular Christmas/New Year celebrations.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Indo-Portuguese Cuisine & Drinks</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Goan Fish Curry Rice</span>
+                        <span class="food-item">🍤 Prawn Balchão</span>
+                        <span class="food-item">🍗 Chicken Xacuti</span>
+                        <span class="food-item">🥩 Pork Vindaloo & Sorpotel</span>
+                        <span class="food-item">🍰 Layered Bebinca Dessert</span>
+                        <span class="food-item">🥖 Fresh Goan Poi Bread</span>
+                        <span class="food-item">🥂 Cashew & Toddy Feni</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Transport:</strong> Renting a scooter or self-drive car is the most popular way to explore Goa independently.</p>
+                        <p>• <strong>Safety:</strong> Pay close attention to red flags on beaches showing dangerous swimming currents.</p>
+                        <p>• <strong>Festivals:</strong> Visit during February for the colorful <em>Goa Carnival</em>, or December for Christmas and Shigmo celebrations.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 4. MADHYA PRADESH -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="mp">
+                    <img src="https://plus.unsplash.com/premium_photo-1697730370661-51bf72769ff6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Madhya Pradesh Heritage">
+                    <h2>Madhya Pradesh</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏛️ Vibe: Wildlife, Temples & Heritage</span>
+                        <span class="fact-tag">🍛 Must Eat: Poha-Jalebi & Dal Bafla</span>
+                    </div>
+
+                    <p>Madhya Pradesh lies at the geographical heart of India, containing an extraordinary concentration of history, wildlife, and ancient architecture. From the intricate sculptures of Khajuraho and Buddhist stupas at Sanchi to tiger-filled national parks and medieval hilltop cities like Mandu and Orchha, it offers pure wilderness and culture.</p>
+
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏛️ Khajuraho Group of Temples</h4>
+                            <p><strong>UNESCO Heritage:</strong> Medieval Hindu and Jain temples world-famous for their intricate rock sculptures and architectural perfection.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Sanchi & Bhimbetka</h4>
+                            <p><strong>Ancient Civilizations:</strong> The Great Stupa at Sanchi (Buddhist heritage) and prehistoric cave paintings in the rock shelters of Bhimbetka.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Tiger Capitals (Kanha, Bandhavgarh)</h4>
+                            <p><strong>Wildlife Safaris:</strong> Premier national parks protecting Royal Bengal Tigers, Barasingha, leopards, and inspiring Kipling's <em>Jungle Book</em> (Pench).</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Mandu & Orchha</h4>
+                            <p><strong>Bundela & Afghan Heritage:</strong> Jahaz Mahal (Ship Palace), Roopmati Pavilion, and the stunning Betwa riverfront temples and cenotaphs of Orchha.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏙️ Bhopal, Gwalior & Indore</h4>
+                            <p><strong>Palaces & Street Food:</strong> Gwalior's invincible fort, Bhopal's twin lakes and Tribal Museum, and Indore's legendary Sarafa Night Food Market.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌲 Pachmarhi & Satpura</h4>
+                            <p><strong>Central Highland Escape:</strong> MP's only hill station, surrounded by waterfalls, ravines, ancient caves, and Satpura tiger reserve safaris.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍲 Central Indian Specialties</h3>
+                    <div class="food-list">
+                        <span class="food-item">🥜 Indori Poha-Jalebi</span>
+                        <span class="food-item">🌽 Bhutte Ka Kees (Grated Corn)</span>
+                        <span class="food-item">🫓 Dal Bafla (Ghee dipped wheat balls)</span>
+                        <span class="food-item">🌾 Sabudana Khichdi</span>
+                        <span class="food-item">🥘 Bhopali Gosht & Kebabs</span>
+                        <span class="food-item">🍬 Mawa Bati & Malpua</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Wildlife Safaris:</strong> Safari permits for Kanha and Bandhavgarh open months in advance online and sell out fast. Book early!</p>
+                        <p>• <strong>MP Wildlife & Heritage Route:</strong> Bhopal → Sanchi → Kanha → Bandhavgarh → Khajuraho → Orchha.</p>
+                        <p>• <strong>Festivals:</strong> Don't miss the <em>Khajuraho Dance Festival</em> (Feb) or the <em>Tansen Samaroh</em> music festival in Gwalior.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 5. GUJARAT -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="gujarat">
+                    <img src="https://images.unsplash.com/photo-1604216958967-ee0ec1dd9b64?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Rann of Kutch Gujarat">
+                    <h2>Gujarat</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🌵 Vibe: Wildlife, Heritage & Vibrant Culture</span>
+                        <span class="fact-tag">🍛 Must Eat: Gujarati Thali, Dhokla & Fafda</span>
+                    </div>
+
+                    <p>Gujarat is a fascinating combination of ancient Harappan civilization, sacred coastal pilgrimage sites, Asiatic lion safaris, white salt deserts, and vibrant culture. It is home to the world's last wild population of Asiatic lions, the Great Rann of Kutch, and rich handloom textile traditions.</p>
+
+                    <h3 class="section-heading">📍 Major Destinations & Landscapes</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🦁 Gir National Park</h4>
+                            <p><strong>Asiatic Lions:</strong> The world's sole natural sanctuary protecting wild Asiatic lions, leopards, chital, and marsh crocodiles.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏜️ Rann of Kutch & Rann Utsav</h4>
+                            <p><strong>White Salt Desert:</strong> Walk across an endless white salt desert, stargaze under clear skies, and stay in tent cities during the massive Rann Utsav.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Somnath & Dwarka</h4>
+                            <p><strong>Sacred Coastal Pilgrimages:</strong> The historic Somnath Jyotirlinga temple standing by the Arabian Sea, and the Dwarkadhish temple associated with Lord Krishna.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Ahmedabad & Stepwells</h4>
+                            <p><strong>UNESCO Heritage City:</strong> Sabarmati Ashram, heritage pols, Sidi Saiyyed Mosque, and the beautifully carved subterranean Adalaj Stepwell.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Dholavira & Lothal</h4>
+                            <p><strong>Harappan Archaeology:</strong> Ancient Indus Valley Civilization sites showcasing 4,500-year-old urban water management, grid planning, and docks.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🦩 Statue of Unity & Diu</h4>
+                            <p><strong>Monuments & Coast:</strong> The world's tallest statue (Statue of Unity), flamingos at Nal Sarovar wetlands, and Portuguese coastal heritage in Diu.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Gujarati Thali & Crafts</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍽️ Complete Gujarati Thali</span>
+                        <span class="food-item">🥞 Soft Dhokla & Khandvi</span>
+                        <span class="food-item">🫓 Thepla & Handvo</span>
+                        <span class="food-item">🫓 Fafda-Jalebi</span>
+                        <span class="food-item">🍲 Winter Undhiyu</span>
+                        <span class="food-item">🧵 Ajrakh Block Printing</span>
+                        <span class="food-item">🧵 Bandhani & Kutchi Embroidery</span>
+                        <span class="food-item">🎨 Castor Oil Rogan Art</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Gir Permits:</strong> Safari permits for Gir National Park must be booked online strictly in advance.</p>
+                        <p>• <strong>Heritage Circuit:</strong> Ahmedabad → Modhera → Patan → Little Rann → Bhuj → Rann of Kutch → Gir → Somnath → Dwarka.</p>
+                        <p>• <strong>Festivals:</strong> Visit during <em>Navratri</em> for 9 nights of grand Garba dance, <em>Uttarayan</em> (Kite Festival in Jan), or the winter <em>Rann Utsav</em>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HASH ROUTING 🚨 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            function activateTab(stateId) {
+                const targetBtn = document.querySelector(`.state-pill-btn[data-state="${stateId}"]`);
+                const targetCard = document.getElementById(stateId);
+                
+                if (targetBtn && targetCard) {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    targetBtn.classList.add('active');
+                    targetCard.classList.add('active');
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: document.getElementById('explore').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+
+            if(window.location.hash) {
+                const hashState = window.location.hash.substring(1); 
+                activateTab(hashState);
+            }
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetState = btn.getAttribute('data-state');
+                    activateTab(targetState);
+                    history.replaceState(null, null, `#${targetState}`);
+                });
+            });
+
+            window.addEventListener('hashchange', () => {
+                const hashState = window.location.hash.substring(1);
+                activateTab(hashState);
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

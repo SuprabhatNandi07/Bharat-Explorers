@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South India | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ The Tropical South — Explore Ancient Temples, Backwaters, and Beaches! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html" class="active">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">THE TROPICAL SOUTH</p>
+            <h1 style="font-size: 5rem;">SOUTH INDIA</h1>
+            <p class="hero-subtitle">Ancient Dravidian temple architecture, peaceful emerald backwaters, rolling spice plantations, and pristine beaches.</p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STATE EXPLORER -->
+    <section id="explore" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable States -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="kerala">🥥 Kerala</button>
+                <button class="state-pill-btn" data-state="tamilnadu">🛕 Tamil Nadu</button>
+                <button class="state-pill-btn" data-state="karnataka">☕ Karnataka</button>
+                <button class="state-pill-btn" data-state="andhra">🌊 Andhra Pradesh</button>
+                <button class="state-pill-btn" data-state="telangana">🏛️ Telangana</button>
+                <button class="state-pill-btn" data-state="andaman">🏝️ Andaman & Nicobar</button>
+            </div>
+
+            <!-- RIGHT CONTENT: State Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- 1. KERALA -->
+                <div class="state-detail-card glass-card active" id="kerala">
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Kerala Backwaters">
+                    <h2>Kerala</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: September to March</span>
+                        <span class="fact-tag">🌴 Vibe: Tropical, Backwaters & Hills</span>
+                        <span class="fact-tag">🍛 Must Eat: Sadya, Appam & Fish Curry</span>
+                    </div>
+                    <p>Often called <strong>"God's Own Country,"</strong> Kerala is one of India's most visually stunning destinations. Stretching along the Arabian Sea and rising into the Western Ghats, the state combines palm-fringed beaches, peaceful backwaters, mist-covered mountains, spice plantations, tropical forests, and historic trading towns.</p>
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛶 The Backwaters</h4>
+                            <p><strong>Alleppey, Kumarakom & Kuttanad:</strong> Float through interconnected canals on a traditional houseboat, watch village life, and witness stunning sunsets over Vembanad Lake.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🍵 The Western Ghats</h4>
+                            <p><strong>Munnar, Wayanad, Vagamon & Ponmudi:</strong> Rolling green tea estates, misty meadows, spice plantations, Edakkal Caves, and the towering Athirappilly Falls.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏖️ Tropical Coastlines</h4>
+                            <p><strong>Kovalam, Varkala, Marari & Bekal:</strong> Dramatic laterite cliffs, curved sandy beaches, historic coastal forts, and world-renowned Ayurvedic wellness retreats.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Historic Kochi & Trivandrum</h4>
+                            <p><strong>Fort Kochi, Mattancherry & Padmanabhaswamy:</strong> Iconic Chinese fishing nets, Dutch palaces, Jewish heritage, and ancient royal temples.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐘 Wildlife Sanctuaries</h4>
+                            <p><strong>Periyar, Eravikulam & Silent Valley:</strong> Track wild elephants on boat safaris, spot the endangered Nilgiri tahr, and explore dense tropical evergreen forests.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🎭 Living Traditions</h4>
+                            <p><strong>Kathakali, Theyyam & Vallam Kali:</strong> Witness mesmerizing classical dance-dramas, vibrant ritual arts of North Kerala, and spectacular Onam snake boat races.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Must-Try Kerala Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍌 Traditional Sadya</span>
+                        <span class="food-item">🥞 Appam & Stew</span>
+                        <span class="food-item">🐟 Kerala Fish Curry</span>
+                        <span class="food-item">🍚 Malabar Biryani</span>
+                        <span class="food-item">🥞 Puttu & Kadala Curry</span>
+                        <span class="food-item">🍮 Payasam</span>
+                    </div>
+                </div>
+
+                <!-- 2. TAMIL NADU -->
+                <div class="state-detail-card glass-card" id="tamilnadu">
+                    <img src="https://images.unsplash.com/photo-1544588440-fc7551331160?q=80&w=1222&auto=format&fit=crop" class="state-hero-img" alt="Tamil Nadu Temple">
+                    <h2>Tamil Nadu</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: November to February</span>
+                        <span class="fact-tag">🛕 Vibe: Heritage, Temples & Coastline</span>
+                        <span class="fact-tag">🍗 Must Eat: Chettinad Chicken & Dosa</span>
+                    </div>
+                    <p>Tamil Nadu is one of India's richest cultural landscapes, where thousands of years of Tamil civilization continue to shape everyday life. The state is renowned for its enormous Dravidian temples, intricately carved gopurams, ancient bronze sculptures, classical Bharatanatyam, and Carnatic music.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Heritage Hubs</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 The Temple Cities</h4>
+                            <p><strong>Madurai, Thanjavur & Chidambaram:</strong> Marvel at the spectacular Meenakshi Amman Temple, the towering Chola architecture of Brihadeeswarar, and the Nataraja Temple.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Coastal Heritage</h4>
+                            <p><strong>Mahabalipuram, Chennai & Kanyakumari:</strong> 7th-century rock-cut shore temples, Marina Beach, and the southernmost tip of India where three seas meet.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌄 The Nilgiri Hills</h4>
+                            <p><strong>Ooty, Coonoor, Kodaikanal & Yercaud:</strong> Misty mountains, the historic toy train, eucalyptus forests, and sprawling tea and coffee plantations.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Chettinad & Kanchipuram</h4>
+                            <p><strong>Palaces & Silk:</strong> Explore the ornate, palatial heritage mansions of Chettinad, and the 'City of a Thousand Temples' famous for handwoven silk sarees.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏝️ Rameswaram & Dhanushkodi</h4>
+                            <p><strong>Sacred Islands:</strong> Cross the Pamban Bridge to the Ramanathaswamy Temple, and explore the hauntingly beautiful coastal ruins of Dhanushkodi.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐘 Tiger Reserves</h4>
+                            <p><strong>Mudumalai, Anamalai & Sathyamangalam:</strong> Protected Western Ghats forests supporting elephants, Bengal tigers, leopards, and diverse birdlife.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 South Indian & Chettinad Flavors</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍗 Spicy Chettinad Chicken</span>
+                        <span class="food-item">🥞 Crispy Dosa & Idli</span>
+                        <span class="food-item">🍚 Savory & Sweet Pongal</span>
+                        <span class="food-item">🍲 Kothu Parotta</span>
+                        <span class="food-item">🥣 Tangy Rasam & Sambar</span>
+                    </div>
+                </div>
+
+                <!-- 3. KARNATAKA -->
+                <div class="state-detail-card glass-card" id="karnataka">
+                    <img src="https://images.unsplash.com/photo-1697130383976-38f28c444292?q=80&w=1026&auto=format&fit=crop" class="state-hero-img" alt="Karnataka Hampi">
+                    <h2>Karnataka</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to April</span>
+                        <span class="fact-tag">🏺 Vibe: Ancient Ruins, Coffee Hills & Cities</span>
+                        <span class="fact-tag">🥘 Must Eat: Bisi Bele Bath & Neer Dosa</span>
+                    </div>
+                    <p>Karnataka is a remarkable meeting point of ancient history, royal heritage, tropical coastlines, misty mountains, and cutting-edge technology. The state is home to the extraordinary boulder-strewn ruins of Hampi, the magnificent Mysore Palace, and the energetic tech hub of Bengaluru.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Ruins</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏛️ Hampi (Vijayanagara Empire)</h4>
+                            <p><strong>Virupaksha, Vittala & Hemakuta Hill:</strong> A massive, surreal archaeological landscape of temples, the iconic Stone Chariot, and giant granite boulders.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>👑 Mysore & Bengaluru</h4>
+                            <p><strong>Palaces & Technology:</strong> The grand Mysore Palace (especially during Dasara), Bengaluru's Cubbon Park, Vidhana Soudha, and vibrant cafe culture.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>☕ Coorg & Chikkamagaluru</h4>
+                            <p><strong>Coffee Plantations & Western Ghats:</strong> Misty highland escapes, Mullayanagiri (highest peak), Sakleshpur, and traditional Kodava culture.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏖️ Gokarna & The Coast</h4>
+                            <p><strong>Om Beach, Udupi & Murudeshwar:</strong> Relaxed spiritual beaches, the towering Murudeshwar Shiva statue, Malpe beach, and St. Mary's basalt rock islands.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Hoysala & Chalukya Architecture</h4>
+                            <p><strong>Belur, Halebidu, Badami & Pattadakal:</strong> Spectacularly detailed star-shaped temples, ancient rock-cut cave temples, and architectural laboratories at Aihole.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Wildlife & Great Waterfalls</h4>
+                            <p><strong>Bandipur, Nagarahole, Dandeli & Jog Falls:</strong> Dense tiger and elephant reserves, white-water rafting, and one of India's most dramatic monsoon waterfalls.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Distinctive Regional Cuisines</h3>
+                    <div class="food-list">
+                        <span class="food-item">🥘 Bisi Bele Bath</span>
+                        <span class="food-item">🍚 Mysore Masala Dosa</span>
+                        <span class="food-item">🍬 Mysore Pak</span>
+                        <span class="food-item">🥞 Neer Dosa</span>
+                        <span class="food-item">🐟 Mangalorean Seafood</span>
+                    </div>
+                </div>
+
+                <!-- 4. ANDHRA PRADESH -->
+                <div class="state-detail-card glass-card" id="andhra">
+                    <img src="https://images.unsplash.com/photo-1564933356-a0c8922d8926?q=80&w=1074&auto=format&fit=crop" class="state-hero-img" alt="Andhra Pradesh Tirupati">
+                    <h2>Andhra Pradesh</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🛕 Vibe: Temples, Coastlines & Heritage</span>
+                        <span class="fact-tag">🍛 Must Eat: Spicy Andhra Meals & Pulihora</span>
+                    </div>
+                    <p>Andhra Pradesh is a fascinating blend of ancient temples, sacred pilgrimage towns, long stretches of coastline, Buddhist archaeological sites, lush valleys, and vibrant Telugu culture.</p>
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 Tirupati & Srisailam</h4>
+                            <p><strong>Spiritual Centers:</strong> The sacred hill temple of Tirumala (one of India's most visited), and the Mallikarjuna Jyotirlinga surrounded by Nallamala forests.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Visakhapatnam (Vizag)</h4>
+                            <p><strong>The Coastal City:</strong> RK Beach, golden sands of Rushikonda, the hilltop Kailasagiri park, and the historic Simhachalam Temple.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌄 Araku Valley & Eastern Ghats</h4>
+                            <p><strong>Coffee & Caves:</strong> Take the scenic train to Araku, explore the million-year-old Borra Caves, and experience the misty chills of Lambasingi.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Gandikota & Lepakshi</h4>
+                            <p><strong>The Grand Canyon of India:</strong> Dramatic red gorges carved by the Pennar River, and the Veerabhadra Temple famous for its Hanging Pillar and massive Nandi.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🪷 Buddhist Heritage</h4>
+                            <p><strong>Amaravati & Nagarjunakonda:</strong> Ancient stupas, historic island museums, and rich archaeological ruins of early Buddhism and the Satavahanas.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐦 Wetlands & River Deltas</h4>
+                            <p><strong>Kolleru, Pulicat, Coringa & Godavari:</strong> Massive lakes for migratory flamingos and pelicans, plus dense estuarine mangrove forests in Coringa.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Fiery Andhra Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Traditional Andhra Meals</span>
+                        <span class="food-item">🌿 Gongura Pachadi & Mutton</span>
+                        <span class="food-item">🍋 Tangy Pulihora</span>
+                        <span class="food-item">🌶️ Spicy Guntur Chicken</span>
+                        <span class="food-item">🍮 Pootharekulu (Paper Sweet)</span>
+                    </div>
+                </div>
+
+                <!-- 5. TELANGANA -->
+                <div class="state-detail-card glass-card" id="telangana">
+                    <img src="https://images.unsplash.com/photo-1694091684549-b1188cb03a4b?q=80&w=1331&auto=format&fit=crop" class="state-hero-img" alt="Telangana Charminar">
+                    <h2>Telangana</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to February</span>
+                        <span class="fact-tag">🏛️ Vibe: Deccan Heritage, Forts & Tech</span>
+                        <span class="fact-tag">🍛 Must Eat: Hyderabadi Biryani & Haleem</span>
+                    </div>
+                    <p>Telangana is a fascinating land where centuries of Deccan history meet a rapidly growing modern India. Hyderabad forms the cultural and technological heart, famous for the Charminar, massive forts, royal palaces, pearls, and legendary cuisine.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Heritage</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🕌 Hyderabad (City of Nizams)</h4>
+                            <p><strong>Charminar, Palaces & Lakes:</strong> The iconic arches, Laad Bazaar, opulent Chowmahalla and Falaknuma Palaces, and the giant Buddha of Hussain Sagar.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Golconda Fort & Qutb Shahi</h4>
+                            <p><strong>Acoustic Engineering & Royal Tombs:</strong> Explore the massive fortress once central to the diamond trade, and the nearby domed royal tombs.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Kakatiya Architecture</h4>
+                            <p><strong>Warangal & Ramappa Temple:</strong> The UNESCO-listed star-shaped Ramappa temple, Warangal Fort gateways, and the Thousand Pillar Temple.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Forests & Wildlife</h4>
+                            <p><strong>Kawal, Amrabad & Nallamala:</strong> Extensive protected reserves supporting Bengal tigers, leopards, and diverse flora across the Deccan plateau.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>💦 Waterfalls & Nature</h4>
+                            <p><strong>Kuntala, Bogatha & Ananthagiri:</strong> The "Niagara of Telangana," spectacular monsoon waterfalls, and peaceful hill trekking near Hyderabad.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Spiritual Centers</h4>
+                            <p><strong>Yadadri & Bhadrachalam:</strong> The grand Lakshmi Narasimha Temple, and the deeply revered Rama heritage town along the scenic Godavari River.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Hyderabadi & Telangana Cuisine</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Hyderabadi Dum Biryani</span>
+                        <span class="food-item">🥘 Rich Haleem (Ramadan Special)</span>
+                        <span class="food-item">🌿 Sarva Pindi</span>
+                        <span class="food-item">🌶️ Pachipulusu</span>
+                        <span class="food-item">🍮 Qubani Ka Meetha</span>
+                    </div>
+                </div>
+
+                <!-- 6. ANDAMAN & NICOBAR ISLANDS -->
+                <div class="state-detail-card glass-card" id="andaman">
+                    <!-- NEW UPDATED IMAGE LINK APPLIED HERE -->
+                    <img src="https://plus.unsplash.com/premium_photo-1719843013722-c2f4d69db940?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Andaman Tropical Beach">
+                    <h2>Andaman & Nicobar Islands (UT)</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to May</span>
+                        <span class="fact-tag">🏝️ Vibe: Tropical Islands & Coral Reefs</span>
+                        <span class="fact-tag">🐟 Must Eat: Seafood & Coconut Curries</span>
+                    </div>
+                    <p>The Andaman & Nicobar Islands are one of India's most spectacular tropical destinations, scattered across the Bay of Bengal. With turquoise waters, white-sand beaches, dense rainforests, coral reefs, and fascinating colonial history, the islands offer an incredible combination of relaxation and adventure.</p>
+                    <h3 class="section-heading">📍 Major Islands & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏝️ Port Blair (Gateway)</h4>
+                            <p><strong>Cellular Jail & Museums:</strong> Learn about India's freedom struggle at "Kala Pani", visit the Samudrika Marine Museum, and relax at Corbyn's Cove.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏖️ Swaraj Dweep (Havelock)</h4>
+                            <p><strong>Radhanagar Beach & Scuba Diving:</strong> World-famous white-sand beaches, Elephant Beach for water sports, and India's premier coral reef diving sites.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌅 Shaheed Dweep (Neil Island)</h4>
+                            <p><strong>Laxmanpur Beach & Natural Bridge:</strong> A quieter, slower-paced island famous for dramatic rock formations, cycling, and spectacular sunsets.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌳 Baratang Island</h4>
+                            <p><strong>Caves & Mangroves:</strong> An adventurous journey through dense tropical mangrove creeks to discover ancient, hidden limestone caves.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐠 Marine National Parks</h4>
+                            <p><strong>Mahatma Gandhi Park, Jolly Buoy & North Bay:</strong> Pristine protected ecosystems for snorkeling, glass-bottom boats, sea turtles, and colorful reef fish.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌋 Unique Geology & Escapes</h4>
+                            <p><strong>Barren Island & Little Andaman:</strong> See India's only active volcano from a boat, or head to Little Andaman for surfing at Butler Bay and waterfalls.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Island Seafood & Flavors</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Fresh Fish Curry</span>
+                        <span class="food-item">🍤 Coconut Prawn Curry</span>
+                        <span class="food-item">🦀 Garlic Butter Crab</span>
+                        <span class="food-item">🐟 Grilled Catch of the Day</span>
+                        <span class="food-item">🍍 Fresh Tropical Fruits</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HASH ROUTING 🚨 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            function activateTab(stateId) {
+                const targetBtn = document.querySelector(`.state-pill-btn[data-state="${stateId}"]`);
+                const targetCard = document.getElementById(stateId);
+                
+                if (targetBtn && targetCard) {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    targetBtn.classList.add('active');
+                    targetCard.classList.add('active');
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: document.getElementById('explore').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+
+            if(window.location.hash) {
+                const hashState = window.location.hash.substring(1); 
+                activateTab(hashState);
+            }
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetState = btn.getAttribute('data-state');
+                    activateTab(targetState);
+                    history.replaceState(null, null, `#${targetState}`);
+                });
+            });
+
+            window.addEventListener('hashchange', () => {
+                const hashState = window.location.hash.substring(1);
+                activateTab(hashState);
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

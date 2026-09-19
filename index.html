@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India | The Ultimate Journey</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Welcome to Bharat Explorers — Discover the Ultimate India 36 Experience! 
+            <span class="spacer"></span> 
+            <a href="#map">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- 2. Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- 3. Cinematic Hero Section -->
+    <section id="hero" class="cinematic-hero">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">THE INDIA 36 EXPERIENCE</p>
+            <h1>ONE COUNTRY.<br><span>A THOUSAND WORLDS.</span></h1>
+            <p class="hero-subtitle">From Himalayan peaks to tropical islands, discover the landscapes, cultures, flavors, and stories that make India extraordinary.</p>
+            
+            <div class="hero-actions">
+                <a href="gallery.html" class="btn-primary">EXPLORE 3D GALLERY &rarr;</a>
+                <a href="#map" class="btn-secondary">VIEW REGIONS &rarr;</a>
+            </div>
+
+            <div class="hero-stats">
+                <span>28 STATES</span> • 
+                <span>8 UNION TERRITORIES</span> • 
+                <span>∞ STORIES</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Interactive Region Explorer Overview -->
+    <section id="map" class="map-section reveal">
+        <h2 class="section-title">Explore India</h2>
+        <p class="section-subtitle">Select a region to uncover its hidden gems.</p>
+        
+        <div class="region-container glass-card">
+            
+            <!-- REGION TABS -->
+            <div class="region-tabs">
+                <button class="region-btn active" data-target="north">North India</button>
+                <button class="region-btn" data-target="south">South India</button>
+                <button class="region-btn" data-target="east">East & Northeast</button>
+                <button class="region-btn" data-target="west">West & Central</button>
+            </div>
+            
+            <!-- EXACT HASH ROUTING APPLIED TO ALL PILLS -->
+            <div class="region-content active" id="north">
+                <div class="region-info">
+                    <h3>The Crown of India</h3>
+                    <p>Home to the mighty Himalayas, golden deserts, and the capital city.</p>
+                    <div class="state-pills">
+                        <a href="north-india.html#ladakh" target="_blank">🏔️ Ladakh (UT)</a>
+                        <a href="north-india.html#kashmir" target="_blank">❄️ Jammu & Kashmir (UT)</a>
+                        <a href="north-india.html#himachal" target="_blank">🌲 Himachal Pradesh</a>
+                        <a href="north-india.html#uttarakhand" target="_blank">⛰️ Uttarakhand</a>
+                        <a href="north-india.html#punjab" target="_blank">🌾 Punjab</a>
+                        <a href="north-india.html#punjab" target="_blank">🏙️ Chandigarh (UT)</a>
+                        <a href="north-india.html#delhi" target="_blank">🚜 Haryana</a>
+                        <a href="north-india.html#delhi" target="_blank">🕌 Delhi (UT)</a>
+                        <a href="north-india.html#up" target="_blank">🛕 Uttar Pradesh</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="region-content" id="south">
+                <div class="region-info">
+                    <h3>The Tropical South</h3>
+                    <p>Ancient Dravidian temples, backwaters, and pristine coastlines.</p>
+                    <div class="state-pills">
+                        <a href="south-india.html#andhra" target="_blank">🌊 Andhra Pradesh</a>
+                        <a href="south-india.html#karnataka" target="_blank">☕ Karnataka</a>
+                        <a href="south-india.html#kerala" target="_blank">🥥 Kerala</a>
+                        <a href="south-india.html#tamilnadu" target="_blank">🛕 Tamil Nadu</a>
+                        <a href="south-india.html#telangana" target="_blank">💻 Telangana</a>
+                        <a href="south-india.html#andaman" target="_blank">🏝️ Andaman & Nicobar (UT)</a>
+                        <a href="south-india.html#kerala" target="_blank">🏖️ Lakshadweep (UT)</a>
+                        <a href="south-india.html#tamilnadu" target="_blank">🏘️ Puducherry (UT)</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="region-content" id="east">
+                <div class="region-info">
+                    <h3>The Untouched East</h3>
+                    <p>Living root bridges, mangrove forests, and rolling tea gardens.</p>
+                    <div class="state-pills">
+                        <a href="east-india.html#bihar" target="_blank">🍃 Bihar</a>
+                        <a href="east-india.html#bihar" target="_blank">🌳 Jharkhand</a>
+                        <a href="east-india.html#odisha" target="_blank">🛕 Odisha</a>
+                        <a href="east-india.html#westbengal" target="_blank">🐅 West Bengal</a>
+                        <a href="east-india.html#sikkim" target="_blank">⛰️ Sikkim</a>
+                        <a href="east-india.html#assam" target="_blank">🍵 Assam</a>
+                        <a href="east-india.html#arunachal" target="_blank">🌅 Arunachal Pradesh</a>
+                        <a href="east-india.html#assam" target="_blank">🌿 Nagaland</a>
+                        <a href="east-india.html#manipur" target="_blank">🌸 Manipur</a>
+                        <a href="east-india.html#meghalaya" target="_blank">🎋 Mizoram</a>
+                        <a href="east-india.html#tripura" target="_blank">🏰 Tripura</a>
+                        <a href="east-india.html#meghalaya" target="_blank">🌧️ Meghalaya</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="region-content" id="west">
+                <div class="region-info">
+                    <h3>The Heart & The West</h3>
+                    <p>The wildlife capital of India and vibrant coastal nightlife.</p>
+                    <div class="state-pills">
+                        <a href="west-india.html#rajasthan" target="_blank">🏜️ Rajasthan</a>
+                        <a href="west-india.html#gujarat" target="_blank">🦁 Gujarat</a>
+                        <a href="west-india.html#maharashtra" target="_blank">🎬 Maharashtra</a>
+                        <a href="west-india.html#goa" target="_blank">🏖️ Goa</a>
+                        <a href="west-india.html#mp" target="_blank">🐅 Madhya Pradesh</a>
+                        <a href="west-india.html#mp" target="_blank">🏺 Chhattisgarh</a>
+                        <a href="west-india.html#gujarat" target="_blank">🏝️ Dadra & Nagar Haveli (UT)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Choose Your Journey -->
+    <section id="experiences" class="journey-section reveal">
+        <h2 class="section-title">What Kind of India Are You Looking For?</h2>
+        <p class="section-subtitle">Filter the subcontinent by your travel style.</p>
+        
+        <div class="journey-grid">
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🏔️</div>
+                <h3>Mountains</h3>
+                <p>Himalayan escapes & high-altitude adventures.</p>
+                <a href="north-india.html" class="explore-link">Explore &rarr;</a>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🏖️</div>
+                <h3>Beaches</h3>
+                <p>Coastal retreats & island adventures.</p>
+                <a href="south-india.html" class="explore-link">Explore &rarr;</a>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🐅</div>
+                <h3>Wildlife</h3>
+                <p>National parks & unforgettable encounters.</p>
+                <a href="wildlife.html" class="explore-link">Explore &rarr;</a>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🏛️</div>
+                <h3>Heritage</h3>
+                <p>Forts, temples & ancient civilizations.</p>
+                <a href="heritage.html" class="explore-link">Explore &rarr;</a>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🍛</div>
+                <h3>Food</h3>
+                <p>Regional flavors from every corner.</p>
+                <a href="food.html" class="explore-link">Explore &rarr;</a>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🧘</div>
+                <h3>Spiritual</h3>
+                <p>Sacred cities, monasteries & retreats.</p>
+                <a href="north-india.html#up" class="explore-link">Explore &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. India's Must-Experience Places -->
+    <section id="must-visit" class="must-visit-section reveal">
+        <h2 class="section-title">India's Must-Experience Places</h2>
+        <p class="section-subtitle">The crown jewels of the subcontinent.</p>
+        
+        <div class="destinations-grid">
+            <div class="dest-card" onclick="window.open('north-india.html#up', '_blank')">
+                <img src="https://plus.unsplash.com/premium_photo-1697730352959-a77dac39c883?q=80&w=687&auto=format&fit=crop" alt="Taj Mahal">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Heritage</span>
+                    <h3>Taj Mahal</h3>
+                    <p>Agra, Uttar Pradesh</p>
+                </div>
+            </div>
+            <div class="dest-card" onclick="window.open('north-india.html#uttarakhand', '_blank')">
+                <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop" alt="Valley of Flowers">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Nature</span>
+                    <h3>Valley of Flowers</h3>
+                    <p>Uttarakhand</p>
+                </div>
+            </div>
+            <div class="dest-card" onclick="window.open('south-india.html#karnataka', '_blank')">
+                <img src="https://images.unsplash.com/photo-1600100397608-f010f423b971?q=80&w=735&auto=format&fit=crop" alt="Hampi">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Ancient</span>
+                    <h3>Ruins of Hampi</h3>
+                    <p>Karnataka</p>
+                </div>
+            </div>
+            <div class="dest-card" onclick="window.open('west-india.html#gujarat', '_blank')">
+                <img src="https://images.unsplash.com/photo-1628265512314-a9464859fe0c?q=80&w=735&auto=format&fit=crop" alt="Rann of Kutch">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Landscape</span>
+                    <h3>Rann of Kutch</h3>
+                    <p>Gujarat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Live Travel Pulse -->
+    <section id="pulse" class="pulse-section reveal">
+        <h2 class="section-title">India Travel Pulse</h2>
+        <p class="section-subtitle">Average conditions across India's top cities.</p>
+        
+        <div class="pulse-grid">
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🌡️</div>
+                <div class="pulse-info">
+                    <h4>Delhi</h4>
+                    <p>31°C • Clear Sky</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🏙️</div>
+                <div class="pulse-info">
+                    <h4>Mumbai</h4>
+                    <p>30°C • Humid</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🌧️</div>
+                <div class="pulse-info">
+                    <h4>Kolkata</h4>
+                    <p>28°C • Showers</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🌤️</div>
+                <div class="pulse-info">
+                    <h4>Chennai</h4>
+                    <p>34°C • Sunny</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">⛅</div>
+                <div class="pulse-info">
+                    <h4>Bangalore</h4>
+                    <p>24°C • Pleasant</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🛕</div>
+                <div class="pulse-info">
+                    <h4>Varanasi</h4>
+                    <p>32°C • Clear</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">❄️</div>
+                <div class="pulse-info">
+                    <h4>Manali</h4>
+                    <p>12°C • Cool Breeze</p>
+                </div>
+            </div>
+            <div class="pulse-card glass-card">
+                <div class="pulse-icon">🌅</div>
+                <div class="pulse-info">
+                    <h4>Goa</h4>
+                    <p>29°C • Sunset</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Animated Stats Section (Fixed Data Targets & Bug-Free JS) -->
+    <section id="stats" class="stats-section reveal">
+        <div class="stats-grid">
+            <div class="stat-box glass-card">
+                <h2 class="stat-counter" data-target="36" data-suffix="">0</h2>
+                <p>Regions Explored</p>
+            </div>
+            <div class="stat-box glass-card">
+                <h2 class="stat-counter" data-target="42000" data-suffix="+">0</h2>
+                <p>Kilometers Traveled</p>
+            </div>
+            <div class="stat-box glass-card">
+                <h2 class="stat-counter" data-target="1000" data-suffix="+">0</h2>
+                <p>Cups of Chai</p>
+            </div>
+            <div class="stat-box glass-card">
+                <h2>∞</h2>
+                <p>Memories Made</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Massive Final CTA -->
+    <section class="final-cta-section reveal">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2>Your India Is Waiting.</h2>
+            <p>36 regions. Thousands of stories. One incredible journey.</p>
+            <a href="itineraries.html#plan" class="btn-primary cta-btn">START EXPLORING</a>
+        </div>
+    </section>
+
+    <!-- 10. Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries and guides.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HOMEPAGE TABS & COUNTERS 🚨 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Safe Region Tab Switcher Logic
+            const regionBtns = document.querySelectorAll('.region-btn');
+            const regionContents = document.querySelectorAll('.region-content');
+
+            if (regionBtns.length > 0 && regionContents.length > 0) {
+                regionBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remove active class from all
+                        regionBtns.forEach(b => b.classList.remove('active'));
+                        regionContents.forEach(c => c.classList.remove('active'));
+
+                        // Add active class to clicked button
+                        btn.classList.add('active');
+
+                        // Show matching content securely
+                        const targetId = btn.getAttribute('data-target');
+                        const targetContent = document.getElementById(targetId);
+                        if (targetContent) {
+                            targetContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // 2. Completely Rebuilt Safe Animated Counter Logic
+            const counters = document.querySelectorAll('.stat-counter');
+            const statsSection = document.querySelector('.stats-section');
+
+            if (statsSection && counters.length > 0) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            
+                            counters.forEach(counter => {
+                                // Extract raw numbers and suffixes safely from data attributes
+                                const target = parseInt(counter.getAttribute('data-target'), 10);
+                                const suffix = counter.getAttribute('data-suffix') || '';
+                                
+                                // Configuration for smooth counting
+                                const duration = 1500; // Total animation time in ms
+                                const step = target / (duration / 25); // Math logic
+                                let current = 0;
+
+                                const updateCount = () => {
+                                    current += step;
+                                    if (current < target) {
+                                        counter.innerText = Math.ceil(current) + suffix;
+                                        setTimeout(updateCount, 25);
+                                    } else {
+                                        // Final stop state to prevent overflow
+                                        counter.innerText = target + suffix;
+                                    }
+                                };
+                                
+                                updateCount();
+                            });
+                            
+                            // Prevent re-triggering when scrolling up and down
+                            observer.unobserve(statsSection);
+                        }
+                    });
+                }, { threshold: 0.3 }); // Triggers earlier to ensure user sees the animation
+
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

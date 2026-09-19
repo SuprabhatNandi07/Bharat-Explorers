@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage of India | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS & TABLE STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+        
+        /* COMPARISON TABLE STYLING */
+        .comparison-table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+        .wildlife-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .wildlife-table th {
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .wildlife-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        .wildlife-table tr:hover {
+            background: rgba(255,153,51,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Heritage of India — Explore 5,000 Years of Dynasties, Forts, and Empires! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html" class="active">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1598177183308-ec8555cbfe76?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">HERITAGE OF INDIA</p>
+            <h1 style="font-size: 5rem;">5,000 YEARS OF CIVILIZATION</h1>
+            <p class="hero-subtitle">Journey through ancient Harappan cities, towering Dravidian temples, imperial Mughal monuments, impregnable Rajput forts, and Maratha mountain strongholds.</p>
+        </div>
+    </section>
+
+    <!-- HISTORICAL ERAS QUICK COMPARISON TABLE -->
+    <section class="reveal" style="padding-bottom: 0;">
+        <h2 class="section-title">🇮🇳 India's Historical Journey — At a Glance</h2>
+        <p class="section-subtitle">Explore the defining eras that shaped the subcontinent's architecture, philosophy, and identity.</p>
+        
+        <div class="comparison-table-container glass-card" style="padding: 20px;">
+            <table class="wildlife-table">
+                <thead>
+                    <tr>
+                        <th>Era</th>
+                        <th>Main Theme</th>
+                        <th>Must-Visit Places</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🏺 Ancient Civilizations</strong></td>
+                        <td>Harappans, Buddhism & Early Empires</td>
+                        <td>Dholavira, Lothal, Sanchi, Nalanda, Bodh Gaya, Ajanta & Ellora</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🛕 Dravidian Dynasties</strong></td>
+                        <td>Cholas, Pallavas, Hoysalas & Temple Culture</td>
+                        <td>Thanjavur, Mahabalipuram, Madurai, Hampi, Badami & Pattadakal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🕌 Golden Islamic Era</strong></td>
+                        <td>Sultanates, Mughals & Indo-Islamic Art</td>
+                        <td>Delhi, Agra, Fatehpur Sikri, Hyderabad, Lucknow & Bijapur</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⚔️ Rajputana Grandeur</strong></td>
+                        <td>Rajput Kingdoms, Desert Forts & Honor</td>
+                        <td>Chittorgarh, Jodhpur, Udaipur, Jaisalmer, Kumbhalgarh & Jaipur</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🛡️ Maratha Empire</strong></td>
+                        <td>Hill Forts, Deccan Power & Shivaji Maharaj</td>
+                        <td>Raigad, Pune, Sinhagad, Pratapgad & Sindhudurg Sea Fort</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🚂 Colonial India</strong></td>
+                        <td>British Raj, Railways & Freedom Struggle</td>
+                        <td>Kolkata, Mumbai, Delhi, Shimla, Amritsar & Port Blair</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE HERITAGE EXPLORER -->
+    <section id="explore" style="padding-top: 60px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable Eras -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="ancient">🏺 Ancient Civilizations</button>
+                <button class="state-pill-btn" data-state="dravidian">🛕 Dravidian Dynasties</button>
+                <button class="state-pill-btn" data-state="islamic">🕌 Golden Islamic Era</button>
+                <button class="state-pill-btn" data-state="rajputana">⚔️ Rajputana Grandeur</button>
+                <button class="state-pill-btn" data-state="maratha">🛡️ The Maratha Empire</button>
+                <button class="state-pill-btn" data-state="colonial">🚂 Colonial India</button>
+            </div>
+
+            <!-- RIGHT CONTENT: Era Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- ============================================== -->
+                <!-- 1. ANCIENT CIVILIZATIONS -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card active" id="ancient">
+                    <img src="https://images.unsplash.com/photo-1598177183308-ec8555cbfe76?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Ancient Civilizations Sanchi Stupa">
+                    <h2>Ancient Civilizations</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏛️ Vibe: Archaeology, Lost Cities & Knowledge</span>
+                        <span class="fact-tag">📜 Famous For: Indus Valley, Buddhism & Empires</span>
+                    </div>
+
+                    <p>India's ancient history stretches back thousands of years, from the sophisticated urban grid planning of the Indus Valley Civilization to the rise of powerful Mauryan and Gupta empires, Buddhist monastic centers, and early rock-cut sanctuaries. Ancient India pioneered mathematics, astronomy, medicine, and enduring philosophical traditions.</p>
+
+                    <h3 class="section-heading">📍 Key Archaeological Sites & Monuments</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏺 Harappan Trade & Cities</h4>
+                            <p><strong>Dholavira & Lothal (Gujarat):</strong> Advanced water management reservoirs, ancient dockyards, bead-making workshops, and sophisticated urban grid layouts over 4,000 years old.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Sanchi Stupa (Madhya Pradesh)</h4>
+                            <p><strong>Mauryan Buddhist Masterpiece:</strong> Commissioned by Emperor Ashoka, famous for its magnificent stone gateways (Toranas) and intricate narrative relief carvings.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Nalanda University (Bihar)</h4>
+                            <p><strong>Ancient Center of Learning:</strong> Monastic university ruins that once hosted thousands of scholars and monks from across Asia to study philosophy, logic, and astronomy.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🪷 Bodh Gaya (Bihar)</h4>
+                            <p><strong>Enlightenment Center:</strong> The Mahabodhi Temple complex and the sacred Bodhi Tree where Gautama Buddha attained enlightenment.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🎨 Ajanta & Ellora Caves (Maharashtra)</h4>
+                            <p><strong>Rock-Cut Masterpieces:</strong> Ajanta's vibrant ancient Buddhist murals and Ellora's monolithic Kailasa Temple carved entirely out of a single rock cliff.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Pattadakal & Bhimbetka</h4>
+                            <p><strong>Early Architecture & Cave Art:</strong> Chalukyan temple experiments in Karnataka and prehistoric rock shelters containing ancient cave art in MP.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍲 Ancient Culinary Influences</h3>
+                    <div class="food-list">
+                        <span class="food-item">🌾 Ancient Millets & Barley</span>
+                        <span class="food-item">🍲 Sattu & Whole Lentil Stews</span>
+                        <span class="food-item">🥛 Fermented Curds & Ghee</span>
+                        <span class="food-item">🌿 Ayurvedic Herbal Infusions</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Ancient India Circuit:</strong> Dholavira → Lothal → Sanchi → Bodh Gaya → Nalanda → Rajgir → Ajanta → Ellora.</p>
+                        <p>• <strong>Highlights:</strong> 🏺 Archaeology • 🛕 Buddhism • 📜 Ancient Science • 📚 Learning & Philosophy.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 2. DRAVIDIAN DYNASTIES -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="dravidian">
+                    <img src="https://media.istockphoto.com/id/2287200910/photo/ancient-granite-pillars-and-temple-mandapa-at-the-airavatesvara-temple-in-darasuram-near.webp?a=1&b=1&s=612x612&w=0&k=20&c=5p7ThBw-Z7d-WCSsL-2kzOMdWwiIxYQl2yHXucvE1Jc=" class="state-hero-img" alt="Dravidian Dynasties Temple">
+                    <h2>Dravidian Dynasties</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏛️ Vibe: Giant Temples & Chola Art</span>
+                        <span class="fact-tag">🛕 Famous For: Cholas, Pallavas, Hoysalas & Vijayanagara</span>
+                    </div>
+
+                    <p>The great southern dynasties transformed South India into one of the world's most remarkable centers of temple architecture, bronze sculpture, classical music, and maritime trade. The Pallavas, Cholas, Pandyas, Chalukyas, Hoysalas, and Vijayanagara rulers created monumental stone complexes whose soaring gopurams remain engineering wonders.</p>
+
+                    <h3 class="section-heading">📍 Key Architectural Marvels</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 Great Living Chola Temples</h4>
+                            <p><strong>Thanjavur, Gangaikonda Cholapuram & Darasuram:</strong> The Brihadisvara Temple featuring a massive vimana tower, giant stone Nandi, and exquisite Chola bronzes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Mahabalipuram (Pallavas)</h4>
+                            <p><strong>Coastal Rock-Cut Art:</strong> Shore Temple standing by the Bay of Bengal, Pancha Rathas carved from single boulders, and Arjuna's Penance relief.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Meenakshi Temple (Madurai)</h4>
+                            <p><strong>Pandyan Grandeur:</strong> Soaring entrance gopurams covered in thousands of colorful mythological figures and the Thousand Pillar Hall.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Hampi (Vijayanagara Empire)</h4>
+                            <p><strong>The Stone Chariot & Ruins:</strong> Virupaksha Temple, Vittala Temple's musical stone pillars, and sprawling royal enclosures amidst boulder mountains.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Badami, Aihole & Pattadakal</h4>
+                            <p><strong>Chalukyan Cradle:</strong> Red sandstone cliff cave temples in Badami, and early structural temple experimentation sites in Aihole and Pattadakal.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Belur & Halebidu (Hoysalas)</h4>
+                            <p><strong>Sculptural Perfection:</strong> Star-shaped soapstone temple walls covered in microscopic, soapstone-carved dancing figures and animal friezes.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍲 Temple Cuisine & Traditions</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Traditional Temple Prasadams</span>
+                        <span class="food-item">🍌 Banana Leaf South Indian Meals</span>
+                        <span class="food-item">🍋 Tamarind Rice (Pulihora)</span>
+                        <span class="food-item">🍮 Sweet Payasam & Pongal</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Dravidian Temple Circuit:</strong> Mahabalipuram → Kanchipuram → Thanjavur → Gangaikonda Cholapuram → Madurai → Hampi → Belur.</p>
+                        <p>• <strong>Highlights:</strong> 🛕 Temples • 🗿 Stone Carvings • 🎨 Bronze Sculpture • 📜 Royal Inscriptions.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 3. THE GOLDEN ISLAMIC ERA -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="islamic">
+                    <img src="https://plus.unsplash.com/premium_photo-1697730332011-11f027c6aa60?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Golden Islamic Era Mughal Monuments">
+                    <h2>The Golden Islamic Era</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏛️ Vibe: Sultanates, Mughal Architecture & Sufism</span>
+                        <span class="fact-tag">🕌 Famous For: Taj Mahal, Forts, Mosques & Biryani</span>
+                    </div>
+
+                    <p>The medieval and early modern Islamic periods transformed India's architecture, urban planning, music, poetry, and culinary traditions. Successive Delhi Sultanates, regional Deccan Sultanates, and the Mughal Empire created extraordinary monuments fusing Persian, Central Asian, and indigenous Indian craftsmanship.</p>
+
+                    <h3 class="section-heading">📍 Imperial Capitals & Monuments</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🕌 Qutub Minar & Delhi Sultanate</h4>
+                            <p><strong>The First Minarets:</strong> The world's tallest brick minaret, Quwwat-ul-Islam mosque, Alai Darwaza, and the mysterious ancient Iron Pillar.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>❤️ The Taj Mahal & Agra Fort</h4>
+                            <p><strong>Mughal Zenith:</strong> Shah Jahan's white marble mausoleum by the Yamuna River, and the red sandstone palaces of the imperial Mughal court.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🕌 Fatehpur Sikri</h4>
+                            <p><strong>Akbar's Planned Capital:</strong> The colossal Buland Darwaza gateway, Panch Mahal, and the delicate white marble Tomb of Sufi Saint Salim Chishti.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Red Fort & Jama Masjid (Delhi)</h4>
+                            <p><strong>Imperial Power:</strong> The seat of Mughal emperors featuring the Diwan-i-Khas, surrounded by India's grandest historic mosque.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🕌 Charminar & Gol Gumbaz</h4>
+                            <p><strong>Deccan Heritage:</strong> Hyderabad's iconic four-minaret monument and Bijapur's Gol Gumbaz, home to the world's second-largest acoustic dome.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🎵 Sufi Dargahs & Heritage</h4>
+                            <p><strong>Spiritual Syncretism:</strong> Ajmer Sharif Dargah, Nizamuddin Dargah in Delhi, Qawwali musical traditions, and Mandu's Afghan palaces.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Royal Mughlai & Indo-Islamic Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Aromatic Dum Biryani</span>
+                        <span class="food-item">🍲 Slow-Cooked Nihari & Haleem</span>
+                        <span class="food-item">🍢 Seekh & Galouti Kebabs</span>
+                        <span class="food-item">🍗 Rich Shahi Korma</span>
+                        <span class="food-item">🍮 Shahi Tukda & Sheer Khurma</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Mughal Heritage Circuit:</strong> Delhi → Agra → Fatehpur Sikri → Lucknow → Ajmer → Hyderabad → Bijapur.</p>
+                        <p>• <strong>Highlights:</strong> 🕌 Indo-Islamic Architecture • 👑 Royal History • 🍛 Mughlai Food • 🎵 Sufi Qawwali.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 4. RAJPUTANA GRANDEUR -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="rajputana">
+                    <img src="https://images.unsplash.com/photo-1740382242941-e3e2499b42d2?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Rajputana Fort">
+                    <h2>Rajputana Grandeur</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏰 Vibe: Forts, Palaces, Warriors & Royalty</span>
+                        <span class="fact-tag">⚔️ Famous For: Hill Forts, Thar Desert & Court Culture</span>
+                    </div>
+
+                    <p>Rajputana represents one of India's most romantic historical landscapes. The warrior kingdoms of Rajasthan constructed impregnable hill forts, fortified desert cities, glass-and-mirror palaces, and a court culture renowned for honor, chivalry, miniature paintings, and folk music.</p>
+
+                    <h3 class="section-heading">📍 Fortified Capitals & Strongholds</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏰 Chittorgarh Fort</h4>
+                            <p><strong>Pride of Mewar:</strong> India's largest fort, featuring the Vijay Stambh (Tower of Victory), Kirti Stambh, Gaumukh reservoir, and stories of Rajput valor.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Mehrangarh Fort (Jodhpur)</h4>
+                            <p><strong>The Blue City Fortress:</strong> Imposing cliffs topped by royal palaces, cannon terraces, and museum collections of royal palanquins and armor.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Amber Fort & Jaipur</h4>
+                            <p><strong>Kachhwaha Royal Seat:</strong> Sheesh Mahal (Mirror Palace), Maota Lake reflections, and the surrounding defensive walls of Jaigarh and Nahargarh.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Jaisalmer Golden Fort</h4>
+                            <p><strong>Living Sandstone Fort:</strong> Rises directly from the Thar Desert, housing merchant havelis, Jain temples, and narrow winding alleys.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Udaipur City Palace & Lakes</h4>
+                            <p><strong>Mewar Royal Palace:</strong> Sprawling white marble palace complex overlooking Lake Pichola and Jag Mandir island palace.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Kumbhalgarh & Junagarh</h4>
+                            <p><strong>Unbroken Defenses:</strong> Kumbhalgarh's wall (second longest in the world after the Great Wall of China), and Bikaner's unbreached Junagarh Fort.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Royal Rajput Cuisines & Crafts</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍲 Dal Baati Churma</span>
+                        <span class="food-item">🍖 Fiery Laal Maas</span>
+                        <span class="food-item">🥘 Gatte Ki Sabzi & Ker Sangri</span>
+                        <span class="food-item">🎨 Miniature Paintings & Blue Pottery</span>
+                        <span class="food-item">🧵 Bandhani & Block Prints</span>
+                        <span class="food-item">🎶 Ghoomar & Kalbeliya Folk Dance</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Rajputana Circuit:</strong> Jaipur → Pushkar → Chittorgarh → Udaipur → Kumbhalgarh → Jodhpur → Jaisalmer → Bikaner.</p>
+                        <p>• <strong>Highlights:</strong> 🏰 UNESCO Hill Forts • 👑 Royal Palaces • ⚔️ Martial History • 🐪 Desert Folk Culture.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 5. THE MARATHA EMPIRE -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="maratha">
+                    <img src="https://images.unsplash.com/photo-1762006222917-ab457593fbe9?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Maratha Empire Hill Fort">
+                    <h2>The Maratha Empire</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to February</span>
+                        <span class="fact-tag">🏰 Vibe: Hill Forts, Warriors & Deccan Heritage</span>
+                        <span class="fact-tag">🛡️ Famous For: Shivaji Maharaj, Mountain Warfare & Sea Forts</span>
+                    </div>
+
+                    <p>Emerging from the rugged Sahyadri mountains of the Western Ghats, the Maratha Empire became one of the dominant powers in 17th and 18th century India. Under Chhatrapati Shivaji Maharaj and later Peshwas, an ingenious network of hill forts, guerrilla warfare strategies, and naval strongholds reshaped Deccan politics.</p>
+
+                    <h3 class="section-heading">📍 Mountain Strongholds & Capitals</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏰 Raigad Fort (Capital of Shivaji Maharaj)</h4>
+                            <p><strong>The Royal Capital:</strong> Perched atop a sheer mountain plateau, featuring royal palace ruins, the coronation throne site, and ropeway access.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Sinhagad & Pratapgad Forts</h4>
+                            <p><strong>Mountain Strongholds:</strong> Iconic forts near Pune and Mahabaleshwar deeply associated with famous Maratha battles and mountain defense.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Rajgad & Torna Forts</h4>
+                            <p><strong>Early Capitals:</strong> Torna (the first fort captured by young Shivaji Maharaj) and Rajgad, which served as the royal seat for over two decades.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Sindhudurg & Coastal Forts</h4>
+                            <p><strong>Maratha Naval Power:</strong> Massive sea fort built on an island off the Konkan coast in Malvan, demonstrating Maratha maritime strategy.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏙️ Pune & Shaniwar Wada</h4>
+                            <p><strong>Peshwa Capital:</strong> The seven-storey fortified palace seat of the Maratha Peshwas, Lal Mahal, and surrounding historical heritage.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Panhala & Kolhapur</h4>
+                            <p><strong>Southern Stronghold:</strong> Massive fort complex near Kolhapur with a rich history of sieges, escape routes, and royal palaces.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Rustic Deccan Foods</h3>
+                    <div class="food-list">
+                        <span class="food-item">🌶️ Misal Pav & Kolhapuri Misal</span>
+                        <span class="food-item">🫓 Sweet Puran Poli</span>
+                        <span class="food-item">🫓 Jowar & Bajra Bhakri</span>
+                        <span class="food-item">🍲 Tambda & Pandhra Rassa</span>
+                        <span class="food-item">🥟 Steamed Ukdiche Modak</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Maratha Fort Circuit:</strong> Pune → Sinhagad → Rajgad → Torna → Pratapgad → Raigad → Panhala → Sindhudurg.</p>
+                        <p>• <strong>Highlights:</strong> 🏰 Fort Trekking • ⚔️ Military Strategy • 🌄 Sahyadri Mountain Vistas • 🌊 Coastal Sea Forts.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 6. COLONIAL INDIA -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="colonial">
+                    <img src="https://images.unsplash.com/photo-1719339285288-0790b8867c6e?q=80&w=1142&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Colonial India Architecture">
+                    <h2>Colonial India</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏛️ Vibe: British Architecture, Railways & Freedom Struggle</span>
+                        <span class="fact-tag">🚂 Famous For: Colonial Cities, Hill Stations & Independence</span>
+                    </div>
+
+                    <p>The colonial era reshaped India's urban port cities, transportation infrastructure, and architectural landscapes while giving rise to the Indian independence movement. Indo-Saracenic buildings, mountain toy railways, summer hill capitals, and freedom memorials reflect this pivotal historical epoch leading to independence in 1947.</p>
+
+                    <h3 class="section-heading">📍 Port Capitals, Hill Stations & Freedom Memorials</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏛️ Kolkata (Colonial Imperial Capital)</h4>
+                            <p><strong>Victoria Memorial & Howrah Bridge:</strong> Marble monuments, St. Paul's Cathedral, Indian Museum, Writers' Building, and historic tram networks.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Mumbai (Colonial Gateway)</h4>
+                            <p><strong>Victorian Gothic Heritage:</strong> UNESCO-listed Chhatrapati Shivaji Maharaj Terminus (CST), Gateway of India, and the Fort heritage district.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🚂 Heritage Mountain Railways</h4>
+                            <p><strong>UNESCO Toy Trains:</strong> Historic steam and diesel trains climbing through mountain forests in Darjeeling, Nilgiri (Ooty), and Kalka-Shimla.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏔️ British Hill Capitals</h4>
+                            <p><strong>Shimla, Darjeeling & Ooty:</strong> The summer capital at Shimla (Viceregal Lodge, The Ridge), tea garden estates, and colonial bungalows.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🕊️ Freedom Struggle Memorials</h4>
+                            <p><strong>Andaman, Amritsar & Sabarmati:</strong> The Cellular Jail ("Kala Pani") in Port Blair, Jallianwala Bagh in Amritsar, and Mahatma Gandhi's Sabarmati Ashram.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Imperial New Delhi & Enclaves</h4>
+                            <p><strong>Lutyens' Delhi & French Towns:</strong> Rashtrapati Bhavan, India Gate, Connaught Place, and the French colonial lanes of Puducherry.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Colonial Culinary Influences</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍛 Railway Mutton Curry</span>
+                        <span class="food-item">🍲 Anglo-Indian Vegetable Stews</span>
+                        <span class="food-item">🍗 Cutlets & Croquettes</span>
+                        <span class="food-item">🥣 Mulligatawny Soup</span>
+                        <span class="food-item">🍰 Kolkata & Bakery Fruitcakes</span>
+                        <span class="food-item">☕ High Tea & Plantation Blends</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Best Circuit & Highlights</h4>
+                        <p>• <strong>Colonial & Freedom Circuit:</strong> Kolkata → Delhi → Amritsar → Shimla → Mumbai → Ahmedabad → Dandi → Port Blair.</p>
+                        <p>• <strong>Highlights:</strong> 🚂 Heritage Toy Trains • 🏛️ Indo-Saracenic Architecture • 🕊️ Independence Movement Memorials.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST HISTORICAL CIRCUITS -->
+    <section class="reveal" style="padding-top: 20px;">
+        <h2 class="section-title">🏆 Choose By Historical Interest</h2>
+        <p class="section-subtitle">Pick the exact historical era or theme that matches your travel curiosity.</p>
+        
+        <div class="journey-grid">
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🏺</div>
+                <h3>Best for Ancient History</h3>
+                <p><strong>Dholavira, Sanchi & Nalanda:</strong> Harappan ruins, Ashokan stupas, and ancient centers of global learning.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🛕</div>
+                <h3>Best for Temple Architecture</h3>
+                <p><strong>Thanjavur & Hampi:</strong> Chola stone vimanas, Vijayanagara stone chariots, and Hoysala soapstone carvings.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🕌</div>
+                <h3>Best for Mughal Architecture</h3>
+                <p><strong>Agra, Delhi & Fatehpur Sikri:</strong> White marble domes, red sandstone forts, and symmetrical charbagh gardens.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">⚔️</div>
+                <h3>Best for Forts & Royalty</h3>
+                <p><strong>Rajasthan:</strong> Impregnable UNESCO hill forts, desert castles, and royal glass-and-mirror palaces.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🛡️</div>
+                <h3>Best for Military History</h3>
+                <p><strong>Maharashtra:</strong> Mountain hill forts built by Shivaji Maharaj across the Western Ghats Sahyadri ranges.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🕊️</div>
+                <h3>Best for Freedom Movement</h3>
+                <p><strong>Delhi, Punjab, Gujarat & Andaman:</strong> Jallianwala Bagh, Sabarmati Ashram, and the Cellular Jail in Port Blair.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer" style="margin-top: 80px;">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR THE TABS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    
+                    const targetState = btn.getAttribute('data-state');
+                    document.getElementById(targetState).classList.add('active');
+                });
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

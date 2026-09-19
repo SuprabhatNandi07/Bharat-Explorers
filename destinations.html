@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Explorers | Destinations</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Explore the Subcontinent — Uncover all 36 Regions and Crown Jewels! 
+            <span class="spacer"></span> 
+            <a href="#map">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO FIX -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html" class="active">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero (SPACING FIX APPLIED) -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">SUBCONTINENT ATLAS</p>
+            <h1 style="font-size: 5rem;">DESTINATIONS OF INDIA</h1>
+            <p class="hero-subtitle">From the high-altitude cold deserts of Ladakh to the tropical palm-fringed shores of Kerala.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Region Explorer Map -->
+    <section id="map" class="map-section reveal">
+        <h2 class="section-title">Explore by Region</h2>
+        <p class="section-subtitle">Select a zone to uncover states, union territories, and hidden gems.</p>
+        
+        <div class="region-container glass-card">
+            
+            <div class="region-tabs">
+                <button class="region-btn active" data-target="north">North India</button>
+                <button class="region-btn" data-target="south">South India</button>
+                <button class="region-btn" data-target="east">East & Northeast</button>
+                <button class="region-btn" data-target="west">West & Central</button>
+            </div>
+            
+            <div class="region-content active" id="north">
+                <div class="region-info">
+                    <h3>The Crown of India</h3>
+                    <p>Home to the mighty Himalayas, holy rivers, ancient spiritual capitals, and majestic palaces.</p>
+                    <div class="state-pills">
+                        <span>🏔️ Ladakh (UT)</span>
+                        <span>❄️ Jammu & Kashmir (UT)</span>
+                        <span>🌲 Himachal Pradesh</span>
+                        <span>⛰️ Uttarakhand</span>
+                        <span>🌾 Punjab</span>
+                        <span>🏙️ Chandigarh (UT)</span>
+                        <span>🚜 Haryana</span>
+                        <span>🕌 Delhi (UT)</span>
+                        <span>🛕 Uttar Pradesh</span>
+                    </div>
+                    <a href="north-india.html" class="btn-primary" style="margin-top: 30px;">Explore North India Fully &rarr;</a>
+                </div>
+            </div>
+
+            <div class="region-content" id="south">
+                <div class="region-info">
+                    <h3>The Tropical South</h3>
+                    <p>Ancient Dravidian temple architecture, peaceful emerald backwaters, spice plantations, and pristine beaches.</p>
+                    <div class="state-pills">
+                        <span>🌊 Andhra Pradesh</span>
+                        <span>☕ Karnataka</span>
+                        <span>🥥 Kerala</span>
+                        <span>🛕 Tamil Nadu</span>
+                        <span>💻 Telangana</span>
+                        <span>🏝️ Andaman & Nicobar (UT)</span>
+                        <span>🏖️ Lakshadweep (UT)</span>
+                        <span>🏘️ Puducherry (UT)</span>
+                    </div>
+                    <a href="south-india.html" class="btn-primary" style="margin-top: 30px;">Explore South India Fully &rarr;</a>
+                </div>
+            </div>
+
+            <div class="region-content" id="east">
+                <div class="region-info">
+                    <h3>The Untouched East</h3>
+                    <p>Living root bridges, dense primeval mangrove forests, rolling tea estates, and vibrant tribal heritage.</p>
+                    <div class="state-pills">
+                        <span>🍃 Bihar</span>
+                        <span>🌳 Jharkhand</span>
+                        <span>🛕 Odisha</span>
+                        <span>🐅 West Bengal</span>
+                        <span>⛰️ Sikkim</span>
+                        <span>🍵 Assam</span>
+                        <span>🌅 Arunachal Pradesh</span>
+                        <span>🌿 Nagaland</span>
+                        <span>🌸 Manipur</span>
+                        <span>🎋 Mizoram</span>
+                        <span>🏰 Tripura</span>
+                        <span>🌧️ Meghalaya</span>
+                    </div>
+                    <a href="east-india.html" class="btn-primary" style="margin-top: 30px;">Explore East India Fully &rarr;</a>
+                </div>
+            </div>
+
+            <div class="region-content" id="west">
+                <div class="region-info">
+                    <h3>The Heart & The West</h3>
+                    <p>Golden desert landscapes, legendary royal forts, thriving wildlife sanctuaries, and vibrant coastal nightlife.</p>
+                    <div class="state-pills">
+                        <span>🏜️ Rajasthan</span>
+                        <span>🦁 Gujarat</span>
+                        <span>🎬 Maharashtra</span>
+                        <span>🏖️ Goa</span>
+                        <span>🐅 Madhya Pradesh</span>
+                        <span>🏺 Chhattisgarh</span>
+                        <span>🏝️ Dadra & Nagar Haveli and Daman & Diu (UT)</span>
+                    </div>
+                    <a href="west-india.html" class="btn-primary" style="margin-top: 30px;">Explore West India Fully &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- India's Must-Experience Places -->
+    <section id="must-visit" class="must-visit-section reveal">
+        <h2 class="section-title">India's Crown Jewels</h2>
+        <p class="section-subtitle">Must-experience destinations that define the subcontinent.</p>
+        
+        <div class="destinations-grid">
+            <div class="dest-card">
+                <img src="https://plus.unsplash.com/premium_photo-1697730352959-a77dac39c883?q=80&w=687&auto=format&fit=crop" alt="Taj Mahal">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Heritage</span>
+                    <h3>Taj Mahal</h3>
+                    <p>Agra, Uttar Pradesh</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop" alt="Valley of Flowers">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Nature</span>
+                    <h3>Valley of Flowers</h3>
+                    <p>Uttarakhand</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1600100397608-f010f423b971?q=80&w=735&auto=format&fit=crop" alt="Hampi">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Ancient</span>
+                    <h3>Ruins of Hampi</h3>
+                    <p>Karnataka</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1628265512314-a9464859fe0c?q=80&w=735&auto=format&fit=crop" alt="Rann of Kutch">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Landscape</span>
+                    <h3>Rann of Kutch</h3>
+                    <p>Gujarat</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=735&auto=format&fit=crop" alt="Varanasi Ghats">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Spiritual</span>
+                    <h3>Varanasi Ghats</h3>
+                    <p>Uttar Pradesh</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1332&auto=format&fit=crop" alt="Alleppey Backwaters">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Tropical</span>
+                    <h3>Alleppey Backwaters</h3>
+                    <p>Kerala</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?q=80&w=1176&auto=format&fit=crop" alt="Golden Temple">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Spiritual</span>
+                    <h3>Golden Temple</h3>
+                    <p>Amritsar, Punjab</p>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop" alt="Pangong Lake">
+                <div class="dest-overlay">
+                    <span class="dest-tag">Mountain</span>
+                    <h3>Pangong Tso</h3>
+                    <p>Ladakh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive destination guides delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT FOR THE TABS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const regionBtns = document.querySelectorAll('.region-btn');
+            const regionContents = document.querySelectorAll('.region-content');
+
+            regionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    regionBtns.forEach(b => b.classList.remove('active'));
+                    regionContents.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    
+                    const target = btn.getAttribute('data-target');
+                    const targetElement = document.getElementById(target);
+                    if (targetElement) {
+                        targetElement.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="jp.js"></script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North India | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ The Crown of India — Explore the Himalayas, Palaces, and Valleys! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html" class="active">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1597754865557-96ea6b53c9db?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">THE CROWN OF INDIA</p>
+            <h1 style="font-size: 5rem;">NORTH INDIA</h1>
+            <p class="hero-subtitle">Home to the mighty Himalayas, holy rivers, ancient spiritual capitals, and the heart of the subcontinent.</p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STATE EXPLORER -->
+    <section id="explore" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable States -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="ladakh">🏔️ Ladakh (UT)</button>
+                <button class="state-pill-btn" data-state="kashmir">❄️ Jammu & Kashmir</button>
+                <button class="state-pill-btn" data-state="himachal">🌲 Himachal Pradesh</button>
+                <button class="state-pill-btn" data-state="uttarakhand">⛰️ Uttarakhand</button>
+                <button class="state-pill-btn" data-state="punjab">🌾 Punjab</button>
+                <button class="state-pill-btn" data-state="delhi">🏛️ Delhi (UT)</button>
+                <button class="state-pill-btn" data-state="up">🛕 Uttar Pradesh</button>
+            </div>
+
+            <!-- RIGHT CONTENT: State Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- 1. LADAKH -->
+                <div class="state-detail-card glass-card active" id="ladakh">
+                    <img src="https://images.unsplash.com/photo-1536295243470-d7cba4efab7b?q=80&w=1138&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Ladakh Landscape">
+                    <h2>Ladakh (Union Territory)</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: May to September</span>
+                        <span class="fact-tag">🏔️ Elevation: 3,000m - 5,800m+</span>
+                        <span class="fact-tag">🏍️ Vibe: High Passes & Monasteries</span>
+                    </div>
+                    <p>Known as the <strong>"Land of High Passes,"</strong> Ladakh is a spectacular high-altitude cold desert surrounded by the Himalayas and Karakoram ranges. Its dramatic landscape combines barren mountains, turquoise lakes, deep valleys, winding roads, Buddhist monasteries, colorful prayer flags, and traditional villages.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Regions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏙️ Leh & Surroundings</h4>
+                            <p><strong>Gateway to Ladakh:</strong> Explore the 9-storey Leh Palace, Shanti Stupa, Namgyal Tsemo, and the bustling Old Leh Market.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 High-Altitude Lakes</h4>
+                            <p><strong>Pangong Tso, Tso Moriri & Tso Kar:</strong> Jaw-dropping, color-changing turquoise and salt-encrusted lakes set against stark mountains.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏜️ Nubra Valley & Turtuk</h4>
+                            <p><strong>Sand Dunes & Balti Culture:</strong> Ride double-humped Bactrian camels in Hunder and explore the lush border village of Turtuk.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏍️ Legendary High Passes</h4>
+                            <p><strong>Khardung La, Chang La & Umling La:</strong> Epic motorable roads pushing extreme altitudes, highly sought after by motorcycle adventurers.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Ancient Monasteries</h4>
+                            <p><strong>Thiksey, Hemis, Diskit & Lamayuru:</strong> Experience the "Mini Potala," giant Buddhas, and the surreal lunar landscapes of Moonland.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌌 Zanskar & Dark Skies</h4>
+                            <p><strong>Chadar Trek & Hanle:</strong> Trek across the frozen Zanskar River in winter, or visit the Indian Astronomical Observatory for stargazing.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Must-Try Ladakhi Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🥟 Momos</span>
+                        <span class="food-item">🍜 Thukpa</span>
+                        <span class="food-item">🥔 Skyu</span>
+                        <span class="food-item">🍚 Tingmo</span>
+                        <span class="food-item">🥞 Chutagi</span>
+                        <span class="food-item">🍵 Butter Tea</span>
+                    </div>
+                </div>
+
+                <!-- 2. JAMMU & KASHMIR -->
+                <div class="state-detail-card glass-card" id="kashmir">
+                    <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Jammu & Kashmir Landscape">
+                    <h2>Jammu & Kashmir</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: March to August</span>
+                        <span class="fact-tag">🏔️ Vibe: Lakes, Meadows & Snow Peaks</span>
+                        <span class="fact-tag">🌸 Famous For: Shikaras & Valleys</span>
+                    </div>
+                    <p>Often described as <strong>"Heaven on Earth,"</strong> Jammu & Kashmir is a spectacular Himalayan region where snow-covered peaks, alpine meadows, crystal-clear lakes, pine forests, saffron fields, and historic towns come together.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Regions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛶 Srinagar & The Lakes</h4>
+                            <p><strong>Dal Lake, Wular & Manasbal:</strong> Float on luxury houseboats, explore floating vegetable markets on Shikaras, and navigate Asia's largest freshwater lakes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌸 The Mughal Gardens</h4>
+                            <p><strong>Nishat Bagh, Shalimar Bagh & Pari Mahal:</strong> Spectacular terraced gardens designed by Mughal emperors, featuring fountains and mountain views.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>⛷️ Gulmarg (Meadow of Flowers)</h4>
+                            <p><strong>Gulmarg Gondola & Winter Sports:</strong> India's premier skiing destination, offering one of the highest cable cars in the world.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌲 Pahalgam & Sonamarg</h4>
+                            <p><strong>Betaab Valley & Thajiwas Glacier:</strong> Lush pine forests along the Lidder River, and the "Meadow of Gold" providing access to alpine glaciers.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏔️ Offbeat Paradises</h4>
+                            <p><strong>Gurez, Doodhpathri & Yusmarg:</strong> Untouched border valleys, the roaring "Niagara of Kashmir," and tranquil green meadows.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Pilgrimage & Heritage</h4>
+                            <p><strong>Vaishno Devi, Amarnath & Hazratbal:</strong> Deeply sacred Hindu cave shrines drawing millions, alongside historically significant Islamic landmarks.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 The Legendary Wazwan</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍛 Rogan Josh</span>
+                        <span class="food-item">🍖 Rista & Gushtaba</span>
+                        <span class="food-item">🥩 Tabak Maaz</span>
+                        <span class="food-item">🥣 Yakhni</span>
+                        <span class="food-item">🍵 Saffron Kahwa</span>
+                    </div>
+                </div>
+
+                <!-- 3. HIMACHAL PRADESH -->
+                <div class="state-detail-card glass-card" id="himachal">
+                    <img src="https://images.unsplash.com/photo-1597167231350-d057a45dc868?q=80&w=1382&auto=format&fit=crop" class="state-hero-img" alt="Himachal Pradesh">
+                    <h2>Himachal Pradesh</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: March to June</span>
+                        <span class="fact-tag">🌲 Vibe: Pine Forests & Snow Peaks</span>
+                        <span class="fact-tag">🪂 Famous For: Adventure & Hill Stations</span>
+                    </div>
+                    <p>Himachal Pradesh is a breathtaking Himalayan state where snow-capped mountains, dense pine and deodar forests, apple orchards, rushing rivers, alpine meadows, and traditional hill villages create an extraordinary mountain escape.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Valleys</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏙️ Shimla & Dalhousie</h4>
+                            <p><strong>The Ridge, Mall Road & Khajjiar:</strong> Historic British-era hill stations with colonial architecture, the toy train, and "Mini Switzerland."</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏔️ Manali & Solang Valley</h4>
+                            <p><strong>Rohtang Pass & Old Manali:</strong> The adventure capital offering skiing, paragliding, backpacker cafes, and dramatic snowy mountain peaks.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏜️ Spiti & Lahaul Valleys</h4>
+                            <p><strong>Kaza, Key Monastery & Chandratal:</strong> A breathtaking high-altitude desert featuring remote Buddhist villages, ancient murals, and glacial lakes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏞️ Dharamshala & Bir Billing</h4>
+                            <p><strong>McLeod Ganj & Triund Trek:</strong> The center of Tibetan culture, the Dalai Lama's residence, and the world-renowned paragliding capital.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌲 Parvati & Tirthan Valleys</h4>
+                            <p><strong>Kasol, Tosh & Malana:</strong> Bohemian riverside escapes, ancient isolated villages, and pristine forests in the Great Himalayan National Park.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🍎 Kinnaur (Apple Country)</h4>
+                            <p><strong>Kalpa, Sangla & Chitkul:</strong> Spectacular views of Kinnaur Kailash, lush apple orchards, and the last Indian village on the Tibetan border.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Authentic Himachali Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍛 Kangri Dham</span>
+                        <span class="food-item">🥟 Siddu</span>
+                        <span class="food-item">🍖 Chha Gosht</span>
+                        <span class="food-item">🫘 Madra</span>
+                        <span class="food-item">🥔 Aloo Palda</span>
+                    </div>
+                </div>
+
+                <!-- 4. UTTARAKHAND -->
+                <div class="state-detail-card glass-card" id="uttarakhand">
+                    <img src="https://images.unsplash.com/photo-1709623868300-e3b78cad10e1?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Uttarakhand">
+                    <h2>Uttarakhand</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: March to June</span>
+                        <span class="fact-tag">🧘 Vibe: Spiritual, Himalayan & Adventure</span>
+                        <span class="fact-tag">🏔️ Famous For: Char Dham & Wildlife</span>
+                    </div>
+                    <p>Known as <strong>"Devbhoomi" (Land of the Gods)</strong>, Uttarakhand is where sacred temples, ancient pilgrimage routes, dense forests, alpine meadows, and roaring rivers come together.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Treks</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🧘 Rishikesh & Haridwar</h4>
+                            <p><strong>Ganga Aarti & Rafting:</strong> The yoga capital of the world and the sacred gateway to the Himalayan gods, famous for ashrams and the Ganges.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 The Char Dham Yatra</h4>
+                            <p><strong>Kedarnath, Badrinath, Gangotri & Yamunotri:</strong> The ultimate high-altitude Hindu pilgrimage circuit nestled in dramatic mountain terrain.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏔️ Auli, Chopta & Treks</h4>
+                            <p><strong>Tungnath, Chandrashila & Valley of Flowers:</strong> India's premier skiing slopes, the highest Shiva temple, and UNESCO-listed alpine floral meadows.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌲 Mussoorie, Dehradun & Dhanaulti</h4>
+                            <p><strong>Landour & Kempty Falls:</strong> The Queen of Hills, featuring colonial-era charm, peaceful pine forests, and atmospheric cafes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Nainital & The Kumaon Lakes</h4>
+                            <p><strong>Bhimtal, Sattal & Naukuchiatal:</strong> The Lake District of India, offering scenic boating, birdwatching, and forested hill retreats.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Jim Corbett & Rajaji</h4>
+                            <p><strong>Wildlife Safaris:</strong> India's oldest national park famous for Bengal Tigers, plus crucial foothill habitats for wild Asian Elephants.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Kumaoni & Garhwali Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🌿 Kafuli</span>
+                        <span class="food-item">🥔 Aloo Ke Gutke</span>
+                        <span class="food-item">🫘 Bhatt Ki Churdkani</span>
+                        <span class="food-item">🍲 Chainsoo</span>
+                        <span class="food-item">🍬 Bal Mithai</span>
+                    </div>
+                </div>
+
+                <!-- 5. PUNJAB -->
+                <div class="state-detail-card glass-card" id="punjab">
+                    <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Punjab">
+                    <h2>Punjab</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🌾 Vibe: Culture, Agriculture & Celebration</span>
+                        <span class="fact-tag">🎵 Famous For: Sikh Heritage & Golden Fields</span>
+                    </div>
+                    <p>Punjab, meaning the <strong>"Land of Five Rivers,"</strong> is famous for its sweeping golden wheat fields, powerful Sikh heritage, energetic Bhangra music, magnificent gurudwaras, bustling markets, and legendary culinary culture.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 Amritsar (Spiritual Heart)</h4>
+                            <p><strong>Golden Temple & Jallianwala Bagh:</strong> The holiest shrine in Sikhism, crucial independence memorials, and vibrant old-city food streets.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🇮🇳 Wagah-Attari Border</h4>
+                            <p><strong>Beating Retreat Ceremony:</strong> Witness the electrifying, daily patriotic spectacle featuring synchronized drills by border guards.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Patiala & Kapurthala</h4>
+                            <p><strong>Qila Mubarak & Royal Palaces:</strong> The grandeur of royal Punjab, famous for its heritage architecture, Juttis, and Phulkari embroidery.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏙️ Chandigarh</h4>
+                            <p><strong>Rock Garden & Sukhna Lake:</strong> India's iconic planned city, blending modern urban design with extraordinary recycled art.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Anandpur Sahib</h4>
+                            <p><strong>Hola Mohalla & Sikh Heritage:</strong> The birthplace of the Khalsa, known for spectacular martial arts festivals and profound religious history.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌾 Rural Punjab & Wildlife</h4>
+                            <p><strong>Farmstays & Harike Wetland:</strong> Experience golden wheat fields, authentic village hospitality, migratory birds, and Abohar's Blackbuck sanctuaries.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Legendary Punjabi Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🌽 Makki Di Roti & Sarson Da Saag</span>
+                        <span class="food-item">🫓 Amritsari Kulcha</span>
+                        <span class="food-item">🍛 Chole Bhature</span>
+                        <span class="food-item">🍗 Tandoori Chicken</span>
+                        <span class="food-item">🥛 Thick Lassi</span>
+                    </div>
+                </div>
+
+                <!-- 6. DELHI (UT) -->
+                <div class="state-detail-card glass-card" id="delhi">
+                    <img src="https://images.unsplash.com/photo-1678966432189-d58296e45ad2?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Delhi">
+                    <h2>Delhi (Union Territory)</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏙️ Vibe: Urban Heritage & Modern Culture</span>
+                        <span class="fact-tag">🏛️ Famous For: Mughal Monuments & Markets</span>
+                    </div>
+                    <p>Delhi, India's capital, is a city where thousands of years of history meet modern urban life. It is a fascinating blend of ancient ruins, extraordinary Mughal architecture, colonial-era landmarks, bustling old-world bazaars, and legendary street food.</p>
+                    <h3 class="section-heading">📍 Major Regions & Key Landmarks</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🕌 Old Delhi Heritage</h4>
+                            <p><strong>Red Fort, Jama Masjid & Chandni Chowk:</strong> The historic heart featuring Mughal grandeur, ancient alleys, and legendary street food at Paranthe Wali Gali.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ New Delhi Landmarks</h4>
+                            <p><strong>India Gate, Kartavya Path & Rashtrapati Bhavan:</strong> The grand ceremonial axis showcasing monumental architecture and modern political history.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🕌 Mughal Masterpieces</h4>
+                            <p><strong>Humayun's Tomb, Qutub Minar & Safdarjung:</strong> UNESCO heritage sites featuring intricate stone minarets and magnificent symmetrical charbagh gardens.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌳 Urban Escapes & Ruins</h4>
+                            <p><strong>Lodi Garden, Hauz Khas & Purana Qila:</strong> Peaceful historic gardens, medieval ruins, lakes, and trendy surrounding cafes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Spiritual Wonders</h4>
+                            <p><strong>Lotus Temple & Akshardham:</strong> Breathtaking modern architectural marvels representing peace, spirituality, and grand Indian heritage.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛍️ Shopping Districts</h4>
+                            <p><strong>Connaught Place, Khan Market & Dilli Haat:</strong> From upscale boutiques and heritage crafts to bargain fashion and bustling nightlife.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍢 Legendary Delhi Street Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🫓 Chole Bhature</span>
+                        <span class="food-item">🥔 Aloo Tikki & Dahi Bhalla</span>
+                        <span class="food-item">🍢 Seekh Kebabs</span>
+                        <span class="food-item">🍗 Butter Chicken</span>
+                        <span class="food-item">🍲 Nihari</span>
+                    </div>
+                </div>
+
+                <!-- 7. UTTAR PRADESH -->
+                <div class="state-detail-card glass-card" id="up">
+                    <img src="https://images.unsplash.com/photo-1599831069477-b2acdc0bcb91?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Uttar Pradesh">
+                    <h2>Uttar Pradesh</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: November to March</span>
+                        <span class="fact-tag">🛕 Vibe: Spiritual, Heritage & Culture</span>
+                        <span class="fact-tag">🏛️ Famous For: Taj Mahal, Varanasi & Lucknow</span>
+                    </div>
+                    <p>Uttar Pradesh is one of India's most historically and culturally significant states, where ancient spiritual traditions, magnificent Mughal architecture, sacred rivers, royal Nawabi heritage, and vibrant local markets come together to form the heart of the Gangetic plains.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Heritage Hubs</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>❤️ Agra & Mughal Grandeur</h4>
+                            <p><strong>Taj Mahal, Agra Fort & Fatehpur Sikri:</strong> The ultimate Mughal architectural trail, including the world's most famous white-marble monument of love.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Varanasi & Sarnath</h4>
+                            <p><strong>Dashashwamedh Ghat & Kashi Vishwanath:</strong> The spiritual capital of India. Take a Ganges boat ride. Nearby Sarnath marks where Buddhism began to spread.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🕉️ Ayodhya, Mathura & Vrindavan</h4>
+                            <p><strong>Ram Mandir, Deepotsav & Braj Holi:</strong> Profound pilgrimage cities deeply tied to Lord Ram and the explosively colorful legends of Krishna and Radha.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏛️ Lucknow (City of Nawabs)</h4>
+                            <p><strong>Bara Imambara, Rumi Darwaza & Chota Imambara:</strong> Famous for elegant architecture, the Bhul Bhulaiya labyrinth, delicate Chikankari embroidery, and Awadhi culture.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Prayagraj & Jhansi</h4>
+                            <p><strong>Triveni Sangam, Maha Kumbh & Chunar Fort:</strong> Sacred river confluences hosting massive religious gatherings, and historic military fortifications.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Terai Wildlife Sanctuaries</h4>
+                            <p><strong>Dudhwa, Katarniaghat & Chambal:</strong> Protected forest ecosystems harboring Bengal tigers, swamp deer, gharials, and Ganges river dolphins.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Awadhi Cuisine & Famous Crafts</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Lucknowi Awadhi Biryani</span>
+                        <span class="food-item">🍢 Galouti & Tunday Kebabs</span>
+                        <span class="food-item">🍲 Banarasi Tamatar Chaat</span>
+                        <span class="food-item">🍬 Agra Petha</span>
+                        <span class="food-item">🥻 Banarasi Silk Textiles</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HASH ROUTING 🚨 -->
+    <!-- This guarantees that linking from itineraries.html#kashmir opens the exact tab -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            // The master function to switch the active tabs and content
+            function activateTab(stateId) {
+                const targetBtn = document.querySelector(`.state-pill-btn[data-state="${stateId}"]`);
+                const targetCard = document.getElementById(stateId);
+                
+                // If the state ID exists on this page, switch to it!
+                if (targetBtn && targetCard) {
+                    // Remove 'active' from all buttons and cards
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add 'active' to the target button and card
+                    targetBtn.classList.add('active');
+                    targetCard.classList.add('active');
+                    
+                    // Scroll slightly down so the user is directly looking at the content
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: document.getElementById('explore').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+
+            // 1. Check if the URL has a hash (like #kashmir) right when the page first loads
+            if(window.location.hash) {
+                const hashState = window.location.hash.substring(1); // removes the '#'
+                activateTab(hashState);
+            }
+
+            // 2. Normal click behavior when clicking buttons in the sidebar
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetState = btn.getAttribute('data-state');
+                    activateTab(targetState);
+                    
+                    // Update the URL invisibly so the user can copy/share it without jumping the page
+                    history.replaceState(null, null, `#${targetState}`);
+                });
+            });
+
+            // 3. Listen dynamically in case they click a link while already on the page
+            window.addEventListener('hashchange', () => {
+                const hashState = window.location.hash.substring(1);
+                activateTab(hashState);
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

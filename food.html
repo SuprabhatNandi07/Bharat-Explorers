@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Cuisine | Bharat Explorers</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Refined, Elegant Menu Styling for the Food Lists */
+        .food-narrative {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-style: italic;
+            border-left: 4px solid var(--primary);
+            padding-left: 20px;
+            background: rgba(255, 153, 51, 0.05);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+        .sub-category-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin: 35px 0 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* The New Comma-Separated Elegant Text Box */
+        .food-menu-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            font-weight: 500;
+        }
+
+        .mega-category-section {
+            padding: 80px 5%;
+            background: #fff;
+        }
+        .mega-category-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .mega-category-card p.intro {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        .final-feast {
+            background: var(--bg-darker);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        .final-feast .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 1;
+        }
+        .final-feast-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .final-feast-content h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .final-feast-content p {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+        .final-feast-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+            text-align: left;
+        }
+        .final-feast-list span {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            border-left: 3px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ The Grand Culinary Journey — Seven Regions. Hundreds of Dishes. One Extraordinary Food Heritage! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Tasting &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="experiences.html" class="active">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 80vh; background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal" style="max-width: 1000px;">
+            <p class="hero-kicker">THE GRAND CULINARY JOURNEY OF INDIA</p>
+            <h1 style="font-size: 4rem;">A CONTINENT OF FLAVOURS</h1>
+            <p class="hero-subtitle" style="font-size: 1.15rem; text-align: left; padding-top: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+                India is not simply a country of cuisines—it is a continent of flavours within a country. Every landscape has created its own food traditions. The mountains preserve age-old recipes; the coasts celebrate seafood and coconut; the fertile plains produce wheat, rice, vegetables, and milk; the deserts have inspired ingenious preservation techniques; and the forests have given rise to indigenous foods built around millets, herbs, roots, fruits, and wild ingredients.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FOOD EXPLORER (The 7 Regions) -->
+    <section id="explore" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable Regions (NUMBERS REMOVED) -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="royal">🔥 Royal & Mughlai</button>
+                <button class="state-pill-btn" data-state="south">🥥 The Spicy South</button>
+                <button class="state-pill-btn" data-state="north">🌾 The Hearty North</button>
+                <button class="state-pill-btn" data-state="west">🏜️ The Vibrant West</button>
+                <button class="state-pill-btn" data-state="east">🐟 The Coastal East</button>
+                <button class="state-pill-btn" data-state="northeast">⛰️ Untouched Northeast</button>
+                <button class="state-pill-btn" data-state="central">🥜 The Rustic Center</button>
+            </div>
+
+            <!-- RIGHT CONTENT: Full Culinary Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- 1. ROYAL & MUGHLAI -->
+                <div class="state-detail-card glass-card active" id="royal">
+                    <img src="https://images.unsplash.com/photo-1708782341231-426344114ace?q=80&w=880&auto=format&fit=crop" class="state-hero-img" alt="Royal and Mughlai Food">
+                    <h2>The Grandeur of the Royal Kitchens</h2>
+                    
+                    <div class="food-narrative">
+                        The Royal and Mughlai tradition represents some of the most luxurious cooking in the Indian subcontinent. Born from royal courts, Persian influences, Central Asian traditions, and centuries of Indian adaptation, this cuisine is associated with slow cooking, fragrant spices, rich gravies, delicate kebabs, aromatic rice, nuts, dried fruits, saffron, cream, butter, and ghee. These are dishes created for celebration. The cooking is often patient and elaborate.
+                    </div>
+                    
+                    <h4 class="sub-category-title">🍖 Royal Meat & Kebabs</h4>
+                    <p class="food-menu-text">Galouti Kebab, Kakori Kebab, Seekh Kebab, Shami Kebab, Boti Kebab, Reshmi Kebab, Chapli Kebab, Tangri Kebab, Chicken Tikka, Murgh Malai Tikka, Tandoori Chicken, Banjara Kebab, Burrah Kebab, Pasanda Kebab, Gilafi Seekh, Dahi Kebab, Mutton Shikampuri, Lucknowi Boti, Raan, Mutton Chaap.</p>
+
+                    <h4 class="sub-category-title">🍛 Rich Curries & Slow-Cooked Classics</h4>
+                    <p class="food-menu-text">Butter Chicken, Chicken Korma, Mutton Korma, Shahi Korma, Mughlai Chicken, Mughlai Mutton, Nihari, Haleem, Rogan Josh, Yakhni, Mutton Do Pyaza, Chicken Do Pyaza, Keema Matar, Keema Aloo, Makhani Murgh, Murg Musallam, Rezala, Pasanda, Nargisi Kofta, Shahi Kofta, Badami Chicken, Afghani Chicken, Degi Mutton.</p>
+
+                    <h4 class="sub-category-title">🍚 Rice & Biryani (An Entire World)</h4>
+                    <p class="food-menu-text">Lucknowi/Awadhi Biryani, Delhi Mughlai Biryani, Hyderabadi Biryani, Kolkata Biryani, Dindigul Biryani, Ambur Biryani, Thalassery Biryani, Malabar Biryani, Sindhi Biryani, Kacchi Biryani, Mutton Biryani, Chicken Biryani, Egg Biryani, Vegetable Biryani, Yakhni Pulao, Mutton Pulao, Shahi Pulao, Zafrani Pulao.</p>
+
+                    <h4 class="sub-category-title">🫓 Breads & Accompaniments</h4>
+                    <p class="food-menu-text">Sheermal, Roomali Roti, Mughlai Paratha, Naan, Butter Naan, Garlic Naan, Tandoori Roti, Khameeri Roti, Bakarkhani, Warqi Paratha, Laccha Paratha, Rumali Roti.</p>
+
+                    <h4 class="sub-category-title">🍮 Royal Sweets</h4>
+                    <p class="food-menu-text">Shahi Tukda, Double Ka Meetha, Phirni, Zafrani Phirni, Kulfi, Badam Halwa, Gajar Halwa, Moong Dal Halwa, Besan Halwa, Firni with nuts, Rabri, Kesar Rabri, Kheer, Seviyan, Sheer Khurma.</p>
+                    
+                    <p style="margin-top: 20px; font-weight: 600; color: var(--primary);">The royal flavour palette: saffron, cardamom, cinnamon, cloves, mace, nutmeg, rose water, kewra, almonds, pistachios, cashews, cream, ghee, and dried fruits.</p>
+                </div>
+
+                <!-- 2. THE SPICY SOUTH -->
+                <div class="state-detail-card glass-card" id="south">
+                    <img src="https://images.unsplash.com/photo-1694849789325-914b71ab4075?q=80&w=1074&auto=format&fit=crop" class="state-hero-img" alt="The Spicy South">
+                    <h2>Where Coconut, Chillies & Tamarind Dance</h2>
+                    
+                    <div class="food-narrative">
+                        Southern India is a universe of its own. Rice dominates many traditional meals, while coconut, tamarind, curry leaves, mustard seeds, dried red chillies, black pepper, lentils, and fresh herbs create a remarkable range of flavours. From the vegetarian temples of Tamil Nadu to the seafood-rich kitchens of Kerala, from Andhra's fiery chillies to Karnataka's comforting rice dishes, the South offers extraordinary diversity.
+                    </div>
+
+                    <h4 class="sub-category-title">🌴 Tamil Nadu</h4>
+                    <p class="food-menu-text">Masala Dosa, Plain Dosa, Ghee Roast Dosa, Podi Dosa, Set Dosa, Rava Dosa, Onion Dosa, Idli, Kanchipuram Idli, Medu Vada, Sambar, Rasam, Ven Pongal, Lemon Rice, Tamarind Rice, Coconut Rice, Curd Rice, Bisibele Bath, Vegetable Kurma, Chettinad Chicken, Chettinad Mutton, Chicken 65, Kari Dosa, Kothu Parotta, Parotta, Parotta with Salna, Mutton Sukka, Pepper Chicken, Meen Kuzhambu, Crab Masala, Nandu Rasam, Kuzhi Paniyaram, Appam, Adai, Pesarattu, Murukku, Mysore Pak.</p>
+
+                    <h4 class="sub-category-title">🌶️ Andhra & Telangana (Fire & Heat)</h4>
+                    <p class="food-menu-text">Hyderabadi Biryani, Haleem, Mirchi ka Salan, Bagara Baingan, Gongura Chicken, Gongura Mutton, Gongura Pachadi, Andhra Chicken Curry, Kodi Vepudu, Royyala Vepudu, Andhra Fish Curry, Gutti Vankaya, Pesarattu, Punugulu, Garelu, Bobbatlu, Pootharekulu, Double Ka Meetha, Qubani ka Meetha.</p>
+
+                    <h4 class="sub-category-title">🌿 Kerala — God's Own Kitchen</h4>
+                    <p class="food-menu-text">Kerala Fish Curry, Meen Moilee, Karimeen Pollichathu, Karimeen Fry, Prawn Curry, Chemmeen Roast, Kallumakkaya Fry, Kerala Beef Fry, Beef Ularthiyathu, Chicken Stew, Vegetable Stew, Mutton Stew, Appam, Idiyappam, Malabar Parotta, Puttu, Kadala Curry, Thalassery Biryani, Malabar Biryani, Avial, Thoran, Olan, Kalan, Pachadi, Theeyal, Erissery, Sambar, Rasam, Kerala Sadya, Banana Chips, Sharkara Varatti, Unniyappam, Palada Payasam, Ada Pradhaman.</p>
+
+                    <h4 class="sub-category-title">🌴 Karnataka</h4>
+                    <p class="food-menu-text">Mysore Masala Dosa, Maddur Vada, Bisi Bele Bath, Ragi Mudde, Ragi Rotti, Akki Rotti, Mangalorean Fish Curry, Neer Dosa, Chicken Ghee Roast, Mangalorean Kori Gassi, Kundapura Chicken, Udupi Sambar, Kosambari, Vangi Bath, Puliyogare, Chitranna, Kesari Bath, Obbattu, Mysore Pak, Dharwad Peda.</p>
+
+                    <h4 class="sub-category-title">🥥 Goan-South Coastal Influence</h4>
+                    <p class="food-menu-text">Goan Fish Curry, Prawn Balchao, Chicken Xacuti, Pork Vindaloo, Sorpotel, Cafreal, Ambotik, Goan Sausage, Poi, Bebinca.</p>
+                </div>
+
+                <!-- 3. THE HEARTY NORTH -->
+                <div class="state-detail-card glass-card" id="north">
+                    <img src="https://images.unsplash.com/photo-1710091691802-7dedb8af9a77?q=80&w=1170&auto=format&fit=crop" class="state-hero-img" alt="The Hearty North">
+                    <h2>Tandoors, Wheat, Butter & Food That Feels Like Home</h2>
+                    
+                    <div class="food-narrative">
+                        Northern India is where food becomes hearty, smoky, buttery, rustic, and comforting. The tandoor is perhaps its most famous culinary symbol. Wheat becomes naan, roti, kulcha, paratha, and puri. Lentils simmer slowly. Paneer appears in countless forms. Meat is grilled over charcoal or cooked into rich gravies.
+                    </div>
+
+                    <h4 class="sub-category-title">🫓 Breads</h4>
+                    <p class="food-menu-text">Naan, Butter Naan, Garlic Naan, Tandoori Roti, Rumali Roti, Missi Roti, Makki di Roti, Amritsari Kulcha, Aloo Kulcha, Paneer Kulcha, Laccha Paratha, Aloo Paratha, Gobi Paratha, Mooli Paratha, Paneer Paratha, Bedmi Puri, Bhatura, Puri.</p>
+
+                    <h4 class="sub-category-title">🥘 Punjabi Favourites</h4>
+                    <p class="food-menu-text">Dal Makhani, Rajma, Rajma Chawal, Chole, Chole Bhature, Amritsari Chole, Sarson ka Saag, Makki di Roti, Paneer Tikka, Paneer Tikka Masala, Shahi Paneer, Kadai Paneer, Palak Paneer, Matar Paneer, Chole Kulche, Amritsari Fish, Tandoori Chicken, Butter Chicken, Chicken Tikka, Chicken Tikka Masala, Mutton Tikka, Tandoori Prawns.</p>
+
+                    <h4 class="sub-category-title">🏔️ Kashmiri Cuisine (Fragrant & Elegant)</h4>
+                    <p class="food-menu-text">Rogan Josh, Yakhni, Gushtaba, Rista, Tabak Maaz, Yakhni Pulao, Dum Aloo, Haak Saag, Nadru Yakhni, Nadru Monje, Matschgand, Aloo Bukhara Korma, Kashmiri Pulao, Modur Pulao, Kahwa.</p>
+
+                    <h4 class="sub-category-title">🌾 Uttar Pradesh & Awadh</h4>
+                    <p class="food-menu-text">Lucknowi Biryani, Galouti Kebab, Kakori Kebab, Tunday-style Kebab, Awadhi Korma, Nihari, Lucknowi Nihari, Shami Kebab, Basket Chaat, Aloo Tikki, Papdi Chaat, Dahi Bhalla, Bedmi Puri, Kachori, Banarasi Tamatar Chaat, Banarasi Kachori, Banarasi Paan.</p>
+
+                    <h4 class="sub-category-title">🍬 Northern Sweets</h4>
+                    <p class="food-menu-text">Jalebi, Imarti, Gulab Jamun, Rasmalai, Rabri, Gajar ka Halwa, Moong Dal Halwa, Besan Ladoo, Motichoor Ladoo, Pinni, Petha, Balushahi, Gujiya, Kulfi, Lassi, Kesar Lassi, Thandai.</p>
+                </div>
+
+                <!-- 4. THE VIBRANT WEST -->
+                <div class="state-detail-card glass-card" id="west">
+                    <img src="https://images.unsplash.com/photo-1714799263291-272975db795a?q=80&w=1092&auto=format&fit=crop" class="state-hero-img" alt="The Vibrant West">
+                    <h2>Where Sweet Meets Spicy, Rustic Meets Festive</h2>
+                    
+                    <div class="food-narrative">
+                        Western India is wonderfully unpredictable. One bite may be sweet, another sour, another fiery, and another nutty. The cuisines of Rajasthan, Gujarat, Maharashtra, Goa, and the Konkan belt are shaped by dramatically different landscapes. The desert created preservation techniques. Gujarat developed intricate vegetarian cuisine. Maharashtra created some of India's greatest street foods. Goa brought together Indian spices and Portuguese influences.
+                    </div>
+
+                    <h4 class="sub-category-title">🏜️ Rajasthan</h4>
+                    <p class="food-menu-text">Dal Baati Churma, Dal Bafla, Gatte ki Sabzi, Gatte Pulao, Ker Sangri, Laal Maas, Safed Maas, Jungli Maas, Papad ki Sabzi, Panchmel Dal, Bajre ki Roti, Missi Roti, Pyaz ki Kachori, Mawa Kachori, Mirchi Bada, Pyaaz Bada, Ghevar, Makhaniya Lassi, Rabri, Malpua, Churma Ladoo.</p>
+
+                    <h4 class="sub-category-title">🥜 Gujarat (The Balance of Flavours)</h4>
+                    <p class="food-menu-text">Dhokla, Khaman, Khandvi, Fafda, Jalebi, Thepla, Methi Thepla, Dhebra, Handvo, Undhiyu, Sev Tameta, Ringan Bateta, Gujarati Kadhi, Dal Dhokli, Khichdi, Patra, Lilva Kachori, Muthia, Khakhra, Farsi Puri, Chorafali, Shrikhand, Basundi, Mohanthal, Sukhdi.</p>
+
+                    <h4 class="sub-category-title">🌶️ Maharashtra</h4>
+                    <p class="food-menu-text">Vada Pav, Misal Pav, Pav Bhaji, Kanda Poha, Batata Poha, Sabudana Khichdi, Sabudana Vada, Thalipeeth, Pithla Bhakri, Bharli Vangi, Kolhapuri Chicken, Kolhapuri Mutton, Mutton Rassa, Pandhra Rassa, Tambda Rassa, Bombil Fry, Surmai Fry, Kothimbir Vadi, Zunka Bhakri, Usal, Matki Usal, Bhel Puri, Sev Puri, Ragda Pattice, Dabeli, Puran Poli, Modak, Shrikhand, Basundi, Aamras.</p>
+
+                    <h4 class="sub-category-title">🌊 Konkan & Goa</h4>
+                    <p class="food-menu-text">Goan Fish Curry, Prawn Curry, Prawn Balchao, Fish Recheado, Chicken Cafreal, Chicken Xacuti, Pork Vindaloo, Sorpotel, Goan Sausage, Crab Xec Xec, Bebinca, Dodol, Feni.</p>
+                </div>
+
+                <!-- 5. THE COASTAL EAST -->
+                <div class="state-detail-card glass-card" id="east">
+                    <img src="https://images.unsplash.com/photo-1758910536889-43ce7b3199fd?q=80&w=735&auto=format&fit=crop" class="state-hero-img" alt="The Coastal East">
+                    <h2>Rice, Fish, Mustard & the Flavours of the Rivers</h2>
+                    
+                    <div class="food-narrative">
+                        Eastern India is where the river meets the kitchen. Rice and fish are central to many traditions, especially in Bengal, while mustard oil, mustard seeds, poppy seeds, green chillies, coconut, and panch phoron add unmistakable character. The food can be delicate without being bland, aromatic without being heavy, and simple without sacrificing depth.
+                    </div>
+
+                    <h4 class="sub-category-title">🐟 Bengali Classics</h4>
+                    <p class="food-menu-text">Shorshe Ilish, Ilish Bhapa, Ilish Paturi, Doi Ilish, Chingri Malai Curry, Chingri Bhapa, Macher Jhol, Macher Kalia, Doi Maach, Pabda Jhol, Bhetki Paturi, Bhetki Fry, Katla Kalia, Rui Macher Jhol, Golda Chingri, Kosha Mangsho, Mutton Dak Bungalow, Chicken Rezala, Chicken Chaap, Aloo Posto, Begun Bhaja, Shukto, Cholar Dal, Luchi, Kochuri, Radha Ballabhi, Basanti Pulao, Mishti Pulao, Bengali Khichuri.</p>
+
+                    <h4 class="sub-category-title">🍬 Bengali Sweets (Legendary)</h4>
+                    <p class="food-menu-text">Rasgulla, Sandesh, Kacha Golla, Mishti Doi, Rajbhog, Cham Cham, Langcha, Pantua, Jolbhora, Payesh, Nolen Gur Sandesh, Nolen Gur Rasgulla, Sita Bhog, Mihidana, Patishapta, Bhapa Pitha.</p>
+
+                    <h4 class="sub-category-title">🌿 Odisha</h4>
+                    <p class="food-menu-text">Dalma, Pakhala Bhata, Dahi Pakhala, Machha Besara, Macha Ghanta, Chhena Poda, Chhena Gaja, Dahibara Aloodum, Bara, Santula, Kanika, Pitha, Khaja, Mahaprasad temple foods.</p>
+
+                    <h4 class="sub-category-title">🌱 Assam & Eastern Hills</h4>
+                    <p class="food-menu-text">Masor Tenga, Khar, Duck Curry, Duck with Ash Gourd, Pork with Bamboo Shoot, Chicken with Bamboo Shoot, Aloo Pitika, Xaak Bhaji, Pitha, Jolpan, Bora Saul, Payox.</p>
+                </div>
+
+                <!-- 6. THE UNTOUCHED NORTHEAST -->
+                <div class="state-detail-card glass-card" id="northeast">
+                    <img src="https://plus.unsplash.com/premium_photo-1670601440146-3b33dfcd7e17?q=80&w=1238&auto=format&fit=crop" class="state-hero-img" alt="The Untouched Northeast">
+                    <h2>Wild, Fermented, Smoky & Intensely Indigenous</h2>
+                    
+                    <div class="food-narrative">
+                        The Northeast is one of India's greatest culinary frontiers. Its food traditions are deeply connected to forests, mountains, rivers, indigenous communities, fermentation, smoking, local herbs, bamboo shoots, rice, pork, fish, and extraordinary chillies. This is not food that tries to imitate mainstream Indian cuisine. It follows its own rules.
+                    </div>
+                    
+                    <h4 class="sub-category-title">🌶️ The Northeast's Flavour Identity</h4>
+                    <p style="margin-bottom: 20px; color: var(--text-main); font-weight: 600;">Expect: smoke + fermentation + herbs + bamboo + chilli + meat + rice + mountain vegetables. And, of course, the legendary Bhut Jolokia (ghost pepper).</p>
+
+                    <h4 class="sub-category-title">🔥 Nagaland</h4>
+                    <p class="food-menu-text">Smoked Pork with Bamboo Shoot, Pork with Axone, Axone Chutney, Naga Pork Curry, Raja Mircha preparations, Smoked Beef, Smoked Fish, Bamboo Shoot Curry, Galho, Naga-style chutneys.</p>
+
+                    <h4 class="sub-category-title">🌿 Manipur</h4>
+                    <p class="food-menu-text">Eromba, Singju, Chamthong, Iromba, Nga Thongba, Paknam, Morok Metpa, Chak-hao rice dishes, Fermented fish preparations.</p>
+
+                    <h4 class="sub-category-title">🏔️ Meghalaya & Mizoram</h4>
+                    <p class="food-menu-text">Jadoh, Dohneiihong, Dohkhlieh, Nakham Bitchi, Tungrymbai, Pukhlein, Bai, Sawhchiar, Vawksa Rep, Mizo smoked pork.</p>
+
+                    <h4 class="sub-category-title">🥟 Sikkim & Arunachal Pradesh</h4>
+                    <p class="food-menu-text">Thukpa, Momos, Zan, Apong, Gyathuk, Phagshapa, Sha Phalley, Chhurpi, Gundruk, Sel Roti.</p>
+                </div>
+
+                <!-- 7. THE RUSTIC CENTER -->
+                <div class="state-detail-card glass-card" id="central">
+                    <img src="https://images.unsplash.com/photo-1778448806852-db6a837fa98f?q=80&w=1170&auto=format&fit=crop" class="state-hero-img" alt="The Rustic Center">
+                    <h2>Earthy, Indigenous, Hearty & Rooted in the Land</h2>
+                    
+                    <div class="food-narrative">
+                        Central India is where food often feels closest to the soil. The cuisines of Madhya Pradesh, Chhattisgarh, Jharkhand, and surrounding areas have been shaped by tribal traditions, forests, agriculture, millets, maize, lentils, seasonal greens, roots, seeds, peanuts, jaggery, and locally available ingredients. This is food with a strong connection to nature. It is often uncomplicated, but that simplicity is precisely its beauty.
+                    </div>
+
+                    <h4 class="sub-category-title">🌾 Madhya Pradesh</h4>
+                    <p class="food-menu-text">Poha, Jalebi, Dal Bafla, Bhutte ka Kees, Sabudana Khichdi, Sabudana Vada, Mawa Bati, Bhopali Gosht, Bhopali Korma, Seekh Kebab, Bhopali Pulao, Palak Puri, Dal Paniya, Chakki ki Shaak, Malpua, Mawa Jalebi.</p>
+
+                    <h4 class="sub-category-title">🌽 Chhattisgarh & Jharkhand</h4>
+                    <p class="food-menu-text">Chila, Fara, Muthiya, Bafauri, Angakar Roti, Aamat, Dubki Kadhi, Dehati Badi, Mahua foods, Tikhur, Dhuska, Rugra, Chilka Roti, Thekua, Litti, Handia.</p>
+
+                    <h4 class="sub-category-title">🌾 Bihar — Rustic Heartland Flavours</h4>
+                    <p class="food-menu-text">Litti Chokha, Sattu Paratha, Sattu Sharbat, Dal Pitha, Chana Ghugni, Ghugni, Aloo Chokha, Baingan Chokha, Tomato Chokha, Khaja, Thekua, Tilkut, Balushahi, Malpua, Kheer, Makhana preparations, Champaran Mutton.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MEGA CATEGORY SECTIONS (STREET FOOD, DRINKS, SWEETS, VEG & MEAT) -->
+    <section class="mega-category-section">
+        
+        <!-- STREET FOOD -->
+        <div class="mega-category-card reveal">
+            <h2 class="section-title">🍢 The Street Food of India</h2>
+            <p class="intro">Because India's Culinary Story Doesn't End at the Dining Table. Indian street food is where speed, creativity, affordability, spice, crunch, and pure joy collide.</p>
+            
+            <h4 class="sub-category-title">North Indian Street Food</h4>
+            <p class="food-menu-text">Chole Bhature, Aloo Tikki, Dahi Bhalla, Papdi Chaat, Gol Gappa, Samosa, Kachori, Jalebi, Kulfi, Chole Kulche, Ram Ladoo, Bread Pakora.</p>
+
+            <h4 class="sub-category-title">Western Street Food</h4>
+            <p class="food-menu-text">Vada Pav, Misal Pav, Pav Bhaji, Bhel Puri, Sev Puri, Dabeli, Ragda Pattice, Kanda Bhaji, Batata Vada, Kachori, Fafda-Jalebi.</p>
+
+            <h4 class="sub-category-title">Southern & Eastern Street Food</h4>
+            <p class="food-menu-text">Masala Dosa, Medu Vada, Mysore Bonda, Punugulu, Mirchi Bajji, Kothu Parotta, Banana Bajji, Ghugni, Telebhaja, Mughlai Paratha, Fish Fry, Kolkata Egg Roll, Jhalmuri, Dahi Puri.</p>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="mega-category-card reveal">
+            <h2 class="section-title">🍵 The Drinks of India</h2>
+            <p class="intro">A Country That Knows How to Drink Its Flavours.</p>
+            
+            <h4 class="sub-category-title">Chai Culture & Cooling Drinks</h4>
+            <p class="food-menu-text">Masala Chai, Adrak Chai, Cutting Chai, Irani Chai, Kashmiri Kahwa, Noon Chai, Tandoori Chai, Sweet Lassi, Mango Lassi, Chaas, Jaljeera, Aam Panna, Nimbu Pani, Thandai, Sol Kadhi, Kokum Sharbat, Bel Sharbat, Sattu Sharbat, Filter Coffee, Badam Milk, Falooda, Panakam, Rose Milk, Nannari Sharbat.</p>
+        </div>
+
+        <!-- SWEETS -->
+        <div class="mega-category-card reveal">
+            <h2 class="section-title">🍬 The Sweet India</h2>
+            <p class="intro">A Dessert for Every Celebration. From milk-based sweets to jaggery desserts, fried delicacies to rice puddings, India's dessert traditions are astonishingly diverse.</p>
+            
+            <h4 class="sub-category-title">Milk, Flour & Ghee-Based Classics</h4>
+            <p class="food-menu-text">Rasmalai, Rasgulla, Sandesh, Cham Cham, Rabri, Basundi, Shrikhand, Mishti Doi, Kulfi, Kheer, Phirni, Payasam, Jalebi, Imarti, Malpua, Ghevar, Balushahi, Gujiya, Thekua, Churma, Puran Poli, Mysore Pak, Kaju Katli, Besan Ladoo, Motichoor Ladoo, Moong Dal Halwa, Modak, Unniyappam, Dodol, Chikki.</p>
+        </div>
+
+        <!-- VEGETARIAN -->
+        <div class="mega-category-card reveal">
+            <h2 class="section-title">🌿 The Vegetarian India</h2>
+            <p class="intro">Proof That Indian Food Never Needed Meat to Be Extraordinary. Vegetables are transformed into elaborate curries, stuffed preparations, fritters, pickles, dals, and festive meals.</p>
+            
+            <h4 class="sub-category-title">Vegetable Classics & Dals</h4>
+            <p class="food-menu-text">Baingan Bharta, Bharli Vangi, Aloo Gobi, Aloo Matar, Bhindi Masala, Gobi Manchurian, Palak Paneer, Shahi Paneer, Matar Paneer, Malai Kofta, Navratan Korma, Dal Tadka, Dal Fry, Dal Makhani, Rajma, Chole, Kadhi, Avial, Undhiyu, Gatte ki Sabzi, Aloo Posto, Shukto, Dalma, Pithla, Zunka, Sarson ka Saag, Kaddu ki Sabzi, Lauki Kofta, Bharwa Bhindi.</p>
+        </div>
+
+        <!-- MEAT & SEAFOOD -->
+        <div class="mega-category-card reveal" style="margin-bottom: 0;">
+            <h2 class="section-title">🥩 The Meat & Seafood India</h2>
+            <p class="intro">From Himalayan Mutton to Coastal Fish. For non-vegetarian food lovers, India offers an astonishing spectrum.</p>
+            
+            <h4 class="sub-category-title">Chicken, Mutton, Lamb & Seafood</h4>
+            <p class="food-menu-text">Butter Chicken, Tandoori Chicken, Chicken Tikka, Chicken Korma, Chicken Chettinad, Hyderabadi Chicken, Kerala Chicken Curry, Goan Chicken Xacuti, Chicken Cafreal, Mangalorean Ghee Roast, Rogan Josh, Nihari, Laal Maas, Mutton Korma, Mutton Biryani, Gushtaba, Rista, Champaran Mutton, Kosha Mangsho, Shorshe Ilish, Chingri Malai Curry, Meen Moilee, Karimeen Pollichathu, Amritsari Fish, Bombil Fry, Prawn Balchao, Crab Masala.</p>
+        </div>
+
+    </section>
+
+    <!-- THE FINAL FEAST (CONCLUSION) -->
+    <section class="final-feast">
+        <div class="overlay"></div>
+        <div class="final-feast-content reveal">
+            <h2>🇮🇳 The Final Feast</h2>
+            <p>And after travelling through all seven culinary worlds, one thing becomes clear:<br><strong>There is no single taste of India.</strong></p>
+            
+            <div class="final-feast-list">
+                <span>🔥 Smoky And Royal</span>
+                <span>🌶️ Fiery And Bold</span>
+                <span>🥥 Creamy & Coconut-Rich</span>
+                <span>🌾 Earthy And Comforting</span>
+                <span>🏜️ Spicy And Rustic</span>
+                <span>🐟 Delicate & Mustardy</span>
+                <span>⛰️ Smoked & Fermented</span>
+                <span>🥜 Nutty And Wholesome</span>
+                <span>🍬 Sweet & Celebratory</span>
+                <span>🍋 Tangy And Refreshing</span>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.9;">
+                It can be a plate of dal baati churma, a bowl of Hyderabadi biryani, a banana-leaf Kerala sadya, a Bengali plate of macher jhol and rice, a fiery Naga pork curry, a Gujarati thali, a Maharashtrian misal pav, a Punjabi sarson ka saag with makki di roti, or a humble plate of litti chokha.
+            </p>
+            <p style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin-top: 30px;">
+                And that is the magic. India's food is not one cuisine.<br>
+                It is thousands of kitchens, millions of recipes, countless traditions, and generations of stories—served on one extraordinary table.
+            </p>
+            <h3 style="margin-top: 40px; font-size: 2rem; color: #fff; letter-spacing: 2px;">
+                One country. Seven culinary worlds. Hundreds of flavours.<br>One unforgettable journey. 🇮🇳🍛
+            </h3>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HASH ROUTING 🚨 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            function activateTab(stateId) {
+                const targetBtn = document.querySelector(`.state-pill-btn[data-state="${stateId}"]`);
+                const targetCard = document.getElementById(stateId);
+                
+                if (targetBtn && targetCard) {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    targetBtn.classList.add('active');
+                    targetCard.classList.add('active');
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: document.getElementById('explore').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+
+            if(window.location.hash) {
+                const hashState = window.location.hash.substring(1); 
+                activateTab(hashState);
+            }
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetState = btn.getAttribute('data-state');
+                    activateTab(targetState);
+                    history.replaceState(null, null, `#${targetState}`);
+                });
+            });
+
+            window.addEventListener('hashchange', () => {
+                const hashState = window.location.hash.substring(1);
+                activateTab(hashState);
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

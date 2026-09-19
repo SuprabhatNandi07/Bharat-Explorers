@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Explorers | 3D Gallery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Visual Journey — Swipe Through All 36 States & Union Territories! 
+            <span class="spacer"></span> 
+            <a href="#gallery-section">Explore 3D Gallery &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html" class="active">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1514222134-b57cbf8ce697?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">VISUAL ARCHIVE</p>
+            <h1 style="font-size: 5rem;">THE 36-REGION GALLERY</h1>
+            <p class="hero-subtitle">An interactive visual snapshot from every single state and union territory in the subcontinent.</p>
+        </div>
+    </section>
+
+    <!-- Complete 36-Region 3D Gallery -->
+    <section id="gallery-section" class="gallery-section reveal">
+        <h2 class="section-title">The Subcontinent in 3D</h2>
+        <p class="section-subtitle">Swipe or drag to explore all 36 regions.</p>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <!-- 28 STATES -->
+                <div class="swiper-slide premium-slide">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkWB5RRe8bwHnEZqL88LWHV7x4lX9asT-GMer-swIsCSOpNd-aoX5097Bk&s=10" loading="lazy" alt="Andhra Pradesh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Andhra Pradesh</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The Koh-i-Noor of India, famous for ancient temples and spicy coastal cuisine.</p>
+                            <a href="south-india.html#andhra" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1626761627604-f27d98885f4b?q=80&w=1170&auto=format&fit=crop" loading="lazy" alt="Arunachal Pradesh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Arunachal Pradesh</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The land of dawn-lit mountains, offering untouched Himalayan beauty.</p>
+                            <a href="east-india.html#arunachal" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1602020277972-99978250c8bd?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Assam">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Assam</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Rolling green tea estates and the home of the majestic one-horned rhinoceros.</p>
+                            <a href="east-india.html#assam" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1719948689557-728788964865?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Bihar">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Bihar</h3>
+                            <span class="rating">★★★☆☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The cradle of history where Buddhism was born beneath the Bodhi tree.</p>
+                            <a href="east-india.html#bihar" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1673462107499-97848ff888b9?q=80&w=736&auto=format&fit=crop" loading="lazy" alt="Chhattisgarh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Chhattisgarh</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A hidden gem of dense forests, tribal culture, and roaring waterfalls.</p>
+                            <a href="west-india.html#mp" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1664283661568-859f7aff0b20?q=80&w=686&auto=format&fit=crop" loading="lazy" alt="Goa">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Goa</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Golden beaches, Portuguese architecture, and a vibrant coastal nightlife.</p>
+                            <a href="west-india.html#goa" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1642841819300-20ed449c02a1?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Gujarat">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Gujarat</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">From the white salt desert of Kutch to the home of the Asiatic Lion.</p>
+                            <a href="west-india.html#gujarat" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1574929751963-9c6181261276?q=80&w=648&auto=format&fit=crop" loading="lazy" alt="Haryana">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Haryana</h3>
+                            <span class="rating">★★★☆☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The ancient heartland of the Mahabharata, rich in agriculture and tradition.</p>
+                            <a href="north-india.html#delhi" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1597754865557-96ea6b53c9db?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Himachal Pradesh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Himachal Pradesh</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A breathtaking mountain paradise of pine forests and snowy peaks.</p>
+                            <a href="north-india.html#himachal" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1597223772193-cc1583a495a9?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Jharkhand">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Jharkhand</h3>
+                            <span class="rating">★★★☆☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The land of forests, deeply rooted in tribal heritage and natural parks.</p>
+                            <a href="east-india.html#bihar" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1697730420879-dc2a8dbaa31f?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Karnataka">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Karnataka</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A blend of ancient ruins in Hampi, lush coffee estates, and modern tech cities.</p>
+                            <a href="south-india.html#karnataka" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1704365159747-1f7b8913044f?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Kerala">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Kerala</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">God's Own Country, famed for its tranquil backwaters and ayurvedic healing.</p>
+                            <a href="south-india.html#kerala" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1661963839850-b4be117aff11?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Madhya Pradesh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Madhya Pradesh</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The heart of India, holding spectacular forts and legendary tiger reserves.</p>
+                            <a href="west-india.html#mp" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Maharashtra">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Maharashtra</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Where the bustling energy of Mumbai meets the misty Western Ghats.</p>
+                            <a href="west-india.html#maharashtra" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1587635861480-414767bd0198?q=80&w=1170&auto=format&fit=crop" loading="lazy" alt="Manipur">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Manipur</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The jewel of the East, home to the world's only floating national park.</p>
+                            <a href="east-india.html#manipur" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1686472886489-1d2d7e08ff9c?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Meghalaya">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Meghalaya</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The abode of clouds, famous for endless rain and magical living root bridges.</p>
+                            <a href="east-india.html#meghalaya" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1776180039892-42369af5f2df?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Mizoram">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Mizoram</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A tranquil land of rolling blue mountains and vibrant highland festivals.</p>
+                            <a href="east-india.html#meghalaya" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1681060555594-fca26e9622ce?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Nagaland">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Nagaland</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A fiercely proud tribal state known for the spectacular Hornbill Festival.</p>
+                            <a href="east-india.html#assam" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1629723248038-8b3bc1ecce29?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Odisha">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Odisha</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A coastal paradise guarding magnificent ancient temples and diverse wildlife.</p>
+                            <a href="east-india.html#odisha" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1588096344356-9b497caeeb64?q=80&w=784&auto=format&fit=crop" loading="lazy" alt="Punjab">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Punjab</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The land of five rivers, endless golden fields, and boundless hospitality.</p>
+                            <a href="north-india.html#punjab" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Rajasthan">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Rajasthan</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The land of kings, painted with grand desert forts and royal palaces.</p>
+                            <a href="west-india.html#rajasthan" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1697730412085-6f10bddf58c7?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Sikkim">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Sikkim</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A serene, organic Himalayan state resting in the shadow of Mount Kanchenjunga.</p>
+                            <a href="east-india.html#sikkim" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1617777854432-2c66c79f970a?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Tamil Nadu">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Tamil Nadu</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The cultural heartland of South India, rich in classical arts and architecture.</p>
+                            <a href="south-india.html#tamilnadu" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1679144425100-3326ccc7233e?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Telangana">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Telangana</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Where the rich heritage of the Nizams perfectly blends with cutting-edge IT hubs.</p>
+                            <a href="south-india.html#telangana" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1701407369440-b8c0232707fb?q=80&w=1074&auto=format&fit=crop" loading="lazy" alt="Tripura">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Tripura</h3>
+                            <span class="rating">★★★☆☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A cultural melting pot featuring magnificent water palaces and bamboo arts.</p>
+                            <a href="east-india.html#tripura" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1627894483216-2138af692e32?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Uttar Pradesh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Uttar Pradesh</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The spiritual heart of India, home to the sacred Ganges and the iconic Taj Mahal.</p>
+                            <a href="north-india.html#up" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1547453155-ae5be9428a4f?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Uttarakhand">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Uttarakhand</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The Land of Gods, offering spiritual treks and raw, breathtaking Himalayan vistas.</p>
+                            <a href="north-india.html#uttarakhand" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1634015158905-de840be0c62c?q=80&w=715&auto=format&fit=crop" loading="lazy" alt="West Bengal">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>West Bengal</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">From the artistic streets of Kolkata to the mangrove forests of the Sundarbans.</p>
+                            <a href="east-india.html#westbengal" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 UNION TERRITORIES -->
+                <div class="swiper-slide premium-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1719843013722-c2f4d69db940?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Andaman & Nicobar">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Andaman & Nicobar</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A remote tropical paradise with crystal clear waters and coral reefs.</p>
+                            <a href="south-india.html#andaman" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1723410101041-a15314d4082c?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Chandigarh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Chandigarh</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">India's first planned city, known for its incredible architecture and urban gardens.</p>
+                            <a href="north-india.html#punjab" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1572797751206-35424c13a703?q=80&w=1333&auto=format&fit=crop" loading="lazy" alt="Dadra & Daman">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Dadra & Daman</h3>
+                            <span class="rating">★★★☆☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Quiet coastal enclaves carrying the charm of bygone Portuguese eras.</p>
+                            <a href="west-india.html#gujarat" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1678966432189-d58296e45ad2?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Delhi">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Delhi</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">The bustling capital where centuries of history collide with modern urban life.</p>
+                            <a href="north-india.html#delhi" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1621232082074-1a7750ecc557?q=80&w=627&auto=format&fit=crop" loading="lazy" alt="Jammu & Kashmir">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Jammu & Kashmir</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">Heaven on Earth, adorned with serene lakes, saffron fields, and snowy valleys.</p>
+                            <a href="north-india.html#kashmir" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1617824077360-7a77db40aae1?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Ladakh">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Ladakh</h3>
+                            <span class="rating">★★★★★</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A high-altitude desert of stark beauty, Buddhist monasteries, and crystal lakes.</p>
+                            <a href="north-india.html#ladakh" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1678624080006-09f033a6e17c?q=80&w=687&auto=format&fit=crop" loading="lazy" alt="Lakshadweep">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Lakshadweep</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A stunning archipelago of pristine, untouched coral atolls in the Arabian Sea.</p>
+                            <a href="south-india.html#kerala" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide premium-slide">
+                    <img src="https://images.unsplash.com/photo-1647193800506-b570a982b081?q=80&w=735&auto=format&fit=crop" loading="lazy" alt="Puducherry">
+                    <div class="premium-content">
+                        <div class="slide-header">
+                            <h3>Puducherry</h3>
+                            <span class="rating">★★★★☆</span>
+                        </div>
+                        <div class="slide-details">
+                            <p class="slide-desc">A quaint coastal town blending Indian spirituality with chic French architecture.</p>
+                            <a href="south-india.html#tamilnadu" target="_blank" class="btn-primary slide-btn">Explore Region</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Controls -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive visual guides delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 3D GALLERY INITIALIZATION SCRIPT 🚨 -->
+    <!-- This turns the static images into a spinning 3D carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.mySwiper', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                initialSlide: 1, 
+                coverflowEffect: {
+                    rotate: 20,      
+                    stretch: 0,      
+                    depth: 350,      
+                    modifier: 1,
+                    slideShadows: true, 
+                },
+                loop: true, 
+                autoplay: {
+                    delay: 2500, 
+                    disableOnInteraction: false, 
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

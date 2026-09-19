@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>East & Northeast India | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ The Untouched East — Discover Mangroves, Tea Estates, and Tribal Heritage! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO FIX -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html" class="active">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1686472886489-1d2d7e08ff9c?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">THE UNTOUCHED EAST</p>
+            <h1 style="font-size: 5rem;">EAST & NORTHEAST</h1>
+            <p class="hero-subtitle">Living root bridges, dense primeval mangrove forests, rolling tea estates, and beautifully preserved tribal heritage.</p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STATE EXPLORER -->
+    <section id="explore" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable States -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="westbengal">🐅 West Bengal</button>
+                <button class="state-pill-btn" data-state="sikkim">⛰️ Sikkim</button>
+                <button class="state-pill-btn" data-state="meghalaya">🌧️ Meghalaya</button>
+                <button class="state-pill-btn" data-state="assam">🍵 Assam</button>
+                <button class="state-pill-btn" data-state="arunachal">🌅 Arunachal Pradesh</button>
+                <button class="state-pill-btn" data-state="manipur">🌸 Manipur</button>
+                <button class="state-pill-btn" data-state="tripura">🏰 Tripura</button>
+                <button class="state-pill-btn" data-state="odisha">🛕 Odisha</button>
+                <button class="state-pill-btn" data-state="bihar">🍃 Bihar</button>
+            </div>
+
+            <!-- RIGHT CONTENT: State Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- 1. WEST BENGAL -->
+                <div class="state-detail-card glass-card active" id="westbengal">
+                    <img src="https://images.unsplash.com/photo-1728531149421-fbddbd127982?q=80&w=1063&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="West Bengal">
+                    <h2>West Bengal</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🌿 Vibe: Himalayas, Culture & Sundarbans</span>
+                        <span class="fact-tag">🍛 Must Eat: Macher Jhol & Mishti Doi</span>
+                    </div>
+                    <p>West Bengal is one of India's most geographically diverse states, stretching from the Himalayan foothills in the north to the mangrove forests of the Sundarbans in the south. It combines colonial Kolkata, misty Darjeeling tea gardens, the forests of Dooars, terracotta temples of Bishnupur, and the world's largest mangrove delta.</p>
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏛️ Kolkata (City of Joy)</h4>
+                            <p><strong>Culture & Heritage:</strong> Explore the grand Victoria Memorial, Howrah Bridge, Indian Museum, College Street bookstores, and the historic neighborhoods of North Kolkata.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🚂 The Himalayas</h4>
+                            <p><strong>Darjeeling, Kalimpong & Sandakphu:</strong> Ride the UNESCO-listed Himalayan Railway, enjoy spectacular views of Mt. Kanchenjunga, and trek to Sandakphu.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Sundarbans & Dooars</h4>
+                            <p><strong>Mangroves & Forests:</strong> Explore the world's largest mangrove delta searching for Royal Bengal Tigers, or visit Jaldapara and Gorumara for rhinos and elephants.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Heritage & Culture</h4>
+                            <p><strong>Bishnupur & Shantiniketan:</strong> Admire exquisite terracotta temples, buy traditional Baluchari textiles, and explore the cultural legacy of Rabindranath Tagore.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Iconic Bengali Cuisine</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Macher Jhol (Fish Curry)</span>
+                        <span class="food-item">🐟 Shorshe Ilish (Mustard Hilsa)</span>
+                        <span class="food-item">🍖 Kosha Mangsho (Mutton)</span>
+                        <span class="food-item">🫓 Luchi & Alur Dom</span>
+                        <span class="food-item">🌯 Kolkata Kathi Roll</span>
+                        <span class="food-item">🍮 Mishti Doi & Rosogolla</span>
+                    </div>
+                    <div class="tips-box">
+                        <h4>⚠️ Travel Circuits & Tips</h4>
+                        <p>• <strong>Durga Puja:</strong> Visiting Kolkata during Durga Puja (Sept/Oct) is a once-in-a-lifetime cultural spectacle, as the entire city becomes an art gallery.</p>
+                        <p>• <strong>Himalayan Circuit:</strong> Darjeeling → Kalimpong → Kurseong → Sandakphu (Best for tea gardens and trekking).</p>
+                    </div>
+                </div>
+
+                <!-- 2. SIKKIM -->
+                <div class="state-detail-card glass-card" id="sikkim">
+                    <img src="https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Sikkim Mountains">
+                    <h2>Sikkim</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: Mar to May, Oct to Nov</span>
+                        <span class="fact-tag">🏔️ Vibe: Himalayan Peaks & Monasteries</span>
+                        <span class="fact-tag">🍜 Must Eat: Momos, Thukpa & Phagshapa</span>
+                    </div>
+                    <p>Sikkim is a small Himalayan state with an extraordinary concentration of mountains, monasteries, forests, and alpine landscapes. Dominated by Mount Kanchenjunga (the world's third-highest mountain), Sikkim is famous for its peaceful Buddhist culture, winding mountain roads, vibrant rhododendron forests, and spectacular high-altitude destinations.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Landscapes</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏙️ Gangtok & Surroundings</h4>
+                            <p><strong>The Hill Capital:</strong> Explore peaceful Buddhist monasteries, vibrant mountain cafés, and stunning viewpoints offering Himalayan panoramas.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 High-Altitude Lakes</h4>
+                            <p><strong>Tsomgo Lake & Gurudongmar:</strong> Visit the dramatic glacial Tsomgo Lake, and Gurudongmar, one of the highest and most sacred lakes in India.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏔️ North Sikkim & Passes</h4>
+                            <p><strong>Lachung, Lachen & Nathula Pass:</strong> Experience the Yumthang "Valley of Flowers", Zero Point snowscapes, and the historic Silk Road pass to Tibet.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 West & South Sikkim</h4>
+                            <p><strong>Pelling, Yuksom & Ravangla:</strong> Unbeatable views of Mt. Kanchenjunga, ancient ruins of Rabdentse, and giant Buddha statues.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Himalayan Comfort Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🥟 Steamed Momos</span>
+                        <span class="food-item">🍜 Hearty Thukpa</span>
+                        <span class="food-item">🍖 Phagshapa (Pork Stew)</span>
+                        <span class="food-item">🥟 Sha Phaley</span>
+                        <span class="food-item">🧀 Chhurpi (Yak Cheese)</span>
+                    </div>
+                </div>
+
+                <!-- 3. MEGHALAYA -->
+                <div class="state-detail-card glass-card" id="meghalaya">
+                    <img src="https://images.unsplash.com/photo-1625654325562-762dcec9e6f2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Meghalaya Root Bridge">
+                    <h2>Meghalaya</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to April</span>
+                        <span class="fact-tag">🌿 Vibe: Waterfalls, Caves & Root Bridges</span>
+                        <span class="fact-tag">🍖 Must Eat: Jadoh & Dohneiihong</span>
+                    </div>
+                    <p>Meghalaya, meaning <strong>"Abode of Clouds,"</strong> is one of India's most spectacular northeastern states. Its dramatic landscape is shaped by extraordinary rainfall, creating dense forests, enormous waterfalls, deep limestone caves, mist-covered hills, and crystal-clear rivers.</p>
+                    <h3 class="section-heading">📍 Key Destinations & Wonders</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏙️ Shillong</h4>
+                            <p><strong>The Scotland of the East:</strong> Explore the state's lively, music-loving hill capital surrounded by pine forests, Ward's Lake, and cafes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌧️ Cherrapunji & Mawsynram</h4>
+                            <p><strong>The Wettest Places on Earth:</strong> Discover dramatic cliffs, plunging waterfalls, and deep cave systems carved by centuries of heavy rain.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌉 Living Root Bridges</h4>
+                            <p><strong>Nongriat:</strong> Trek deep into the jungle to cross the world-famous Double-Decker Living Root Bridge, woven naturally from rubber fig trees.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Dawki & Mawlynnong</h4>
+                            <p><strong>Crystal Rivers:</strong> Boat on the transparent, glass-like waters of the Umngot River, and visit Asia's cleanest village.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Khasi & Jaintia Delicacies</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍚 Jadoh (Rice & Meat)</span>
+                        <span class="food-item">🍖 Dohneiihong (Pork with Black Sesame)</span>
+                        <span class="food-item">🌿 Tungrymbai (Fermented Soybeans)</span>
+                        <span class="food-item">🎋 Bamboo Shoot Dishes</span>
+                        <span class="food-item">🥞 Pukhlein (Sweet Rice Bread)</span>
+                    </div>
+                </div>
+
+                <!-- 4. ASSAM -->
+                <div class="state-detail-card glass-card" id="assam">
+                    <img src="https://images.unsplash.com/photo-1602020277972-fd160de66021?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Assam Kaziranga Rhino">
+                    <h2>Assam</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to April</span>
+                        <span class="fact-tag">🌿 Vibe: Tea Gardens, Rivers & Wildlife</span>
+                        <span class="fact-tag">🍛 Must Eat: Masor Tenga & Pitha</span>
+                    </div>
+                    <p>Assam is the gateway to Northeast India and a lush land shaped by the mighty Brahmaputra River. It is internationally famous for its sprawling tea plantations and Kaziranga National Park, home to the world's largest population of Greater One-Horned Rhinoceroses.</p>
+                    <h3 class="section-heading">📍 Major Regions & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🐅 Kaziranga & Wildlife</h4>
+                            <p><strong>Rhinos & Foothill Ecology:</strong> Embark on safaris in Kaziranga, Manas, Pobitora, and Orang National Parks to spot rhinos and tigers.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🍵 Tea Country</h4>
+                            <p><strong>Dibrugarh, Jorhat & Tinsukia:</strong> Stay in heritage plantation bungalows and explore endless emerald tea estates.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏝️ Majuli Island</h4>
+                            <p><strong>World's Largest River Island:</strong> Experience the unique neo-Vaishnavite culture, traditional mask-making, and monasteries in the Brahmaputra.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Guwahati & Temples</h4>
+                            <p><strong>Kamakhya Temple:</strong> Visit the deeply sacred Kamakhya Temple, and take a boat to Umananda (Peacock Island) on the Brahmaputra.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Assamese Comfort Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Masor Tenga (Sour Fish Curry)</span>
+                        <span class="food-item">🥣 Khar (Alkaline Palate Cleanser)</span>
+                        <span class="food-item">🥔 Aloo Pitika (Mashed Potatoes)</span>
+                        <span class="food-item">🥞 Pitha (Rice Sweets)</span>
+                        <span class="food-item">🍵 Assam Black Tea</span>
+                    </div>
+                </div>
+
+                <!-- 5. ARUNACHAL PRADESH (NEW) -->
+                <div class="state-detail-card glass-card" id="arunachal">
+                    <img src="https://images.unsplash.com/photo-1626761627604-f27d98885f4b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Arunachal Pradesh">
+                    <h2>Arunachal Pradesh</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to April</span>
+                        <span class="fact-tag">🏔️ Vibe: The Last Great Frontier</span>
+                        <span class="fact-tag">🍜 Must Eat: Thukpa, Zan & Apong</span>
+                    </div>
+                    <p>Known as the "Land of Dawn-Lit Mountains," Arunachal Pradesh is India's wildest and least explored frontier. It offers winding mountain roads through Tawang, massive ancient Buddhist monasteries, high-altitude lakes, and dense pristine forests hiding remote Himalayan valleys.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Valleys</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 Tawang & Sela Pass</h4>
+                            <p><strong>Buddhist Heritage & High Passes:</strong> Home to the massive Tawang Monastery (India's largest), the frozen Sela Lake, and dramatic snow-covered Himalayan passes.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌾 Ziro Valley</h4>
+                            <p><strong>Apatani Culture:</strong> A picturesque pine-clad valley famous for its terraced rice fields, unique Apatani tribal heritage, and the annual Ziro Music Festival.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Namdapha National Park</h4>
+                            <p><strong>Untouched Wilderness:</strong> A sprawling biodiversity hotspot harboring snow leopards, clouded leopards, tigers, and red pandas within dense rainforests.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Tribal & Himalayan Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍜 Thukpa</span>
+                        <span class="food-item">🥟 Momos</span>
+                        <span class="food-item">🌾 Zan (Millet Porridge)</span>
+                        <span class="food-item">🌿 Bamboo Shoot Curries</span>
+                    </div>
+                </div>
+
+                <!-- 6. MANIPUR (NEW) -->
+                <div class="state-detail-card glass-card" id="manipur">
+                    <img src="https://images.unsplash.com/photo-1587635861480-414767bd0198?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Manipur">
+                    <h2>Manipur</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🌊 Vibe: Floating Islands & Green Valleys</span>
+                        <span class="fact-tag">🍛 Must Eat: Eromba & Singju</span>
+                    </div>
+                    <p>Described as the "Jewel of the Northeast," Manipur is a land of rolling blue hills, classical dance, and deeply preserved traditions. It is world-famous for Loktak Lake's floating phumdis (islands) and the endangered Sangai deer.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🌊 Loktak Lake & Keibul Lamjao</h4>
+                            <p><strong>Floating National Park:</strong> The world's only floating national park, composed of circular floating biomasses (phumdis), home to the dancing Sangai deer.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏙️ Imphal & Kangla Fort</h4>
+                            <p><strong>Heritage & History:</strong> The vibrant capital city featuring the historic Kangla Fort, Ima Keithel (a massive market run entirely by women), and WWII memorials.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Traditional Manipuri Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Eromba (Fish & Veg Mash)</span>
+                        <span class="food-item">🥗 Singju (Spicy Salad)</span>
+                        <span class="food-item">🍲 Chamthong (Vegetable Stew)</span>
+                        <span class="food-item">🍚 Black Rice Pudding</span>
+                    </div>
+                </div>
+
+                <!-- 7. TRIPURA (NEW) -->
+                <div class="state-detail-card glass-card" id="tripura">
+                    <img src="https://images.unsplash.com/photo-1701407369440-b8c0232707fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Tripura">
+                    <h2>Tripura</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🏰 Vibe: Palaces & Bamboo Trails</span>
+                        <span class="fact-tag">🍛 Must Eat: Mui Borok & Chakhwi</span>
+                    </div>
+                    <p>Tripura is a hidden cultural treasure of the Northeast, boasting grand royal palaces reflecting its princely past, ancient rock-cut carvings hidden deep in forests, and expansive bamboo groves.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Attractions</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏰 Agartala & Ujjayanta Palace</h4>
+                            <p><strong>Royal Heritage:</strong> The gleaming white Ujjayanta Palace, sprawling gardens, and the vibrant local culture of the state capital.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Neermahal (The Water Palace)</h4>
+                            <p><strong>Architectural Marvel:</strong> A breathtaking red-and-white palace floating in the middle of Rudrasagar Lake, blending Hindu and Mughal architectural styles.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🪨 Unakoti Rock Carvings</h4>
+                            <p><strong>Ancient Mysteries:</strong> Massive, centuries-old rock-cut sculptures of Hindu deities carved directly into a forested hillside.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Tripuri Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍲 Mui Borok (Traditional Cuisine)</span>
+                        <span class="food-item">🎋 Chakhwi (Bamboo Shoot Dish)</span>
+                        <span class="food-item">🐟 Mosdeng (Spicy Chutney)</span>
+                    </div>
+                </div>
+
+                <!-- 8. ODISHA -->
+                <div class="state-detail-card glass-card" id="odisha">
+                    <img src="https://images.unsplash.com/photo-1639980290886-6bdd61c7582b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Odisha Konark Temple">
+                    <h2>Odisha</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🌊 Vibe: Temples, Beaches & Tribal Heritage</span>
+                        <span class="fact-tag">🍛 Must Eat: Dalma & Chhena Poda</span>
+                    </div>
+                    <p>Odisha is one of India's great cultural treasures, combining magnificent Kalinga temple architecture, long stretches of coastline, deep tribal traditions, classical Odissi dance, and rich coastal cuisine.</p>
+                    <h3 class="section-heading">📍 Major Destinations & Nature</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🛕 The Golden Triangle</h4>
+                            <p><strong>Bhubaneswar, Puri & Konark:</strong> Explore the "City of Temples," the deeply sacred Jagannath Temple in Puri, and the colossal, chariot-shaped Konark Sun Temple.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐦 Chilika Lake</h4>
+                            <p><strong>Dolphins & Migratory Birds:</strong> Asia's largest brackish water lagoon, famous for spotting Irrawaddy dolphins and millions of winter migratory birds.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌊 Coastal Beaches</h4>
+                            <p><strong>Gopalpur, Chandipur & Chandrabhaga:</strong> Relax on quiet beaches, or witness the bizarre "vanishing sea" phenomenon at Chandipur.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Forests & Wildlife</h4>
+                            <p><strong>Simlipal, Satkosia & Bhitarkanika:</strong> Trek through dense tiger reserves, boat through crocodile-infested mangroves, and explore the Satkosia river gorge.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Coastal Odia Cuisine</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍛 Dalma (Lentil & Vegetable Stew)</span>
+                        <span class="food-item">🍚 Pakhala Bhata (Water Rice)</span>
+                        <span class="food-item">🐟 Macha Ghanta (Fish Head Curry)</span>
+                        <span class="food-item">🍰 Chhena Poda (Roasted Cheese Sweet)</span>
+                        <span class="food-item">🍮 Rasabali</span>
+                    </div>
+                </div>
+
+                <!-- 9. BIHAR -->
+                <div class="state-detail-card glass-card" id="bihar">
+                    <img src="https://images.unsplash.com/photo-1736235300171-eb8aa382b594?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Bihar Bodh Gaya">
+                    <h2>Bihar</h2>
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">⛅ Best Time: October to March</span>
+                        <span class="fact-tag">🛕 Vibe: Ancient Civilizations & Buddhism</span>
+                        <span class="fact-tag">🍛 Must Eat: Litti Chokha & Thekua</span>
+                    </div>
+                    <p>Bihar is one of India's most historically profound regions, serving as the cradle of ancient civilization, Buddhism, and Jainism. Once the heartland of the powerful Magadha empire, it is home to the world's earliest universities (Nalanda) and the exact spot where Gautama Buddha attained enlightenment (Bodh Gaya).</p>
+                    <h3 class="section-heading">📍 Major Destinations & Heritage</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🪷 Bodh Gaya & Gaya</h4>
+                            <p><strong>The Center of Buddhism:</strong> Sit beneath the sacred Bodhi Tree at the Mahabodhi Temple, a UNESCO World Heritage site and Buddhism's holiest pilgrimage destination.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>📚 Ancient Universities</h4>
+                            <p><strong>Nalanda & Vikramshila:</strong> Wander through the massive, excavated red-brick ruins of Nalanda, one of the greatest centers of learning in the ancient world.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>⛰️ Rajgir & Pawapuri</h4>
+                            <p><strong>Hills & Jain Heritage:</strong> Explore ancient caves, hot springs, the Vishwa Shanti Stupa in Rajgir, and the sacred Jain Jal Mandir in Pawapuri.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🎨 Madhubani & Kesaria</h4>
+                            <p><strong>Art & Giant Stupas:</strong> Explore the birthplace of the vibrant Mithila (Madhubani) painting tradition, and see the massive, multi-tiered Buddhist stupa at Kesaria.</p>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">🍲 Rustic Bihari Cuisine</h3>
+                    <div class="food-list">
+                        <span class="food-item">🫓 Litti Chokha (Stuffed Wheat Balls)</span>
+                        <span class="food-item">🥞 Sattu Paratha</span>
+                        <span class="food-item">🍖 Champaran Meat (Ahuna Mutton)</span>
+                        <span class="food-item">🍹 Sattu Sharbat</span>
+                        <span class="food-item">🍪 Thekua (Crunchy Sweet)</span>
+                        <span class="food-item">🥞 Malpua</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- 🚨 BULLETPROOF JAVASCRIPT FOR HASH ROUTING 🚨 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            function activateTab(stateId) {
+                const targetBtn = document.querySelector(`.state-pill-btn[data-state="${stateId}"]`);
+                const targetCard = document.getElementById(stateId);
+                
+                if (targetBtn && targetCard) {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    targetBtn.classList.add('active');
+                    targetCard.classList.add('active');
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: document.getElementById('explore').offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+
+            if(window.location.hash) {
+                const hashState = window.location.hash.substring(1); 
+                activateTab(hashState);
+            }
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetState = btn.getAttribute('data-state');
+                    activateTab(targetState);
+                    history.replaceState(null, null, `#${targetState}`);
+                });
+            });
+
+            window.addEventListener('hashchange', () => {
+                const hashState = window.location.hash.substring(1);
+                activateTab(hashState);
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>

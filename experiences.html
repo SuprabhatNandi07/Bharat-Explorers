@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Explorers | Experiences</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Immersive Culture — Dive into Wildlife, 5,000 Years of Heritage, and Regional Cuisines! 
+            <span class="spacer"></span> 
+            <a href="#wildlife">Explore Now &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO FIX -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html" class="active">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero (SPACING FIX APPLIED) -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">CULTURE & NATURE</p>
+            <h1 style="font-size: 5rem;">INDIAN EXPERIENCES</h1>
+            <p class="hero-subtitle">Track majestic wildlife, experience 5,000 years of civilization, and taste 34 distinct regional food cultures.</p>
+        </div>
+    </section>
+
+    <!-- Into the Wild Section -->
+    <section id="wildlife" class="wildlife-section reveal">
+        <h2 class="section-title">Into The Wild</h2>
+        <p class="section-subtitle">Meet the spectacular residents of India's elite national parks.</p>
+        
+        <div class="wildlife-grid">
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1615963244664-5b845b2025ee?q=80&w=764&auto=format&fit=crop" alt="Ranthambore">
+                <h3>Ranthambore National Park</h3>
+                <p>📍 Rajasthan</p>
+                <p>Famous for: <strong>Bengal Tigers</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/flagged/photo-1557650454-65194af63bf9?q=80&w=880&auto=format&fit=crop" alt="Kaziranga">
+                <h3>Kaziranga National Park</h3>
+                <p>📍 Assam</p>
+                <p>Famous for: <strong>One-Horned Rhinos</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1581852017103-68ac65514cf7?q=80&w=1173&auto=format&fit=crop" alt="Jim Corbett">
+                <h3>Jim Corbett National Park</h3>
+                <p>📍 Uttarakhand</p>
+                <p>Famous for: <strong>Asian Elephants & Tigers</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://plus.unsplash.com/premium_photo-1669725687221-6fe12c2da6b1?q=80&w=687&auto=format&fit=crop" alt="Gir Forest">
+                <h3>Gir National Park</h3>
+                <p>📍 Gujarat</p>
+                <p>Famous for: <strong>Asiatic Lions</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://plus.unsplash.com/premium_photo-1661963380682-8fcaf8ca7650?q=80&w=880&auto=format&fit=crop" alt="Sundarbans">
+                <h3>Sundarbans National Park</h3>
+                <p>📍 West Bengal</p>
+                <p>Famous for: <strong>Swimming Bengal Tigers</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://plus.unsplash.com/premium_photo-1661952443167-05d723e6bb3a?q=80&w=1170&auto=format&fit=crop" alt="Hemis">
+                <h3>Hemis National Park</h3>
+                <p>📍 Ladakh</p>
+                <p>Famous for: <strong>Snow Leopards</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?q=80&w=1170&auto=format&fit=crop" alt="Periyar">
+                <h3>Periyar National Park</h3>
+                <p>📍 Kerala</p>
+                <p>Famous for: <strong>Wild Elephants</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1729228270455-4fbbd8042985?q=80&w=1170&auto=format&fit=crop" alt="Kanha">
+                <h3>Kanha National Park</h3>
+                <p>📍 Madhya Pradesh</p>
+                <p>Famous for: <strong>Tigers & Barasingha</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1549480017-d76466a4b7e8?q=80&w=1156&auto=format&fit=crop" alt="Bandhavgarh">
+                <h3>Bandhavgarh National Park</h3>
+                <p>📍 Madhya Pradesh</p>
+                <p>Famous for: <strong>Royal Bengal Tigers</strong></p>
+            </div>
+            <div class="wildlife-card glass-card">
+                <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=689&auto=format&fit=crop" alt="Keibul Lamjao">
+                <h3>Keibul Lamjao National Park</h3>
+                <p>📍 Manipur</p>
+                <p>Famous for: <strong>Sangai (Dancing Deer)</strong></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="wildlife.html" class="btn-primary">Deep Dive into Safari Guides &rarr;</a>
+        </div>
+    </section>
+
+    <!-- India Through Time (Timeline) -->
+    <section id="history" class="timeline-section reveal">
+        <h2 class="section-title">India Through Time</h2>
+        <p class="section-subtitle">5,000 years of history shaping the modern subcontinent.</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>2500 BCE</h3>
+                    <p><strong>Indus Valley Civilization:</strong> One of the world's oldest advanced urban societies flourishes.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>320 BCE</h3>
+                    <p><strong>Mauryan Empire:</strong> Chandragupta Maurya and Ashoka unite almost the entire subcontinent.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>1526 CE</h3>
+                    <p><strong>The Mughal Era:</strong> A golden age of art, culture, and architecture, including the Taj Mahal.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>1947 CE</h3>
+                    <p><strong>Independence:</strong> India breaks free from British rule to become the world's largest democracy.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="heritage.html" class="btn-primary">Explore All Eras & Empires &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Taste of India (All 34 Regional Cuisines) -->
+    <section id="food" class="food-section reveal">
+        <h2 class="section-title">A Nation Served on a Plate</h2>
+        <p class="section-subtitle">Discover the regional food traditions of India.</p>
+        
+        <div class="food-grid">
+            <div class="food-card glass-card"><div class="food-icon">🍛</div><h3>Bengali Cuisine</h3><p>A delicate yet flavorful tradition known for mustard oil, freshwater fish, rice, subtle spices, and iconic sweets such as Rasgulla, Sandesh, and Mishti Doi.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥘</div><h3>Rajasthani Cuisine</h3><p>A hearty desert cuisine built around gram flour, lentils, ghee, and dried ingredients, celebrated through Dal Baati Churma, Gatte ki Sabzi, and Ker Sangri.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥥</div><h3>Kerala Cuisine</h3><p>A tropical culinary tradition featuring coconut, curry leaves, tamarind, seafood, and aromatic spices, with Kerala Sadya, Appam, and Puttu among its signature dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍚</div><h3>Hyderabadi Cuisine</h3><p>A rich Indo-Islamic culinary tradition famous for slow-cooked dishes, fragrant basmati rice, saffron, and aromatic spices, best represented by Hyderabadi Biryani and Haleem.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🫓</div><h3>Punjabi Cuisine</h3><p>Bold and comforting food characterized by tandoori cooking, butter, cream, ghee, and robust spices, featuring Butter Chicken, Chole Bhature, Sarson da Saag, and Makki di Roti.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍽️</div><h3>Gujarati Cuisine</h3><p>A predominantly vegetarian cuisine famous for its distinctive sweet, savory, and tangy balance, with Dhokla, Thepla, Undhiyu, Fafda, and Gujarati Thali.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🌶️</div><h3>Maharashtrian Cuisine</h3><p>A diverse cuisine ranging from fiery Kolhapuri preparations to comforting street foods, featuring Misal Pav, Vada Pav, Puran Poli, and Bharli Vangi.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🐟</div><h3>Goan Cuisine</h3><p>A coastal fusion of Indian and Portuguese influences featuring seafood, coconut, kokum, vinegar, and chilies, with Goan Fish Curry, Prawn Balchão, and Vindaloo as favorites.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍲</div><h3>Tamil Cuisine</h3><p>A traditional South Indian cuisine centered around rice, lentils, tamarind, coconut, and aromatic spices, featuring Idli, Dosa, Sambar, Rasam, and Pongal.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍗</div><h3>Chettinad Cuisine</h3><p>A fiery cuisine from Tamil Nadu known for freshly roasted spices, black pepper, fennel, curry leaves, and rich meat preparations such as Chettinad Chicken.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🌶️</div><h3>Andhra Cuisine</h3><p>Famous for its bold heat, tangy flavors, gongura leaves, tamarind, and red chilies, with dishes such as Gongura Pachadi, Andhra Chicken, Pulihora, and spicy Andhra meals.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍛</div><h3>Karnataka Cuisine</h3><p>A wonderfully diverse tradition ranging from Udupi vegetarian food to spicy regional dishes, featuring Bisi Bele Bath, Mysore Masala Dosa, Ragi Mudde, and Mysore Pak.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥘</div><h3>Odia Cuisine</h3><p>Known for simple preparation, balanced spices, mustard, vegetables, and seafood, with traditional favorites including Dalma, Pakhala Bhata, Machha Besara, and Chhena Poda.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🐟</div><h3>Assamese Cuisine</h3><p>A light and earthy cuisine that makes extensive use of rice, freshwater fish, herbs, bamboo shoots, and fermented ingredients, with Masor Tenga and Khar among its specialties.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥟</div><h3>Sikkimese Cuisine</h3><p>A Himalayan food culture influenced by Tibetan and Nepali traditions, featuring steaming hot momos, thukpa, fermented vegetables, and hearty noodle-based dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🌶️</div><h3>Naga Cuisine</h3><p>An earthy and intensely flavored cuisine known for smoked meats, fermented ingredients, bamboo shoots, herbs, and fiery Naga chilies, especially in smoked pork preparations.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍲</div><h3>Manipuri Cuisine</h3><p>A distinctive cuisine built around rice, seasonal vegetables, herbs, fermented fish, and local ingredients, with Eromba, Singju, and Chamthong among its popular dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥬</div><h3>Mizo Cuisine</h3><p>Simple yet flavorful northeastern cooking centered on rice, vegetables, herbs, bamboo shoots, and meat, with Bai being one of Mizoram's best-known traditional dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍖</div><h3>Tripuri Cuisine</h3><p>The traditional cuisine of Tripura, known as Mui Borok, features rice, vegetables, herbs, fermented fish, and bamboo shoots, with Chakhwi and Mosdeng forming popular preparations.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍜</div><h3>Arunachali Cuisine</h3><p>A Himalayan and tribal food tradition featuring rice, smoked meat, bamboo shoots, fermented foods, and warming soups such as Thukpa.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥩</div><h3>Meghalaya Cuisine</h3><p>Rich in indigenous Khasi, Jaintia, and Garo traditions, this cuisine highlights rice, pork, bamboo shoots, and local herbs, with Jadoh and Dohneiih as notable dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍖</div><h3>Kashmiri Cuisine</h3><p>An aromatic culinary tradition famous for saffron, fennel, dry fruits, yogurt, and carefully balanced spices, featuring Rogan Josh, Yakhni, and the elaborate Wazwan feast.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍜</div><h3>Ladakhi Cuisine</h3><p>High-altitude Himalayan food designed for a cold climate, featuring barley, wheat, vegetables, yak or meat preparations, and warming dishes such as Thukpa and Momos.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥘</div><h3>Himachali Cuisine</h3><p>A mountain cuisine centered around lentils, grains, yogurt, and locally available ingredients, with the traditional Dham feast, Siddu, and Chana Madra among its specialties.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥬</div><h3>Uttarakhand Cuisine</h3><p>Simple Himalayan cooking featuring millets, lentils, local herbs, and earthy flavors, with dishes such as Kafuli, Aloo ke Gutke, Bhatt ki Churdkani, and Jhangore ki Kheer.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍢</div><h3>Awadhi Cuisine</h3><p>The refined culinary tradition of Lucknow, celebrated for slow cooking, fragrant spices, delicate kebabs, and rich gravies, including Galouti Kebab, Lucknowi Biryani, and Korma.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍗</div><h3>Mughlai Cuisine</h3><p>A luxurious North Indian tradition influenced by the Mughal royal kitchens, known for rich gravies, aromatic spices, nuts, dried fruits, and dishes such as Korma, Kebabs, and Butter Chicken.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥘</div><h3>Bihari Cuisine</h3><p>A rustic and satisfying cuisine built around sattu, wheat, rice, mustard oil, and seasonal vegetables, best known for Litti Chokha, Sattu Paratha, and Thekua.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍚</div><h3>Jharkhandi Cuisine</h3><p>An indigenous food tradition emphasizing rice, millets, leafy greens, forest produce, and simple spices, with Dhuska, Rugra, Chilka Roti, and Thekua among its specialties.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🌾</div><h3>Chhattisgarhi Cuisine</h3><p>A largely rice-based cuisine featuring indigenous grains, lentils, herbs, and locally available ingredients, with Fara, Chila, Angakar Roti, and Aamat as popular dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥜</div><h3>Madhya Pradesh Cuisine</h3><p>A diverse central Indian cuisine combining wheat, lentils, spices, and street-food traditions, famous for Poha, Bhutte ka Kees, Dal Bafla, and Bhopali-style dishes.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🫓</div><h3>Haryanvi Cuisine</h3><p>A rustic and wholesome cuisine reflecting the agricultural culture of Haryana, featuring wheat, bajra, dairy, vegetables, and dishes such as Bajra Khichdi, Kadhi, and Churma.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🥔</div><h3>Kumaoni Cuisine</h3><p>A traditional Himalayan cuisine from the Kumaon region, emphasizing simple ingredients, lentils, grains, and local herbs, with Aloo ke Gutke, Bhatt ki Churdkani, and Ras-Bhaat.</p></div>
+            <div class="food-card glass-card"><div class="food-icon">🍛</div><h3>Sindhi Cuisine</h3><p>A flavorful culinary tradition known for tangy gravies, lentils, vegetables, and wheat-based breads, featuring Sindhi Kadhi, Sai Bhaji, Dal Pakwan, and Koki.</p></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="food.html" class="btn-primary">Explore Culinary Zones &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive destination guides delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <script src="jp.js"></script>
+</body>
+</html>

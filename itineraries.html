@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Explorers | Travel Itineraries</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS TRICK TO MAKE ENTIRE CARDS CLICKABLE WITHOUT BLINKING -->
+    <style>
+        .journal-card {
+            position: relative; /* Anchors the stretched link */
+        }
+        .stretched-link::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: 10;
+            cursor: pointer;
+        }
+        /* MAGIC FIX: Stops the button from moving up, killing the infinite blinking loop! */
+        .journal-card:hover .stretched-link {
+            transform: none !important; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Plan Your Trip — All 36 Destinations Curated into Perfect Itineraries! 
+            <span class="spacer"></span> 
+            <a href="#itineraries">Explore Routes &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <!-- CLICKABLE LOGO -->
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html" class="active">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1619837374214-f5b9eb80876d?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">ROAD DIARIES & GUIDES</p>
+            <h1 style="font-size: 5rem;">THE INDIA 36 ITINERARIES</h1>
+            <p class="hero-subtitle">Curated day-by-day routes, field notes, and practical advice from across every single state and union territory.</p>
+        </div>
+    </section>
+
+    <!-- Travel Itineraries Grid -->
+    <section id="itineraries" class="journal-section reveal">
+        <h2 class="section-title">The Master Routes</h2>
+        <p class="section-subtitle">Click any itinerary to open the full regional guide in a new tab.</p>
+        
+        <div class="journal-grid">
+            
+            <!-- 1. J&K -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop" alt="Jammu & Kashmir">
+                <div class="journal-content">
+                    <span class="journal-meta">1. Jammu & Kashmir</span>
+                    <h3>Valleys of Kashmir</h3>
+                    <p>Winding through Srinagar, Gulmarg, Pahalgam, and Sonamarg amid snow-capped peaks and alpine meadows.</p>
+                    <a href="north-india.html#kashmir" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 2. Ladakh -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop" alt="Ladakh">
+                <div class="journal-content">
+                    <span class="journal-meta">2. Ladakh</span>
+                    <h3>The Road to Ladakh</h3>
+                    <p>Navigating the treacherous high-altitude passes, turquoise lakes, and dramatic landscapes on a Classic 350.</p>
+                    <a href="north-india.html#ladakh" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 3. Himachal -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1597754865557-96ea6b53c9db?q=80&w=800&auto=format&fit=crop" alt="Himachal Pradesh">
+                <div class="journal-content">
+                    <span class="journal-meta">3. Himachal Pradesh</span>
+                    <h3>Himalayan Hideaways</h3>
+                    <p>From Manali to Spiti, discovering remote monasteries, mountain villages, winding roads, and towering peaks.</p>
+                    <a href="north-india.html#himachal" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 4. Uttarakhand -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1709623868300-e3b78cad10e1?q=80&w=800&auto=format&fit=crop" alt="Uttarakhand">
+                <div class="journal-content">
+                    <span class="journal-meta">4. Uttarakhand</span>
+                    <h3>Trails of the Garhwal</h3>
+                    <p>Hiking through alpine valleys, ancient temples, rushing rivers, and peaceful Himalayan villages.</p>
+                    <a href="north-india.html#uttarakhand" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 5. Punjab -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?q=80&w=800&auto=format&fit=crop" alt="Punjab">
+                <div class="journal-content">
+                    <span class="journal-meta">5. Punjab</span>
+                    <h3>Golden Fields & Golden Temple</h3>
+                    <p>Exploring Amritsar's spiritual heart, vibrant markets, Punjabi farms, and unforgettable food.</p>
+                    <a href="north-india.html#punjab" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 6. Haryana -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1574929751963-9c6181261276?q=80&w=800&auto=format&fit=crop" alt="Haryana">
+                <div class="journal-content">
+                    <span class="journal-meta">6. Haryana</span>
+                    <h3>Heritage Beyond the Highway</h3>
+                    <p>Discovering ancient ruins, rural landscapes, historic forts, and the evolving culture around Gurugram.</p>
+                    <a href="north-india.html#delhi" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 7. Rajasthan -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=800&auto=format&fit=crop" alt="Rajasthan">
+                <div class="journal-content">
+                    <span class="journal-meta">7. Rajasthan</span>
+                    <h3>Nights Under Thar Stars</h3>
+                    <p>Camels, folk music, majestic forts, and sleeping beneath a blanket of stars in golden Jaisalmer.</p>
+                    <a href="west-india.html#rajasthan" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 8. Gujarat -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1604216958967-ee0ec1dd9b64?q=80&w=800&auto=format&fit=crop" alt="Gujarat">
+                <div class="journal-content">
+                    <span class="journal-meta">8. Gujarat</span>
+                    <h3>The White Rann</h3>
+                    <p>Crossing the endless salt desert of Kutch, discovering handicraft villages, wildlife, and colourful traditions.</p>
+                    <a href="west-india.html#gujarat" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 9. Goa -->
+            <div class="journal-card">
+                <img src="https://plus.unsplash.com/premium_photo-1664283661568-859f7aff0b20?q=80&w=800&auto=format&fit=crop" alt="Goa">
+                <div class="journal-content">
+                    <span class="journal-meta">9. Goa</span>
+                    <h3>Beyond the Beaches</h3>
+                    <p>Chasing hidden waterfalls, Portuguese heritage, palm-lined roads, and the quieter side of Goa.</p>
+                    <a href="west-india.html#goa" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 10. Maharashtra -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=800&auto=format&fit=crop" alt="Maharashtra">
+                <div class="journal-content">
+                    <span class="journal-meta">10. Maharashtra</span>
+                    <h3>Mumbai to the Konkan Coast</h3>
+                    <p>From Mumbai's electric streets to coastal forts, seafood villages, beaches, and lush Western Ghats.</p>
+                    <a href="west-india.html#maharashtra" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 11. MP -->
+            <div class="journal-card">
+                <img src="https://plus.unsplash.com/premium_photo-1697730370661-51bf72769ff6?q=80&w=800&auto=format&fit=crop" alt="Madhya Pradesh">
+                <div class="journal-content">
+                    <span class="journal-meta">11. Madhya Pradesh</span>
+                    <h3>Into the Heart of India</h3>
+                    <p>Exploring ancient temples, royal heritage, dense forests, and the legendary wildlife of central India.</p>
+                    <a href="west-india.html#mp" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 12. Chhattisgarh -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1673462107499-97848ff888b9?q=80&w=736&auto=format&fit=crop" alt="Chhattisgarh">
+                <div class="journal-content">
+                    <span class="journal-meta">12. Chhattisgarh</span>
+                    <h3>Into the Wild Heartland</h3>
+                    <p>Following forest trails to hidden waterfalls, tribal villages, caves, and the untouched landscapes of Bastar.</p>
+                    <a href="west-india.html#mp" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 13. UP -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=800&auto=format&fit=crop" alt="Uttar Pradesh">
+                <div class="journal-content">
+                    <span class="journal-meta">13. Uttar Pradesh</span>
+                    <h3>Along the Sacred Ganges</h3>
+                    <p>From Varanasi's glowing ghats to Agra's timeless Taj Mahal and the spiritual heartlands of Uttar Pradesh.</p>
+                    <a href="north-india.html#up" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 14. Bihar -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1736235300171-eb8aa382b594?q=80&w=800&auto=format&fit=crop" alt="Bihar">
+                <div class="journal-content">
+                    <span class="journal-meta">14. Bihar</span>
+                    <h3>Ancient India Revisited</h3>
+                    <p>Walking through the historic landscapes of Nalanda, Bodh Gaya, Rajgir, and the birthplace of Buddhist learning.</p>
+                    <a href="east-india.html#bihar" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 15. Jharkhand -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1597223772193-cc1583a495a9?q=80&w=800&auto=format&fit=crop" alt="Jharkhand">
+                <div class="journal-content">
+                    <span class="journal-meta">15. Jharkhand</span>
+                    <h3>Waterfalls & Wilderness</h3>
+                    <p>Chasing cascading waterfalls, forest trails, tribal traditions, and the rugged beauty of the Chota Nagpur Plateau.</p>
+                    <a href="east-india.html#bihar" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 16. West Bengal -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1558431382-27e303142255?q=80&w=800&auto=format&fit=crop" alt="West Bengal">
+                <div class="journal-content">
+                    <span class="journal-meta">16. West Bengal</span>
+                    <h3>Heritage & Chai in Kolkata</h3>
+                    <p>Riding yellow taxis, sipping kulhad chai by the Howrah Bridge, and exploring colonial alleyways.</p>
+                    <a href="east-india.html#westbengal" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 17. Sikkim -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?q=80&w=800&auto=format&fit=crop" alt="Sikkim">
+                <div class="journal-content">
+                    <span class="journal-meta">17. Sikkim</span>
+                    <h3>The Kingdom Above the Clouds</h3>
+                    <p>Winding through monasteries, rhododendron forests, mountain passes, and spectacular views of Kanchenjunga.</p>
+                    <a href="east-india.html#sikkim" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 18. Assam -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1602020277972-fd160de66021?q=80&w=800&auto=format&fit=crop" alt="Assam">
+                <div class="journal-content">
+                    <span class="journal-meta">18. Assam</span>
+                    <h3>Into the Wild Assam</h3>
+                    <p>Cruising along the Brahmaputra and searching for one-horned rhinos in the tall grasslands of Kaziranga.</p>
+                    <a href="east-india.html#assam" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 19. Meghalaya -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1625654325562-762dcec9e6f2?q=80&w=800&auto=format&fit=crop" alt="Meghalaya">
+                <div class="journal-content">
+                    <span class="journal-meta">19. Meghalaya</span>
+                    <h3>A Monsoon in Meghalaya</h3>
+                    <p>Discovering living root bridges, misty mountains, crystal-clear rivers, and waterfalls in the wettest corner of India.</p>
+                    <a href="east-india.html#meghalaya" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 20. Arunachal Pradesh -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1626761627604-f27d98885f4b?q=80&w=1170&auto=format&fit=crop" alt="Arunachal Pradesh">
+                <div class="journal-content">
+                    <span class="journal-meta">20. Arunachal Pradesh</span>
+                    <h3>The Last Great Frontier</h3>
+                    <p>Following mountain roads through Tawang, Buddhist monasteries, high-altitude lakes, and remote Himalayan valleys.</p>
+                    <a href="east-india.html#assam" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 21. Nagaland -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1681060555594-fca26e9622ce?q=80&w=800&auto=format&fit=crop" alt="Nagaland">
+                <div class="journal-content">
+                    <span class="journal-meta">21. Nagaland</span>
+                    <h3>The Hills of Nagaland</h3>
+                    <p>Exploring Kohima, traditional Naga villages, mountain landscapes, and one of Northeast India's most distinctive cultures.</p>
+                    <a href="east-india.html#assam" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 22. Manipur -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1587635861480-414767bd0198?q=80&w=1170&auto=format&fit=crop" alt="Manipur">
+                <div class="journal-content">
+                    <span class="journal-meta">22. Manipur</span>
+                    <h3>The Jewel of the Northeast</h3>
+                    <p>Discovering Loktak Lake, floating islands, ancient traditions, and the peaceful hills surrounding Imphal.</p>
+                    <a href="east-india.html#assam" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 23. Mizoram -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1776180039892-42369af5f2df?q=80&w=800&auto=format&fit=crop" alt="Mizoram">
+                <div class="journal-content">
+                    <span class="journal-meta">23. Mizoram</span>
+                    <h3>Roads Through Blue Mountains</h3>
+                    <p>Riding through winding mountain roads, bamboo forests, quiet villages, and the dramatic landscapes of Mizoram.</p>
+                    <a href="east-india.html#meghalaya" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 24. Tripura -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1701407369440-b8c0232707fb?q=80&w=1074&auto=format&fit=crop" alt="Tripura">
+                <div class="journal-content">
+                    <span class="journal-meta">24. Tripura</span>
+                    <h3>Palaces & Bamboo Trails</h3>
+                    <p>Exploring royal palaces, ancient temples, lush forests, and the hidden cultural treasures of Tripura.</p>
+                    <a href="east-india.html#meghalaya" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 25. Odisha -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1639980290886-6bdd61c7582b?q=80&w=800&auto=format&fit=crop" alt="Odisha">
+                <div class="journal-content">
+                    <span class="journal-meta">25. Odisha</span>
+                    <h3>Temples & the Eastern Coast</h3>
+                    <p>Journeying from the temples of Bhubaneswar to Konark's Sun Temple, Chilika Lake, and the beaches of Puri.</p>
+                    <a href="east-india.html#odisha" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 26. Andhra Pradesh -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1564933356-a0c8922d8926?q=80&w=800&auto=format&fit=crop" alt="Andhra Pradesh">
+                <div class="journal-content">
+                    <span class="journal-meta">26. Andhra Pradesh</span>
+                    <h3>Coastal Andhra</h3>
+                    <p>Discovering ancient Buddhist sites, dramatic valleys, temple towns, beaches, and the flavours of Andhra cuisine.</p>
+                    <a href="south-india.html#andhra" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 27. Telangana -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1694091684549-b1188cb03a4b?q=80&w=800&auto=format&fit=crop" alt="Telangana">
+                <div class="journal-content">
+                    <span class="journal-meta">27. Telangana</span>
+                    <h3>Hyderabad After Dark</h3>
+                    <p>Exploring Charminar, historic forts, royal cuisine, bustling bazaars, and the modern energy of Hyderabad.</p>
+                    <a href="south-india.html#telangana" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 28. Karnataka -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1697130383976-38f28c444292?q=80&w=800&auto=format&fit=crop" alt="Karnataka">
+                <div class="journal-content">
+                    <span class="journal-meta">28. Karnataka</span>
+                    <h3>From Palaces to Coffee</h3>
+                    <p>Riding from Mysuru's royal avenues into Coorg's misty coffee plantations and the wild Western Ghats.</p>
+                    <a href="south-india.html#karnataka" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 29. Kerala -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop" alt="Kerala">
+                <div class="journal-content">
+                    <span class="journal-meta">29. Kerala</span>
+                    <h3>Misty Tea Estates of Munnar</h3>
+                    <p>Wandering through emerald tea plantations, spice gardens, tranquil backwaters, and tropical villages.</p>
+                    <a href="south-india.html#kerala" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 30. Tamil Nadu -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1544588440-fc7551331160?q=80&w=800&auto=format&fit=crop" alt="Tamil Nadu">
+                <div class="journal-content">
+                    <span class="journal-meta">30. Tamil Nadu</span>
+                    <h3>Temples, Coast & Culture</h3>
+                    <p>Following the ancient temple trail from Chennai and Mahabalipuram to Madurai, Thanjavur, and Rameswaram.</p>
+                    <a href="south-india.html#tamilnadu" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 31. Andaman & Nicobar -->
+            <div class="journal-card">
+                <img src="https://plus.unsplash.com/premium_photo-1719843013722-c2f4d69db940?q=80&w=735&auto=format&fit=crop" alt="Andaman">
+                <div class="journal-content">
+                    <span class="journal-meta">31. Andaman & Nicobar</span>
+                    <h3>Into the Emerald Islands</h3>
+                    <p>Diving into turquoise waters, exploring tropical forests, and discovering the remote beauty of India's island frontier.</p>
+                    <a href="south-india.html#andaman" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 32. Lakshadweep -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1678624080006-09f033a6e17c?q=80&w=800&auto=format&fit=crop" alt="Lakshadweep">
+                <div class="journal-content">
+                    <span class="journal-meta">32. Lakshadweep</span>
+                    <h3>Blue Lagoons of Lakshadweep</h3>
+                    <p>Sailing between tiny coral islands, snorkelling through clear lagoons, and escaping into a world of turquoise waters.</p>
+                    <a href="south-india.html#kerala" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 33. Delhi -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1678966432189-d58296e45ad2?q=80&w=800&auto=format&fit=crop" alt="Delhi">
+                <div class="journal-content">
+                    <span class="journal-meta">33. Delhi</span>
+                    <h3>The Capital Through the Ages</h3>
+                    <p>Walking from the Red Fort and Jama Masjid to India Gate, Chandni Chowk, and Delhi's modern neighbourhoods.</p>
+                    <a href="north-india.html#delhi" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 34. Puducherry -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1647193800506-b570a982b081?q=80&w=800&auto=format&fit=crop" alt="Puducherry">
+                <div class="journal-content">
+                    <span class="journal-meta">34. Puducherry</span>
+                    <h3>French Streets by the Sea</h3>
+                    <p>Cycling through colourful colonial streets, seaside promenades, cafés, and the peaceful lanes of Auroville.</p>
+                    <a href="south-india.html#tamilnadu" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 35. Chandigarh -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1723410101041-a15314d4082c?q=80&w=800&auto=format&fit=crop" alt="Chandigarh">
+                <div class="journal-content">
+                    <span class="journal-meta">35. Chandigarh</span>
+                    <h3>The Modernist City</h3>
+                    <p>Exploring Le Corbusier's planned city, Rock Garden, Sukhna Lake, and Chandigarh's distinctive urban design.</p>
+                    <a href="north-india.html#punjab" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 36. Daman & Diu -->
+            <div class="journal-card">
+                <img src="https://images.unsplash.com/photo-1572797751206-35424c13a703?q=80&w=1333&auto=format&fit=crop" alt="Daman and Diu">
+                <div class="journal-content">
+                    <span class="journal-meta">36. Daman & Diu</span>
+                    <h3>Portuguese Trails by the Sea</h3>
+                    <p>Discovering coastal forts, old Portuguese architecture, quiet beaches, and the relaxed charm of India's western coast.</p>
+                    <a href="west-india.html#gujarat" target="_blank" class="read-more stretched-link">Read Itinerary &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Plan Your Journey Widget -->
+    <section id="plan" class="plan-section reveal">
+        <div class="glass-card plan-container">
+            <h2>Build Your Journey</h2>
+            <p>Select your preferences and let us craft the perfect itinerary.</p>
+            <form class="plan-form">
+                <div class="form-group">
+                    <label>WHERE TO?</label>
+                    <select>
+                        <option>Select Destination</option>
+                        <option>The Himalayas</option>
+                        <option>Rajasthan Deserts</option>
+                        <option>Kerala Backwaters</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>WHEN?</label>
+                    <select>
+                        <option>Select Month</option>
+                        <option>October - March (Winter)</option>
+                        <option>April - June (Summer)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>TRAVEL STYLE</label>
+                    <select>
+                        <option>Backpacker / Budget</option>
+                        <option>Comfort / Boutique</option>
+                        <option>Premium / Luxury</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-primary plan-btn">BUILD MY JOURNEY</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer" style="margin-top: 80px;">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries and guides.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <script src="jp.js"></script>
+</body>
+</html>

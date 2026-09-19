@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Wildlife Safaris | Bharat Explorers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HIGH-DENSITY INFORMATION GRIDS & TABLE STYLING -->
+    <style>
+        .section-heading { 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            color: var(--primary); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+        }
+        .places-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-align: left;
+        }
+        .place-card { 
+            background: rgba(255,255,255,0.7); 
+            border: 1px solid rgba(255,255,255,0.9); 
+            padding: 22px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
+        }
+        .place-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--primary); 
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.15);
+        }
+        .place-card h4 { 
+            color: var(--text-main); 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+            border-bottom: 2px solid var(--primary-glow); 
+            padding-bottom: 6px; 
+            display: inline-block; 
+        }
+        .place-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 0; 
+            color: var(--text-muted); 
+        }
+        .food-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            justify-content: center;
+        }
+        .food-item { 
+            background: rgba(255,153,51,0.1); 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            border: 1px solid rgba(255,153,51,0.3); 
+        }
+        .tips-box {
+            background: rgba(255, 153, 51, 0.08); 
+            border-left: 4px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tips-box h4 {
+            color: var(--primary); 
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .tips-box p {
+            font-size: 0.95rem; 
+            margin-bottom: 8px; 
+            color: var(--text-main);
+        }
+        
+        /* COMPARISON TABLE STYLING */
+        .comparison-table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+        .wildlife-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .wildlife-table th {
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .wildlife-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        .wildlife-table tr:hover {
+            background: rgba(255,153,51,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Announcement Bar -->
+    <div class="announcement-bar">
+        <p>
+            ✨ Into The Wild — Discover India's Super Six National Parks & Tiger Reserves! 
+            <span class="spacer"></span> 
+            <a href="#explore">Start Exploring &rarr;</a>
+        </p>
+    </div>
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav premium-nav">
+        <a href="index.html" class="logo">✨ &nbsp;Bharat Explorers</a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="destinations.html">Destinations ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="north-india.html">North India</a></li>
+                    <li><a href="south-india.html">South India</a></li>
+                    <li><a href="east-india.html">East India</a></li>
+                    <li><a href="west-india.html">West India</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="experiences.html" class="active">Experiences ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="wildlife.html">🐅 Wildlife</a></li>
+                    <li><a href="heritage.html">🏛️ Heritage</a></li>
+                    <li><a href="food.html">🍛 Food</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="gallery.html">3D Gallery</a></li>
+            <li><a href="itineraries.html">Travel Itineraries</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+            <button class="icon-btn" title="Saved">❤️</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </nav>
+
+    <!-- Page Header Hero -->
+    <section class="cinematic-hero" style="min-height: 70vh; background-image: url('https://images.unsplash.com/photo-1615963244664-5b845b2025ee?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content reveal">
+            <p class="hero-kicker">INTO THE WILD</p>
+            <h1 style="font-size: 5rem;">INDIAN WILDLIFE SAFARIS</h1>
+            <p class="hero-subtitle">Track Royal Bengal Tigers, Asiatic Lions, One-Horned Rhinos, and the elusive Snow Leopard across India's premier reserves.</p>
+        </div>
+    </section>
+
+    <!-- SUPER SIX QUICK COMPARISON TABLE -->
+    <section class="reveal" style="padding-bottom: 0;">
+        <h2 class="section-title">🐾 India's Wildlife Super Six — At a Glance</h2>
+        <p class="section-subtitle">Compare the key species, ecosystems, and geographic locations of India's flagship parks.</p>
+        
+        <div class="comparison-table-container glass-card" style="padding: 20px;">
+            <table class="wildlife-table">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>State / Region</th>
+                        <th>Main Attraction</th>
+                        <th>Landscape / Ecosystem</th>
+                        <th>Best Wildlife Sighted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🐅 Ranthambore</strong></td>
+                        <td>Sawai Madhopur, Rajasthan</td>
+                        <td>Bengal Tigers & Heritage Forts</td>
+                        <td>Dry Deciduous Forest & Lakes</td>
+                        <td>Tigers, Leopards, Crocodiles, Sloth Bears</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🦏 Kaziranga</strong></td>
+                        <td>Assam</td>
+                        <td>One-Horned Rhinoceroses</td>
+                        <td>Wet Grasslands & Brahmaputra Floodplain</td>
+                        <td>Rhinos, Elephants, Wild Buffalo, Tigers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🐘 Jim Corbett</strong></td>
+                        <td>Uttarakhand</td>
+                        <td>Bengal Tigers & Elephants</td>
+                        <td>Sal Forests, Rivers & Foothills</td>
+                        <td>Tigers, Elephants, Leopards, Gharials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🦁 Gir Forest</strong></td>
+                        <td>Gujarat</td>
+                        <td>Asiatic Lions (World's Last Population)</td>
+                        <td>Dry Deciduous Forest & Rocky Hills</td>
+                        <td>Asiatic Lions, Leopards, Chital, Antelopes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🌊 Sundarbans</strong></td>
+                        <td>West Bengal</td>
+                        <td>Swimming Royal Bengal Tigers</td>
+                        <td>Tidal Mangroves & Estuarine Creeks</td>
+                        <td>Tigers, Saltwater Crocodiles, Spotted Deer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>❄️ Hemis</strong></td>
+                        <td>Ladakh</td>
+                        <td>Elusive Snow Leopards</td>
+                        <td>High-Altitude Cold Desert & Mountains</td>
+                        <td>Snow Leopards, Blue Sheep, Ibex, Tibetan Wolf</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE WILDLIFE EXPLORER -->
+    <section id="explore" style="padding-top: 60px; padding-bottom: 100px;">
+        <div class="state-explorer-container">
+            
+            <!-- LEFT SIDEBAR: Clickable Parks -->
+            <div class="state-sidebar reveal">
+                <button class="state-pill-btn active" data-state="ranthambore">🐅 Ranthambore (Rajasthan)</button>
+                <button class="state-pill-btn" data-state="kaziranga">🦏 Kaziranga (Assam)</button>
+                <button class="state-pill-btn" data-state="corbett">🐘 Jim Corbett (Uttarakhand)</button>
+                <button class="state-pill-btn" data-state="gir">🦁 Gir Forest (Gujarat)</button>
+                <button class="state-pill-btn" data-state="sundarbans">🌊 Sundarbans (West Bengal)</button>
+                <button class="state-pill-btn" data-state="hemis">❄️ Hemis (Ladakh)</button>
+            </div>
+
+            <!-- RIGHT CONTENT: Park Details -->
+            <div class="state-content-area reveal">
+                
+                <!-- ============================================== -->
+                <!-- 1. RANTHAMBORE NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card active" id="ranthambore">
+                    <img src="https://images.unsplash.com/photo-1680140979890-101e2798dddf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="state-hero-img" alt="Ranthambore Bengal Tiger">
+                    <h2>Ranthambore National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 Sawai Madhopur, Rajasthan</span>
+                        <span class="fact-tag">⛅ Best Time: October to June</span>
+                        <span class="fact-tag">🌳 Vibe: Tigers, Forts & Lakes</span>
+                        <span class="fact-tag">🏆 Highlight: Tiger Photography</span>
+                    </div>
+
+                    <p>Ranthambore National Park is one of India's most iconic tiger reserves. The park seamlessly combines dry deciduous forests, open grasslands, lakes, and rocky hills with the dramatic, 1,000-year-old ruins of <strong>Ranthambore Fort</strong>. This unique collision of medieval history and thriving wildlife makes Ranthambore world-famous for photography.</p>
+
+                    <h3 class="section-heading">📍 Major Attractions & Ecosystem Features</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🐅 Bengal Tiger Safaris</h4>
+                            <p><strong>Open-Jeep Tracking:</strong> Tigers in Ranthambore are famous for being active during daytime sessions, often sighted drinking near lakes or hunting around ancient stone ruins.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Ranthambore Fort</h4>
+                            <p><strong>Ancient Heritage:</strong> Rises dramatically over the park. Contains ancient gateways, fort walls, historic ruins, and the deeply revered <em>Trinetra Ganesh Temple</em>.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐊 Padam Talao & Lakes</h4>
+                            <p><strong>Primary Water Bodies:</strong> Attracts massive concentrations of wildlife during dry months—frequently spotted with Tigers, Marsh Crocodiles, Sambar deer, and waterbirds.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🌿 Diverse Wildlife</h4>
+                            <p><strong>Full Food Chain:</strong> Home to Leopards, Sambar Deer, Chital, Wild Boars, Sloth Bears, Hanuman Langurs, Indian Wild Dogs, and soaring Eagles.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Local Rajasthani Cuisine</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍲 Dal Baati Churma</span>
+                        <span class="food-item">🥘 Gatte Ki Sabzi</span>
+                        <span class="food-item">🍖 Spicy Laal Maas</span>
+                        <span class="food-item">🫓 Bajra Roti & Ker Sangri</span>
+                        <span class="food-item">🍰 Ghewar & Kachori</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Book Early:</strong> Safari permits across Tourism Zones 1-10 fill up fast. Book online months in advance.</p>
+                        <p>• <strong>Rule of the Wild:</strong> Follow guide instructions strictly. Never make loud noises or attempt to feed animals.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Sawai Madhopur town, Trinetra Ganesh Temple, Surwal Lake, and the Chambal River region.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 2. KAZIRANGA NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="kaziranga">
+                    <img src="https://images.unsplash.com/flagged/photo-1557650454-65194af63bf9?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Kaziranga Rhino">
+                    <h2>Kaziranga National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 Assam</span>
+                        <span class="fact-tag">⛅ Best Time: November to April</span>
+                        <span class="fact-tag">🦏 UNESCO World Heritage Site</span>
+                        <span class="fact-tag">🌾 Vibe: Tall Elephant Grass & Rhinos</span>
+                    </div>
+
+                    <p>Kaziranga National Park is a world-famous conservation success story, harboring two-thirds of the world's population of the <strong>Greater One-Horned Rhinoceros</strong>. Set along the vast Brahmaputra River floodplain, its landscape is defined by tall elephant grass, marshy wetlands, and dense tropical forests.</p>
+
+                    <h3 class="section-heading">📍 Major Wildlife & Ranges</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🦏 Greater One-Horned Rhinoceros</h4>
+                            <p><strong>The Prehistoric Giant:</strong> The primary star of Kaziranga. Highly visible grazing in open grasslands, wallowing in mud, or drinking at water bodies.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐘 Elephants & Wild Water Buffalo</h4>
+                            <p><strong>The Big Five:</strong> Large herds of Asian Elephants, Wild Water Buffalo, and Swamp Deer thriving across wet grassland ecosystems.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Bengal Tigers & Predators</h4>
+                            <p><strong>High Density:</strong> Holds one of the highest densities of tigers in protected areas, along with Indian Rock Pythons and Monitor Lizards.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐦 Birdwatching Haven</h4>
+                            <p><strong>Migratory Waterfowl:</strong> Great Hornbills, Pelicans, Storks, Egrets, Herons, Eagles, and thousands of winter wetland birds.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🚙 Safari Ranges</h4>
+                            <p><strong>Four Tourism Zones:</strong> Central (Kohora), Western (Bagori), Eastern (Agratoli), and Burapahar ranges offer varied terrain and safaris.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🍵 Surrounding Tea Estates</h4>
+                            <p><strong>Assamese Heritage:</strong> The park borders Assam's iconic green tea-growing landscapes, ideal for plantation walks and tea tasting.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Authentic Assamese Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Masor Tenga (Sour Fish Curry)</span>
+                        <span class="food-item">🥣 Khar</span>
+                        <span class="food-item">🥔 Aloo Pitika</span>
+                        <span class="food-item">🦆 Assamese Duck Curry</span>
+                        <span class="food-item">🥞 Rice Pitha</span>
+                        <span class="food-item">🍵 Fresh Assam Black Tea</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Seasonal Closures:</strong> The park closes completely during the monsoon (May to October) due to heavy Brahmaputra River flooding.</p>
+                        <p>• <strong>Neutral Gear:</strong> Wear forest-friendly khakis and olive greens during open-jeep and elephant safaris.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Majuli River Island, Jorhat Tea Estates, Sivasagar Ahom Palaces, and Pobitora Sanctuary.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 3. JIM CORBETT NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="corbett">
+                    <img src="https://images.unsplash.com/photo-1581852017103-68ac65514cf7?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Jim Corbett Elephant">
+                    <h2>Jim Corbett National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 Uttarakhand</span>
+                        <span class="fact-tag">⛅ Best Time: November to June</span>
+                        <span class="fact-tag">🌲 India's First National Park (1936)</span>
+                        <span class="fact-tag">🐅 Vibe: Sal Forests & Ramganga River</span>
+                    </div>
+
+                    <p>Located in the foothills of the Himalayas, Jim Corbett National Park is India's oldest protected reserve. Combining dense Sal tree forests, wide riverbeds, open grasslands, and hilly terrain, Corbett is globally renowned for its population of Royal Bengal Tigers, Asian Elephants, and diverse birdlife.</p>
+
+                    <h3 class="section-heading">📍 Major Zones & Highlights</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🏞️ Dhikala Tourism Zone</h4>
+                            <p><strong>The Core Forest:</strong> Corbett's most famous area, featuring vast open grasslands (Chaurs), views of the Ramganga reservoir, and prime tiger habitat.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐘 Asian Elephants & Tigers</h4>
+                            <p><strong>High Density:</strong> Wild elephant herds frequently cross the Ramganga River, while Bengal Tigers and Leopards patrol the dense Sal canopy.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐊 Ramganga River Ecosystem</h4>
+                            <p><strong>Riverine Predators:</strong> Natural habitat for fish-eating Gharials, Marsh Crocodiles, Sambar deer, and Asian Otters.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐦 600+ Avian Species</h4>
+                            <p><strong>Birdwatcher's Paradise:</strong> Spot Great Hornbills, Fish Eagles, Kingfishers, Woodpeckers, Owls, and migratory river birds.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🚙 Other Key Zones</h4>
+                            <p><strong>Bijrani, Jhirna, Dhela & Durgadevi:</strong> Offering diverse landscapes ranging from dense teak forests to rocky mountain streams.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Kumaoni Mountain Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🌿 Kafuli</span>
+                        <span class="food-item">🥔 Aloo Ke Gutke</span>
+                        <span class="food-item">🫘 Bhatt Ki Churkani</span>
+                        <span class="food-item">🫓 Mandua Roti</span>
+                        <span class="food-item">🌾 Jhangore Ki Kheer</span>
+                        <span class="food-item">🍬 Singori Sweet</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Dhikala Stay:</strong> Overnight stays at the Dhikala Forest Lodge offer the ultimate wilderness experience and must be booked months in advance.</p>
+                        <p>• <strong>Weather Variations:</strong> Morning safaris in the foothills can be very cold; pack heavy jackets even during spring months.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Ramnagar, Nainital Lake, Ranikhet, and the Ramganga Dam Reservoir.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 4. GIR NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="gir">
+                    <img src="https://plus.unsplash.com/premium_photo-1669725687221-6fe12c2da6b1?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Gir Asiatic Lion">
+                    <h2>Gir National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 Gujarat</span>
+                        <span class="fact-tag">⛅ Best Time: October to June</span>
+                        <span class="fact-tag">🦁 Last Stronghold of the Asiatic Lion</span>
+                        <span class="fact-tag">🌳 Vibe: Dry Deciduous Forests & Hills</span>
+                    </div>
+
+                    <p>Gir Forest is world-famous as the <strong>only natural habitat of the Asiatic Lion</strong> on Earth. Its landscape of rugged dry deciduous forests, acacia thorn thickets, seasonal rivers, and rocky ridges provides an ideal sanctuary for lions, leopards, and large herbivore herds.</p>
+
+                    <h3 class="section-heading">📍 Key Species & Experiences</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🦁 The Asiatic Lion</h4>
+                            <p><strong>The Crown Jewel:</strong> Distinct from African lions with a fold of skin along their bellies. Sighted patrolling forest tracks, resting under shade, or near waterbodies.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐆 Leopards & Predators</h4>
+                            <p><strong>High Density:</strong> Gir harbors one of the densest populations of Indian Leopards, along with Striped Hyenas, Golden Jackals, and Desert Cats.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🦌 Diverse Herbivores</h4>
+                            <p><strong>Rich Prey Base:</strong> Massive herds of Chital (Spotted Deer), Sambar, Nilgai, Chinkara, Four-Horned Antelope (Chowsingha), and Wild Boars.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐊 Kamleshwar Dam Crocodiles</h4>
+                            <p><strong>Marsh Crocodiles:</strong> The Kamleshwar Reservoir inside Gir is famous for holding one of the largest populations of Marsh Crocodiles in India.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Authentic Gujarati Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🍽️ Complete Gujarati Thali</span>
+                        <span class="food-item">🥞 Soft Dhokla & Khandvi</span>
+                        <span class="food-item">🫓 Thepla & Fafda-Jalebi</span>
+                        <span class="food-item">🍲 Winter Undhiyu</span>
+                        <span class="food-item">🥘 Sev Tameta & Handvo</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Permits Required:</strong> Gir E-Permits must be booked strictly in advance through the official Gujarat tourism portal.</p>
+                        <p>• <strong>The Circuit:</strong> Gir is seamlessly combined with the sacred <em>Somnath Temple</em>, the beaches of <em>Diu</em>, and <em>Dwarka</em>.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Sasangir, Junagadh, Girnar Hills, Somnath, and Diu Island.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 5. SUNDARBANS NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="sundarbans">
+                    <img src="https://plus.unsplash.com/premium_photo-1661963380682-8fcaf8ca7650?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Sundarbans Mangroves">
+                    <h2>Sundarbans National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 West Bengal</span>
+                        <span class="fact-tag">⛅ Best Time: November to February</span>
+                        <span class="fact-tag">🌊 UNESCO World Heritage Site</span>
+                        <span class="fact-tag">🚤 Vibe: Water-Based Boat Safaris</span>
+                    </div>
+
+                    <p>The Sundarbans is the world's largest mangrove forest delta, created by the confluence of the Ganges, Brahmaputra, and Meghna rivers. It is an extraordinary wilderness where <strong>Royal Bengal Tigers have adapted to swim</strong> across saline tidal rivers and hunt in muddy mangrove thickets.</p>
+
+                    <h3 class="section-heading">📍 Major Ecosystem Features & Safaris</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🚤 Water-Based Boat Safaris</h4>
+                            <p><strong>Cruising Tidal Creeks:</strong> Exploration is entirely done on motorized motorized boats navigating narrow saline channels and mudflats.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐅 Swimming Bengal Tigers</h4>
+                            <p><strong>Unique Adaptation:</strong> The tigers here are famous for drinking salty water, swimming across wide estuaries, and tracking prey through dense mangroves.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐊 Estuarine Crocodiles & Wildlife</h4>
+                            <p><strong>Reptiles & Primates:</strong> Massive Saltwater Crocodiles basking on mudflats, Spotted Deer, Monitor Lizards, and Rhesus Macaques.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🏰 Famous Watchtowers</h4>
+                            <p><strong>Sajnekhali, Sudhanyakhali & Dobanki:</strong> Elevated canopy walkways and watchtowers giving safe views over tiger drinking ponds and sweet-water tanks.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍛 Coastal Bengali Meals</h3>
+                    <div class="food-list">
+                        <span class="food-item">🐟 Fresh Fish Curry & Rice</span>
+                        <span class="food-item">🍤 Prawn Malai Curry</span>
+                        <span class="food-item">🥘 Bengali Dal & Bhaja</span>
+                        <span class="food-item">🥟 Bhapa Pitha</span>
+                        <span class="food-item">🍮 Mishti Doi & Rosogolla</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Tides Matter:</strong> Boat safaris depend heavily on high and low tides. Tides dictate which narrow creeks boats can safely navigate.</p>
+                        <p>• <strong>No Independent Entry:</strong> You must enter with registered guides, permits, and licensed motorized safari boats.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Godkhali, Gosaba, Jharkhali, and Kolkata.</p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- 6. HEMIS NATIONAL PARK -->
+                <!-- ============================================== -->
+                <div class="state-detail-card glass-card" id="hemis">
+                    <img src="https://plus.unsplash.com/premium_photo-1661952443167-05d723e6bb3a?q=80&w=1200&auto=format&fit=crop" class="state-hero-img" alt="Hemis Snow Leopard Landscape">
+                    <h2>Hemis National Park</h2>
+                    
+                    <div class="state-quick-facts">
+                        <span class="fact-tag">📍 Ladakh</span>
+                        <span class="fact-tag">⛅ Best Time: May to Oct (Winter for Snow Leopard)</span>
+                        <span class="fact-tag">🏔️ Vibe: High-Altitude Himalayan Cold Desert</span>
+                        <span class="fact-tag">🐆 Famous For: The Elusive Snow Leopard</span>
+                    </div>
+
+                    <p>Hemis National Park is India's largest high-altitude national park, set amidst the stark, oxygen-thin Himalayan peaks of Ladakh. It is world-renowned as the <strong>global capital for spotting the elusive Snow Leopard</strong> ("The Grey Ghost of the Himalayas").</p>
+
+                    <h3 class="section-heading">📍 Key Species & High-Altitude Trekking</h3>
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h4>🐆 The Snow Leopard</h4>
+                            <p><strong>The Grey Ghost:</strong> Tracked during cold winter months (Dec-Mar) in snow-covered valleys using spotting scopes alongside local expert trackers.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🐐 Himalayan Herbivores</h4>
+                            <p><strong>Blue Sheep & Ibex:</strong> Large herds of Bharal (Blue Sheep), Himalayan Ibex, and Shapu (Ladakh Urial) navigating precipitous rocky cliffs.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🦊 Mountain Predators</h4>
+                            <p><strong>Tibetan Wolf & Red Fox:</strong> High-altitude predators patrolling cold desert valleys alongside Golden Eagles and Lammergeier Vultures.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🥾 Rumbak Valley Treks</h4>
+                            <p><strong>Expedition Safaris:</strong> Unlike jeep safaris, Hemis safaris are high-altitude mountain treks with homestays in traditional Ladakhi villages.</p>
+                        </div>
+                        <div class="place-card">
+                            <h4>🛕 Hemis Monastery</h4>
+                            <p><strong>Buddhist Heritage:</strong> Located on the park border, famous for its historic architectural treasures and the colorful annual <em>Hemis Festival</em>.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-heading">🍜 Comforting Ladakhi Mountain Food</h3>
+                    <div class="food-list">
+                        <span class="food-item">🥟 Steamed Momos</span>
+                        <span class="food-item">🍜 Hot Thukpa Noodle Soup</span>
+                        <span class="food-item">🥔 Skyu & Chutagi</span>
+                        <span class="food-item">🍚 Tingmo & Gravy</span>
+                        <span class="food-item">🍵 Salty Butter Tea</span>
+                        <span class="food-item">🌾 Roasted Tsampa</span>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>⚠️ Safari Tips & Nearby Places</h4>
+                        <p>• <strong>Strict Acclimatization:</strong> Rest for 48 hours in Leh before undertaking any strenuous high-altitude tracking treks in Hemis.</p>
+                        <p>• <strong>Winter Tracking:</strong> Snow leopard expeditions occur in deep winter (-15°C to -20°C). Specialized arctic clothing is required.</p>
+                        <p>• <strong>Nearby Highlights:</strong> Leh town, Stok Palace, Thiksey Monastery, Rumbak Village, and Pangong Tso.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST FOR DIFFERENT EXPERIENCES -->
+    <section class="reveal" style="padding-top: 20px;">
+        <h2 class="section-title">🏆 Choose By Safari Style</h2>
+        <p class="section-subtitle">Find the exact wildlife encounter that matches your dream travel style.</p>
+        
+        <div class="journey-grid">
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🐅</div>
+                <h3>Best for Tiger Photography</h3>
+                <p><strong>Ranthambore & Jim Corbett:</strong> High tiger density, daytime sightings, open jeeps, and dramatic fort backgrounds.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🦏</div>
+                <h3>Best for Rhinos & Grasslands</h3>
+                <p><strong>Kaziranga:</strong> World's largest one-horned rhino population amid tall elephant grass and Brahmaputra floodplains.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🦁</div>
+                <h3>Best for Lions</h3>
+                <p><strong>Gir National Park:</strong> The world's only natural sanctuary to see wild Asiatic Lions roaming dry deciduous forests.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🚤</div>
+                <h3>Most Unique Ecosystem</h3>
+                <p><strong>Sundarbans:</strong> Water-based boat safaris through tidal mangrove creeks tracking swimming tigers and estuarine crocodiles.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🐆</div>
+                <h3>Best High-Altitude Expedition</h3>
+                <p><strong>Hemis:</strong> Extreme Himalayan mountain tracking for the elusive Snow Leopard and Blue Sheep.</p>
+            </div>
+            <div class="journey-card glass-card">
+                <div class="journey-icon">🐘</div>
+                <h3>Best for Wild Elephants</h3>
+                <p><strong>Jim Corbett & Kaziranga:</strong> Large wild elephant herds roaming freely near rivers, Sal forests, and grasslands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer -->
+    <footer class="mega-footer" style="margin-top: 80px;">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">✨ Bharat Explorers</a>
+                <p>Discover India beyond the postcards. 36 regions. Thousands of stories. One incredible journey.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">3D Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="food.html">Cuisines</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Never miss an adventure</h4>
+                <p>Get exclusive travel itineraries delivered to your inbox.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🇮🇳 MADE WITH ❤️ FOR INDIA</p>
+            <p>&copy; 2026 Bharat Explorers | 28 States • 8 Union Territories</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR THE TABS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateBtns = document.querySelectorAll('.state-pill-btn');
+            const stateCards = document.querySelectorAll('.state-detail-card');
+
+            stateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    stateBtns.forEach(b => b.classList.remove('active'));
+                    stateCards.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    
+                    const targetState = btn.getAttribute('data-state');
+                    document.getElementById(targetState).classList.add('active');
+                });
+            });
+        });
+    </script>
+    <script src="jp.js"></script>
+</body>
+</html>
